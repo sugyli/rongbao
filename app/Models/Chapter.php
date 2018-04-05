@@ -47,4 +47,15 @@ class Chapter extends Model
       return $this->webdashubaoinfolink($this->articleid);
 
     }
+
+
+
+    //前台使用
+    public function scopeGetBasicsChapter($query)
+    {
+      return $query->where('chaptertype','<=' ,0)
+                    ->where('display', '<=', '0')
+                    ->orderBy('chapterorder', 'asc')
+                    ->limit(config('app.maxchapter'));
+    }
 }

@@ -219,6 +219,40 @@ class Article extends Model
 
 
 
+
+    public static function getBidBookDataByGet($bid)
+    {
+
+      try {
+        $isuse = Mulu::where('articleid',$bid)
+                                      ->where('is_use',1)
+                                      ->count();
+        if ($isuse <= 0) {
+            $key = config('app.info_key').$bid;
+            $mulu =   Mulu::where('articleid',$bid)->first();
+            if($mulu){
+                Mulu::where('articleid',$bid)->update(['is_use'=>1]);
+            }else{
+                Mulu::create(['articleid' =>$bid,'is_use' => 1]);
+            }
+
+            $bookData  = self::getBasicsBook()->where('articleid', $bid)->first();
+            if($bookData){
+              $bookData->load('relationChapters');
+              \Cache::put($key, $bookData->toArray(), config('app.cacheTime_z'));
+            }
+
+            Mulu::where('articleid',$bid)->update(['is_use'=>0]);
+        }
+
+      } catch (\Exception $e) {
+          \Log::error('ajax更新书的缓存失败',['bookid'=>$bid ,'errno' => $e->getMessage()]);
+           Mulu::where('articleid',$bid)->update(['is_use'=>0]);
+      }
+    }
+
+
+
     //txt
     public function saveOrGetTxtData($bid,$cid,$lastupdate,$attachment)
     {

@@ -208,6 +208,10 @@ Route::group([
     Route::get('/search', 'SearchController@search')->name('search');
     Route::post('/search', 'SearchController@alisearch');
 
+
+
+    Route::post('/checkupsql', 'IndexController@upsqldata')->name('upsqldata');
+
 });
 
 
