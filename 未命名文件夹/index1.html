@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp, small,strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td
+    {
+      margin: 0;padding: 0;
+      border: 0;
+      outline: 0;
+      vertical-align: baseline;
+      background: transparent;
+      line-height: normal;
+    }
+
+    input, button, textarea
+    {
+      outline: none;
+    }
+
+    ol, ul
+    {
+      list-style: none;
+    }
+
+    button, a
+    {
+      background: none;
+      border: none;
+      outline: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a:hover
+    {
+      text-decoration: none;
+    }
+
+    a:focus
+    {
+      text-decoration: none;
+    }
+
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+    {
+      color: #BCC7D7;
+      font-weight: 300;
+    }
+
+    input:-moz-placeholder, textarea:-moz-placeholder
+    {
+      color: #BCC7D7;
+      font-weight: 300;
+    }
+
+    input::-moz-placeholder, textarea::-moz-placeholder
+    {
+      color: #BCC7D7;
+      font-weight: 300;
+    }
+
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder
+    {
+      color: #BCC7D7;
+      font-weight: 300;
+    }
+
+    .icon
+    {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .app .nav
+    {
+      background: #ffffff;
+      height: 60px;
+      border-bottom: 1px solid #EDF0F4;
+    }
+   .app .nav .nav-bar-con
+   {
+     padding: 0;
+     height: 100%;
+   }
+  .app .nav .nav-bar-con .navbar-header
+  {
+      margin-right: 35px;
+      height: 60px;
+  }
+  .app .nav .nav-bar-con .navbar-header .navbar-logo img
+  {
+      height: 46px;
+      margin-top: 7px;
+  }
+  .app .nav .nav-bar-con .navbar-public
+  {
+      height: 60px;
+  }
+  .app .nav .nav-bar-con .navbar-center
+  {
+      float: left;
+  }
+  .app .nav .nav-bar-con .navbar-center li
+  {
+      float: left;
+  }
+  .app .nav .nav-bar-con .navbar-center li a
+  {
+      display: inline-block;
+      font-size: 16px;
+      color: #5A6169;
+      line-height: 60px;
+      height: 60px;
+      padding: 0 24px;
+  }
+  .app .nav .nav-bar-con .navbar-center li a:hover
+  {
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-center li a:focus
+  {
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-center li .active
+  {
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-right
+  {
+      float: right;
+      margin-right: 0;
+  }
+  .app .nav .nav-bar-con .navbar-right li
+  {
+      float: left;
+  }
+  .app .nav .nav-bar-con .navbar-right li a
+  {
+      display: inline-block;
+      font-size: 16px;
+      color: #5A6169;
+      line-height: 60px;
+      height: 60px;
+      padding: 0 24px;
+  }
+  .app .nav .nav-bar-con .navbar-right li a:hover
+  {
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-right li a:focus
+  {
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-right li .active
+  {
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-right .last-item-edit
+  {
+      height: 40px;
+      line-height: 42px;
+      margin-top: 8px;
+      border: 1px solid #007BFF;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px;
+      box-sizing: content-box;
+      margin-left: 10px;
+  }
+  .app .nav .nav-bar-con .navbar-right .last-item-edit a
+  {
+      line-height: 40px;
+      height: 40px;
+      color: #007BFF;
+  }
+  .app .nav .nav-bar-con .navbar-right .last-item-edit a svg
+  {
+      margin-right: 6px;
+  }
+  .app .nav .nav-bar-con .navbar-right .headIcon
+  {
+      position: relative;
+      height: 60px;
+      width: 80px;
+      text-align: center;
+      line-height: 60px;
+      margin-right: 12px;
+  }
+  .app .nav .nav-bar-con .navbar-right .headIcon img
+  {
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      border-radius: 50%;
+  }
+  .app .nav .nav-bar-con .navbar-right .headIcon:hover .headIcon-menu
+  {
+      display: block;
+  }
+  .app .nav .nav-bar-con .navbar-right .headIcon .headIcon-menu
+  {
+      display: none;
+      position: absolute;
+      z-index: 150;
+      top: 70px;
+      right: -16px;
+      padding: 5px 0;
+      background: #ffffff;
+      border-radius: 6px;
+      -webkit-box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175);
+      box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175);
+  }
+  .app .nav .nav-bar-con .navbar-right .headIcon .headIcon-menu li a
+  {
+      height: 40px;
+      width: 108px;
+      padding: 0;
+      line-height: 40px;
+  }
+  .app .nav .nav-bar-con .navbar-right .headIcon .headIcon-menu::after, .app .nav .nav-bar-con .navbar-right .headIcon .headIcon-menu::before
+  {
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      position: absolute;
+      width: 0;
+      border-width: 21px;
+      border-bottom-color: #ffffff;
+      left: 32px;
+      top: -30px;
+  }
+
+ .app .app-bottom
+ {
+    border-top: 1px solid #EDF0F4;
+    background: #ffffff;
+  }
+  .app .app-bottom .link-box {
+    margin-top: 30px; }
+    .app .app-bottom .link-box a {
+      color: #5A6169; }
+      .app .app-bottom .link-box a:hover {
+        color: #007BFF;
+        transition: all .5s; }
+  .app .app-bottom .record-box .record {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 50px; }
+    .app .app-bottom .record-box .record a {
+      color: #5A6169;
+      font-size: 11px; }
+
+.app .back-to-top {
+  position: fixed;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  transition: all .5s;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: #ffffff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175); }
+  .app .back-to-top:hover i {
+    color: #007BFF;
+    transition: all .1s; }
+  .app .back-to-top i {
+    color: #BCC7D7;
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 40px; }
+</style>
+
+<style type="text/css">
+  .home
+  {
+    min-height: 750px;
+    padding: 30px 0;
+  }
+  .home .home-public
+  {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .home .home-public-1
+  {
+    padding-left: 15px;
+  }
+  .home .home-list .open > .more-con
+  {
+    display: none;
+  }
+  .home .home-list .open:hover .more-con
+  {
+    display: block;
+  }
+  .home .home-list .home-item
+  {
+    display: block;
+    padding: 10px 0;
+    border-radius: 2px;
+    background: transparent;
+    color: #3B4651;
+    margin-bottom: 2px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .home .home-list .home-item:hover
+  {
+    transition: all .5s;
+    background: #007BFF;
+    color: #ffffff;
+  }
+  .home .home-list .home-item:hover span
+  {
+    color: #3B4651;
+  }
+  .home .home-list .last-home-item
+  {
+    position: relative;
+  }
+  .home .home-list .last-home-item .more-con
+  {
+      position: absolute;
+      width: 650px;
+      background: transparent;
+      left: 100%;
+      z-index: 300;
+      padding: 0 16px;
+      top: -80px;
+  }
+  .home .home-list .last-home-item .more-con .more-box
+  {
+      padding: 10px 0;
+      background: #ffffff;
+      -webkit-box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175);
+      box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175);
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-text
+  {
+      text-align: left;
+      padding: 13px 0;
+      margin-left: 20px;
+      font-size: 16px;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box1
+  {
+      text-align: left;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box1 .item
+  {
+      display: inline-block;
+      width: 100px;
+      height: 35px;
+      margin-bottom: 15px;
+      margin-left: 20px;
+      text-align: center;
+  }
+ .home .home-list .last-home-item .more-con .more-box .more-menu-box1 .item a
+ {
+      width: 100%;
+      height: 100%;
+      line-height: 35px;
+      display: inline-block;
+      background: #EBF3FB;
+      color: #95B5D7;
+      font-size: 14px;
+      border-radius: 2px;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box1 .item a:hover
+  {
+      transition: all .5s;
+      background: #007BFF;
+      color: #ffffff;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box2
+  {
+      text-align: left;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box2 .item
+  {
+      display: inline-block;
+      width: 100px;
+      height: 35px;
+      margin-bottom: 15px;
+      margin-left: 20px;
+      text-align: center;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box2 .item a
+  {
+      width: 100%;
+      height: 100%;
+      line-height: 35px;
+      display: inline-block;
+      background: #EBF3FB;
+      color: #95B5D7;
+      font-size: 14px;
+      border-radius: 2px;
+  }
+  .home .home-list .last-home-item .more-con .more-box .more-menu-box2 .item a:hover
+  {
+      transition: all .5s;
+      background: #007BFF;
+      color: #ffffff;
+  }
+  .home .home-list .last-home-item .more-con .more-box::after, .home .home-list .last-home-item .more-con .more-box::before
+  {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    position: absolute;
+    width: 0;
+    border-width: 22px;
+    border-right-color: #ffffff;
+    left: -26px;
+    top: 78px;
+  }
+  .home .home-list .home-item-active
+  {
+    background: #007BFF;
+    color: #ffffff;
+  }
+  .home .home-list .home-item-active span
+  {
+    color: #3B4651;
+  }
+  .home .home-list .more::after, .home .home-list .more::before {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    position: absolute;
+    width: 0; }
+  .home .home-list .more:hover::before {
+    border-width: 27px;
+    border-right-color: lime;
+    right: 0;
+    top: 43px; }
+  .home .home-list .more .more-btn {
+    background: none;
+    border: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    box-shadow: none; }
+  .home .home-list .active {
+    background: #ffffff;
+    color: #000000; }
+  .home .home-con-box
+  {
+    padding-right: 0;
+  }
+  .home .home-con-box .home-list-nav
+  {
+    background: #ffffff;
+    margin-right: 0;
+    margin-left: 0;
+    height: 40px;
+    line-height: 40px;
+  }
+  .home .home-con-box .home-list-nav li
+  {
+      float: left;
+      padding: 0 0 0 23px;
+  }
+  .home .home-con-box .home-list-nav li a
+  {
+      display: inline-block;
+      line-height: 42px;
+      width: 60px;
+      height: 40px;
+      text-align: center;
+      color: #BCC7D7;
+      text-decoration: none;
+      font-size: 16px;
+      border-bottom: 3px solid #ffffff;
+  }
+  .home .home-con-box .home-list-nav li .active
+  {
+      transition: all 1.5s;
+      color: #007BFF;
+      border-bottom-color: #007BFF;
+  }
+  .home .home-con-box .alt-list
+  {
+      min-height: 600px;
+      transition: all 0.5s;
+  }
+  .home .home-con-box .alt-list .load
+  {
+      margin-top: 18px;
+      width: 120px;
+      height: 40px;
+      border-radius: 26px;
+      color: #007BFF;
+      border: 2px solid #EBF3FB;
+  }
+  .home .home-con-box .alt-list .load:hover
+  {
+      transition: all .5s;
+      background: #007BFF;
+      color: #ffffff;
+  }
+  .home .home-con-box .alt-list .alt-item
+  {
+      cursor: pointer;
+      margin-top: 1px;
+      padding: 21px 30px 30px 30px;
+      background: #ffffff;
+  }
+  .home .home-con-box .alt-list .alt-item .media
+  {
+      position: relative;
+      margin-bottom: 20px;
+  }
+  .home .home-con-box .alt-list .alt-item .media .media-left
+  {
+      padding: 0;
+  }
+  .home .home-con-box .alt-list .alt-item .media .media-left img
+  {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+      border-radius: 50%;
+  }
+  .home .home-con-box .alt-list .alt-item .media .media-body .alt-name
+  {
+      margin-top: 4px;
+      color: #666666;
+  }
+  .home .home-con-box .alt-list .alt-item .media .media-body .alt-name p:first-child
+  {
+      font-size: 14px;
+      color: #5A6169;
+  }
+  .home .home-con-box .alt-list .alt-item .media .media-body .alt-name p:last-child
+  {
+      font-size: 12px;
+      color: #cccccc;
+  }
+  .home .home-con-box .alt-list .alt-item .media .pass
+  {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      width: 80px;
+      height: 26px;
+      background: #007BFF;
+      border-radius: 14px;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 26px;
+      text-align: center;
+  }
+  .home .home-con-box .alt-list .alt-item .media .no-pass
+  {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      width: 80px;
+      height: 26px;
+      background: #EBF3FB;
+      border-radius: 14px;
+      font-size: 14px;
+      color: #95B5D7;
+      line-height: 26px;
+      text-align: center;
+  }
+  .home .home-con-box .alt-list .alt-item .media .no-pass:hover
+  {
+      transition: all .5s;
+      background: #007BFF;
+      color: #ffffff;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box
+  {
+      position: relative;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-public img
+  {
+      width: 100%;
+      height: 135px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-public:last-child
+  {
+      padding-left: 30px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-public-left
+  {
+      width: 32%;
+      height: 135px;
+      display: inline-block;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-public-right
+  {
+      position: absolute;
+      top: 0;
+      width: 68%;
+      height: 100%;
+      display: inline-block;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .dn
+  {
+      display: none;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-content
+  {
+      width: 100%;
+      word-wrap: break-word;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-content .content1
+  {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      color: #212529;
+      font-size: 20px;
+      font-family: 'PingFangSC-Regular';
+      max-height: 52px;
+      line-height: 26px;
+      margin-bottom: 10px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-content .content2
+  {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-size: 13px;
+      color: #999999;
+      max-height: 40px;
+      line-height: 20px;
+      font-family: 'PingFangSC-Regular';
+      margin-bottom: 10px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .content-bottom
+  {
+      position: absolute;
+      bottom: 4px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-bottom-item
+  {
+      z-index: 200;
+      display: inline-block;
+      margin-right: 2.3em;
+      cursor: pointer;
+      color: #C5C5C5;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-bottom-item svg
+  {
+      font-size: 16px;
+      margin-right: 6px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .alt-bottom-item span
+  {
+      font-size: 12px;
+  }
+  .home .home-con-box .alt-list .alt-item .alt-box .active
+  {
+      position: relative;
+      color: #007BFF;
+  }
+  .home .home-con-box .alt-list .attention-item
+  {
+      cursor: pointer;
+      padding: 20px 24px;
+      height: 44px;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      background: #ffffff;
+      border: 1px solid #f9f9f9;
+  }
+  .home .home-con-box .alt-list .attention-item:hover
+  {
+      transition: all 0.5s;
+      background: #f1f1f1;
+  }
+  .home .home-con-box .alt-list .attention-item img
+  {
+      height: 100%;
+      float: left;
+      border-radius: 50%;
+  }
+  .home .home-con-box .alt-list .attention-item .attention-item-info
+  {
+      float: left;
+      height: 100%;
+      margin-top: 4px;
+      margin-left: 20px;
+  }
+  .home .home-con-box .alt-list .attention-item .attention-item-info p:last-child
+  {
+      color: #666666;
+      font-size: 12px;
+  }
+  .home .home-con-box .alt-list .attention-item .attention-item-btn
+  {
+      float: right;
+      outline: none;
+      background: #666;
+      color: #fff;
+      border-radius: 12px;
+      padding: 3px 25px;
+      margin-top: 10px;
+      border: none;
+      font-size: 12px;
+   }
+          .home .home-con-box .alt-list .attention-item .attention-item-btn:hover {
+            transition: all 0.5s;
+            background: #000; }
+      .home .home-con-box .alt-list .no-follow {
+        min-height: 600px;
+        background: #ffffff;
+        margin-top: 1px; }
+        .home .home-con-box .alt-list .no-follow .follow-null {
+          display: inline-block;
+          margin-top: 20%; }
+          .home .home-con-box .alt-list .no-follow .follow-null img {
+            width: 200px;
+            height: 200px; }
+          .home .home-con-box .alt-list .no-follow .follow-null p {
+            font-size: 16px;
+            color: #BCC7D7; }
+            .home .home-con-box .alt-list .no-follow .follow-null p a {
+              color: #007BFF; }
+  .home .community-box {
+    padding: 30px 20px;
+    background: #ffffff; }
+    .home .community-box .community-top-box .community-icon {
+      width: 60px;
+      height: 60px;
+      background: #BCC7D7;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-bottom: 8px; }
+      .home .community-box .community-top-box .community-icon img {
+        border-radius: 50%;
+        width: 100%; }
+    .home .community-box .community-top-box .community-text {
+      font-size: 16px;
+      color: #5A6169; }
+    .home .community-box .community-center-box {
+      padding: 20px 10px;
+      margin-top: 10px; }
+      .home .community-box .community-center-box ul {
+        margin: 0 auto; }
+        .home .community-box .community-center-box ul li {
+          float: left;
+          width: 50%; }
+          .home .community-box .community-center-box ul li:first-child {
+            border-right: 1px solid #D2E5F7; }
+          .home .community-box .community-center-box ul li div p {
+            padding: 3px 0; }
+            .home .community-box .community-center-box ul li div p:first-child {
+              color: #BCC7D7;
+              font-size: 16px; }
+            .home .community-box .community-center-box ul li div p:last-child {
+              color: #5A6169;
+              font-size: 14px; }
+    .home .community-box .community-bottom-text p {
+      max-height: 88px;
+      margin: 18px 0 20px 0;
+      font-size: 14px;
+      line-height: 22px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+      color: #5A6169; }
+    .home .community-box .community-bottom-text button {
+      border: none;
+      background: #EBF3FB;
+      width: 100%;
+      outline: none;
+      height: 40px;
+      color: #95B5D7;
+      font-size: 14px;
+      border-radius: 22px; }
+      .home .community-box .community-bottom-text button:hover {
+        transition: all .5s;
+        background: #007BFF;
+        color: #ffffff; }
+    .home .community-box .community-bottom-text .active {
+      background: #007BFF;
+      color: #ffffff; }
+</style>
+<style type="text/css">
+  *, *::after, *::before
+  {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+.not-found {
+  padding: 40px;
+  margin-bottom: 200px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  .not-found .not-found-head {
+    display: block;
+    position: relative;
+    width: 200px;
+    margin: 10% auto 0;
+    -webkit-animation: shvr 0.2s infinite;
+    animation: shvr 0.2s infinite; }
+    .not-found .not-found-head .not-found-meta {
+      position: relative;
+      display: inline-block;
+      background: #fff;
+      width: 75px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50%/45px 45px 45% 45%;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .not-found .not-found-head .not-found-meta::after {
+      content: '';
+      position: absolute;
+      border-bottom: 2px solid #fff;
+      width: 70px;
+      height: 50px;
+      left: 0;
+      bottom: -10px;
+      border-radius: 50%; }
+    .not-found .not-found-head .not-found-meta::before {
+      bottom: auto;
+      top: -100px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      left: 0; }
+    .not-found .not-found-head .not-found-meta:nth-of-type(2) {
+      float: right;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    .not-found .not-found-head .not-found-meta:nth-of-type(2)::after {
+      left: 5px; }
+    .not-found .not-found-head .not-found-meta:nth-of-type(3) {
+      display: none; }
+  .not-found .not-found-head::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #000;
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    border-radius: 50%;
+    -webkit-box-shadow: 125px 0 0 #000;
+    box-shadow: 125px 0 0 #000;
+    -webkit-animation: eye 2.5s infinite;
+    animation: eye 2.5s infinite; }
+  .not-found .not-found-body {
+    margin-top: 100px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px; }
+  .not-found .not-found-body::before {
+    content: '404';
+    font-size: 80px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px; }
+
+@-webkit-keyframes eye {
+  0%, 30%, 55%, 90%, 100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
+  10%, 25% {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px); }
+  65% {
+    -webkit-transform: translate(-20px, 0);
+    transform: translate(-20px, 0); }
+  80% {
+    -webkit-transform: translate(20px, 0);
+    transform: translate(20px, 0); } }
+
+@keyframes eye {
+  0%, 30%, 55%, 90%, 100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
+  10%, 25% {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px); }
+  65% {
+    -webkit-transform: translate(-20px, 0);
+    transform: translate(-20px, 0); }
+  80% {
+    -webkit-transform: translate(20px, 0);
+    transform: translate(20px, 0); } }
+
+@-webkit-keyframes shvr {
+  0% {
+    -webkit-transform: translate(1px, 1em);
+    transform: translate(1px, 1em); }
+  50% {
+    -webkit-transform: translate(0, 1em);
+    transform: translate(0, 1em); }
+  100% {
+    -webkit-transform: translate(-1px, 1em);
+    transform: translate(-1px, 1em); } }
+
+@keyframes shvr {
+  0% {
+    -webkit-transform: translate(1px, 1em);
+    transform: translate(1px, 1em); }
+  50% {
+    -webkit-transform: translate(0, 1em);
+    transform: translate(0, 1em); }
+  100% {
+    -webkit-transform: translate(-1px, 1em);
+    transform: translate(-1px, 1em); } }
+
+@-webkit-keyframes text-show {
+  to {
+    text-indent: -373px; } }
+
+@keyframes text-show {
+  to {
+    text-indent: -373px; } }
+
+.loading-box {
+  position: relative;
+  min-height: 700px; }
+  .loading-box .loading-page {
+    position: absolute;
+    top: 50%;
+    left: 50%; }
+    .loading-box .loading-page .bullet {
+      position: absolute;
+      padding: 5px;
+      border-radius: 50%;
+      background: #65a3ff;
+      -webkit-animation: animIn 1s ease-in-out 0s infinite;
+      animation: animIn 1s ease-in-out 0s infinite; }
+    .loading-box .loading-page .bullet:nth-child(1) {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s; }
+    .loading-box .loading-page .bullet:nth-child(2) {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s; }
+    .loading-box .loading-page .bullet:nth-child(3) {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s; }
+    .loading-box .loading-page .bullet:nth-child(4) {
+      -webkit-animation-delay: 0.45s;
+      animation-delay: 0.45s; }
+
+@-webkit-keyframes animIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0; } }
+
+@keyframes animIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0; } }
+
+.not-found-404 {
+  position: relative;
+  padding: 40px 0; }
+  .not-found-404 img {
+    width: 100%; }
+  .not-found-404 button {
+    position: absolute;
+    display: inline-block;
+    height: 32px;
+    width: 120px;
+    bottom: 34%;
+    right: 36.5%;
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    border-radius: 100px; }
+    .not-found-404 button a {
+      color: #007BFF; }
+    .not-found-404 button:hover {
+      background: #007BFF;
+      color: #ffffff;
+      transition: all .5s; }
+      .not-found-404 button:hover a {
+        color: #ffffff; }
+</style>
+  </head>
+  <body style="font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Microsoft YaHei','Source Han Sans SC','Noto Sans CJK SC','WenQuanYi Micro Hei',sans-serif;background:#f6f8f9">
+    <div id="root" style="overflow:hidden;">
+      <div class="app">
+          <nav class="nav">
+            <div class="container nav-bar-con">
+              <div class="row">
+                <div class="navbar-header">
+                  <a class="navbar-logo" href="/">
+                    <img src="https://www.bihu.com/static/media/logo.81b9b93e.png" alt="Logo">
+                  </a>
+                </div>
+                <ul class="navbar-public navbar-center">
+                  <li>
+                    <a class="active" href="/">首页</a>
+                  </li>
+                  <li>
+                    <a class="" href="javascript:">下载APP</a>
+                  </li>
+                </ul>
+
+                <ul class="navbar-public navbar-right">
+                  <li><a class="" href="/login">登录</a></li>
+                  <li><a href="/signup" class="">注册</a></li>
+
+                  <!--
+                    <li class="headIcon">
+                      <img src="https://bihu2001.oss-cn-shanghai.aliyuncs.com/img/bihu_user_default_icon.png?x-oss-process=style/size_head" alt="个人中心">
+                      <ul class="headIcon-menu">
+                        <li><a href="/people/214071">我的主页</a></li>
+                        <li><a href="/account">个人资料</a></li>
+                        <li><a href="/invite">我的邀请</a></li>
+                        <li><a href="/downloadApp/myKey">我的KEY</a></li>
+                        <li><a href="/">退出</a></li>
+                      </ul>
+                    </li>
+                  -->
+
+                  <li class="last-item-edit">
+                    <a target="_blank" href="/edit">
+                      <svg class="icon" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-xie">
+                        </use>
+                      </svg>写文章</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="home container">
+            <div class="row">
+              <div class="col-sm-1 home-public">
+                <ul class="home-list text-center">
+                  <li><a class="home-item home-item-active" href="/?category=recommend">推荐</a></li>
+                  <li><a class="home-item " href="/?category=follow">关注</a></li>
+                  <li>
+                    <div class="open home-item last-home-item">
+                      <button class="more-btn" type="button">更多</button>
+                      <div class="more-con">
+                        <div class="more-box">
+                          <div class="more-menu-text">
+                            <span>已关注</span>
+                          </div>
+                          <div class="more-menu-box1"></div>
+                          <div class="more-menu-text">
+                            <span>热门</span>
+                          </div>
+                          <div class="more-menu-box2">
+                            <div class="item">
+                              <a href="/?category=hots&amp;code=BTC">BTC</a>
+                            </div>
+                            <div class="item"><a href="/?category=hots&amp;code=CYBEX">CYBEX</a></div><div class="item"><a href="/?category=hots&amp;code=DEW">DEW</a></div><div class="item"><a href="/?category=hots&amp;code=ENG">ENG</a></div><div class="item"><a href="/?category=hots&amp;code=EOS">EOS</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=ETH">ETH</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=KEY">KEY</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=LRC">LRC</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=MKR">MKR</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=NEO">NEO</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=ONT">ONT</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=VEN">VEN</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=安全资产">安全资产</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=百咖说">百咖说</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=币圈八卦">币圈八卦</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=大咖访谈">大咖访谈</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=行情解读">行情解读</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=精链币答">精链币答</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=LAUNCH">LAUNCH</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=通证经济">通证经济</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=挖矿">挖矿</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=小白入门">小白入门</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=项目分析">项目分析</a></div>
+                            <div class="item"><a href="/?category=hots&amp;code=知识库">知识库</a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-8 home-con-box">
+                <div>
+                  <ul class="home-list-nav row home-public">
+                    <li><a class="active" href="/?category=recommend">热门</a></li>
+                  </ul>
+
+                  <ul class="alt-list">
+                    <div class="alt-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <img class="media-object" src="https://bihu2001.oss-cn-shanghai.aliyuncs.com/img/5abe7d2f211de55227ce02a0be8e4eae.jpg?x-oss-process=style/size_head" alt="用户头像">
+                        </div>
+                        <div class="media-body">
+                          <div class="alt-name"><p>南宫远</p><p>2小时前</p></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="alt-box">
+                          <div class="alt-public alt-public-left">
+                            <img src="https://bihu2001.oss-cn-shanghai.aliyuncs.com/img/15a95ed345aa09d84a85dc697650002a.png?x-oss-process=style/size_md" alt="文章缩略图">
+                          </div>
+                          <div class="alt-public alt-public-right">
+                              <div class="alt-content">
+                                <div class="content1">64期：这个妹子骗了14万以太坊跑路！什么项目能获得南宫远的青睐</div>
+                                <div class="content2">2018年3月14日，币民日报第64期昨晚币价暴跌，群里又是一片哀嚎，如果未来2年比特币要从5万跌到5千，其他币要跌百倍千倍不等，你还会在</div>
+                              </div>
+                              <div class="content-bottom">
+                                <div class="alt-bottom-item">
+                                  <svg class="icon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-qian"></use>
+                                  </svg>
+                                  <span>做饭</span>
+                                </div>
+                                <button class="alt-bottom-item ">
+                                  <svg class="icon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-dianzan"></use>
+                                  </svg>
+                                  <span>2803</span>
+                                </button>
+                                <button class="alt-bottom-item">
+                                  <svg class="icon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-pinglun"></use>
+                                  </svg>
+                                  <span>255</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="alt-item"><div class="media"><div class="media-left"><img class="media-object" src="https://bihu2001.oss-cn-shanghai.aliyuncs.com/img/6f1120c73505bdf3a87d399811a3eda5.jpeg?x-oss-process=style/size_head" alt="用户头像"></div><div class="media-body"><div class="alt-name"><p>金马</p><p>46分钟前</p></div></div></div><div><div class="alt-box"><div class="alt-public alt-public-left"><img src="https://bihu2001.oss-cn-shanghai.aliyuncs.com/img/47f93dfa8257e420d8d52d1cce133e75.jpg?x-oss-process=style/size_md" alt="文章缩略图"></div><div class="alt-public alt-public-right"><div class="alt-content"><div class="content1">【2018行动指南】优化你的自媒体</div><div class="content2">我在文章【奶王世界行】上海第一次币乎线下聚会分享：你的心太小了中给大家的一个建议是在币乎上不要单打独斗，要靠团队的力量把一个品牌做精做大。</div></div><div class="content-bottom"><div class="alt-bottom-item"><svg class="icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-qian"></use></svg><span>1739.1</span></div><button class="alt-bottom-item "><svg class="icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-dianzan"></use></svg><span>976</span></button><button class="alt-bottom-item"><svg class="icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bihu-pinglun"></use></svg><span>147</span></button></div></div></div></div></div>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+      </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
