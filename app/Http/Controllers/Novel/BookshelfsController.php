@@ -228,7 +228,6 @@ class BookshelfsController extends Controller
              $result['error'] = 1;
              $result['message'] = '删除成功';
              return response()->json($result);
-
            }
 
         }
