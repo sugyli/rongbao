@@ -19,6 +19,10 @@
   </head>
   <body>
     <script>
+          var currentHref=location.href;
+          if(/baiducontent.com/gi.test(currentHref)){
+            location.href= "{{request()->url()}}";
+          }
         var Config = {
           bookshelfdata_url: '{{route('bookshelfdata')}}',
           bookshelfdestroy_url: '{{route('bookshelfdestroy')}}',

@@ -15,6 +15,11 @@
   </head>
   <body>
     <script>
+
+        var currentHref=location.href;
+        if(/baiducontent.com/gi.test(currentHref)){
+          location.href= "{{request()->url()}}";
+        }
         var Config = {
           verifylogin_url: '{{route('verifylogin')}}',
           login_url: '{{route('web.dashubaologin')}}',
