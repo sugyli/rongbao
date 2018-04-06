@@ -4,6 +4,7 @@ return [
 
     'web_dashubao_url' => env('web_dashubao_url'),
     'wap_dashubao_url' => env('wap_dashubao_url'),
+    'admin_url' => env('admin_url'),
     'cacheTime_d' => env('DI'),
     'cacheTime_z' => env('ZHONG'),
     'cacheTime_g' => env('GAO'),
