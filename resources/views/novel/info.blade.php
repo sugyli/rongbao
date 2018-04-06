@@ -9,7 +9,7 @@
 
 <div class="jieshao">
   <div class="lf">
-    <img src="{{$bookData['imgflag']}}" alt="{{$bookData['articlename']}}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
+    <img src="{{$bookData['imgflag']}}" alt="{{$bookData['articlename']}}">
   </div>
   <div class="rt">
     <h1 class="oneline">{{$bookData['articlename']}}</h1>
