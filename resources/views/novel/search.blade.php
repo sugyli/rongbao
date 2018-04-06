@@ -13,6 +13,10 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/public_js/layer_mobile/layer.js"></script>
 <script>
+		var currentHref=location.href;
+		if(/baiducontent.com/gi.test(currentHref)){
+			location.href= "{{request()->url()}}";
+		}
 		var Config = {
 			alisearch_url: '{{route('search')}}',
 		};
