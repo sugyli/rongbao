@@ -121,13 +121,13 @@
     @if($previousChapter)
     <a href="{{ $previousChapter['webdashubaocontentlink']}}" target="_top">← 上一章</a>
     @else
-    <a href="javascript:" target="_top">←到头了</a>
+    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top">←到头了</a>
     @endif
 		<a class="back" href="{{ $chapter['webdashubaoinfolink']}}" target="_top">返回目录</a>
     @if($nextChapter)
     <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top">下一章 →</a>
     @else
-    <a href="javascript:" target="_top"> 到尾了→</a>
+    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top"> 到尾了→</a>
     @endif
   </div>
   <div class="aside">
@@ -145,15 +145,15 @@
   </div>
   <div class="pereview">
     @if($previousChapter)
-    <a href="{{ $previousChapter['webdashubaocontentlink']}}" target="_top">← 上一章</a>
+    <a href="{{ $previousChapter['webdashubaocontentlink']}}" target="_top" id="preview_page">← 上一章</a>
     @else
-    <a href="javascript:" target="_top">←到头了</a>
+    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top" id="preview_page">←到头了</a>
     @endif
-		<a class="back" href="{{ $chapter['webdashubaoinfolink']}}" target="_top">返回目录</a>
+		<a class="back" href="{{ $chapter['webdashubaoinfolink']}}" target="_top" id="index_page">返回目录</a>
     @if($nextChapter)
-    <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top">下一章 →</a>
+    <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top" id="next_page">下一章 →</a>
     @else
-    <a href="javascript:" target="_top"> 到尾了→</a>
+    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top" id="next_page"> 到尾了→</a>
     @endif
   </div>
   <div class="readacbtn">
@@ -165,7 +165,15 @@
 <div class="nr_ad4"></div>
 <script>
 baobaoni.content();
-
+var preview_page = $("#preview_page").attr("href");
+var next_page = $("#next_page").attr("href");
+var index_page = $("#index_page").attr("href");
+function jumpPage() {
+  if (event.keyCode==37) location=preview_page;
+  if (event.keyCode==39) location=next_page;
+  if (event.keyCode==13) location=index_page;
+}
+document.onkeydown=jumpPage;
 </script>
 
 
