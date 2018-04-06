@@ -4,11 +4,7 @@
   <div class="logo">
     <a href="/">{{config('app.webdashubaotitle')}}</a>
   </div>
-  @if(isset($request) && ($request->route()->named('wap.dashubaologin') || $request->route()->named('wap.dashubaoregister') ))
   <a class="header-right" href="{{route('wap.dashubaologin')}}">
-  @else
-  <a class="header-right" href="{{route('wap.dashubaologin')}}?redirect_url={{request()->url()}}">
-  @endif
 		<svg class="icon" aria-hidden="true">
 	    <use xlink:href="#icon-huiyuan"></use>
 		</svg>
