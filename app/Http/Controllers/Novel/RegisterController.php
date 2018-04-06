@@ -81,7 +81,7 @@ class RegisterController extends Controller
       }
 
       Auth::login($user, true); //免登陆
-      return $this->authenticated();
+      return $this->authenticated('wap.dashubaouserindex');
       //跳转
       //return redirect()->intended(route('web.users', [Auth::user()]));
 
