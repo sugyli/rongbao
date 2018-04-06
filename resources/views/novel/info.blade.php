@@ -50,11 +50,4 @@
 </div>
 @endif
 
-<script>
-var bid = {{$bookData['articleid']}};
-var data ={bid: bid}
-ajax_all_Filed("true", "false", "POST", "{{route('upsqldata' ,['bid'=>$bookData['articleid']])}}", "json",data, function(data) {
-  console.log(data)
-});
-</script>
 @endsection

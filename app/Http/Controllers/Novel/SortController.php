@@ -29,7 +29,7 @@ class SortController extends Controller
     public function wapdashubaosort(Request $request , Article $article){
 
       $sid = request()->sid;
-      $page = request()->page;
+      //$page = request()->page;
       if(!isset(config('app.fenlei')[$sid-1])){
         $sid = 1;
       }
