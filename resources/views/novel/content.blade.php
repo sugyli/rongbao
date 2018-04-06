@@ -121,7 +121,7 @@
     @if($previousChapter)
     <a href="{{ $previousChapter['webdashubaocontentlink']}}" target="_top">← 上一章</a>
     @else
-    <a href="javascript:" target="_top">←到头了 →</a>
+    <a href="javascript:" target="_top">←到头了</a>
     @endif
 		<a class="back" href="{{ $chapter['webdashubaoinfolink']}}" target="_top">返回目录</a>
     @if($nextChapter)
@@ -147,7 +147,7 @@
     @if($previousChapter)
     <a href="{{ $previousChapter['webdashubaocontentlink']}}" target="_top">← 上一章</a>
     @else
-    <a href="javascript:" target="_top">←到头了 →</a>
+    <a href="javascript:" target="_top">←到头了</a>
     @endif
 		<a class="back" href="{{ $chapter['webdashubaoinfolink']}}" target="_top">返回目录</a>
     @if($nextChapter)
