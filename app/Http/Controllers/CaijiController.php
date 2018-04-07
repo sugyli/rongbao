@@ -30,6 +30,13 @@ class CaijiController extends Controller
 
     public function update(Article $article)
     {
+
+      $key = config('app.info_key').'92113';
+      \Cache::forget($key);
+      if (Cache::has($key)) {
+            dd('ff');
+        }
+        dd('222');
         $startdate = time();
         $path = storage_path()."/update.txt";
         if(is_file($path) && $lastdate = file_get_contents($path)){
