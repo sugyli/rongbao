@@ -36,7 +36,8 @@ class CaijiController extends Controller
       if (Cache::has($key)) {
             dd('ff');
         }
-        
+
+      
         dd('222');
         $startdate = time();
         $path = storage_path()."/update.txt";
