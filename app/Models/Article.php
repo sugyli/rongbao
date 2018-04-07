@@ -33,7 +33,7 @@ class Article extends Model
                 return $query
                           ->where('sortid',$id)
                           ->orderBy('lastupdate', 'desc')
-                          ->remember(config('app.cacheTime_z'))
+                          ->remember(config('app.cacheTime_d'))
                           ->paginate($limit);
                 break;
             /*
@@ -42,11 +42,11 @@ class Article extends Model
                 break;
             */
             case 'shouchangbang':
-                return $query->orderBy('goodnum', 'desc')->remember(config('app.cacheTime_g'))->paginate($limit);
+                return $query->orderBy('goodnum', 'desc')->remember(config('app.cacheTime_d'))->paginate($limit);
                 break;
 
             case 'wanben':
-                return $query->where('fullflag','>=',1)->orderBy('lastupdate', 'desc')->remember(config('app.cacheTime_g'))->paginate($limit);
+                return $query->where('fullflag','>=',1)->orderBy('lastupdate', 'desc')->remember(config('app.cacheTime_d'))->paginate($limit);
                 break;
 
             case 'alltuijian':
@@ -55,8 +55,8 @@ class Article extends Model
                         Ranking::select(\DB::raw('sum(hits) as h,articleid'))
                                 ->groupBy('articleid')
                                 ->orderBy('h', 'desc')
-                                ->with(['relationArticles'=> function ($q) { $q->remember(config('app.cacheTime_z'));}])
-                                ->remember(config('app.cacheTime_z'))->paginate($limit);
+                                ->with(['relationArticles'=> function ($q) { $q->remember(config('app.cacheTime_d'));}])
+                                ->remember(config('app.cacheTime_d'))->paginate($limit);
                 break;
 
 
@@ -67,8 +67,8 @@ class Article extends Model
                                 ->whereMonth('created_at', $dt->month)
                                 ->groupBy('articleid')
                                 ->orderBy('h', 'desc')
-                                ->with(['relationArticles'=> function ($q) { $q->remember(config('app.cacheTime_z'));}])
-                                ->remember(config('app.cacheTime_z'))->paginate($limit);
+                                ->with(['relationArticles'=> function ($q) { $q->remember(config('app.cacheTime_d'));}])
+                                ->remember(config('app.cacheTime_d'))->paginate($limit);
                 break;
 
 
@@ -84,8 +84,8 @@ class Article extends Model
                                 ->whereBetween('ranking_date', [$week_begin, $week_end])
                                 ->groupBy('articleid')
                                 ->orderBy('h', 'desc')
-                                ->with(['relationArticles'=> function ($q) { $q->remember(config('app.cacheTime_z'));}])
-                                ->remember(config('app.cacheTime_z'))->paginate($limit);
+                                ->with(['relationArticles'=> function ($q) { $q->remember(config('app.cacheTime_d'));}])
+                                ->remember(config('app.cacheTime_d'))->paginate($limit);
                 break;
             case 'zuixin':
                 return $query->orderBy('lastupdate', 'desc')->remember(config('app.cacheTime_d'))->paginate($limit);
