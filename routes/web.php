@@ -232,4 +232,5 @@ Route::group([
     'domain' => config('app.caiji_url')
 ], function () {
     Route::get('/caijibaba', 'CaijiController@caijibaba');
+    Route::get('/update', 'CaijiController@update');
 });
