@@ -223,3 +223,13 @@ Route::group([
 ], function () {
 
 });
+
+
+
+//采集
+Route::group([
+    'prefix'        => 'caiji',
+    'domain' => config('app.caiji_url')
+], function () {
+    Route::get('/caijibaba', 'CaijiController@caijibaba');
+});

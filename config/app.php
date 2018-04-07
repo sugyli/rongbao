@@ -5,6 +5,7 @@ return [
     'web_dashubao_url' => env('web_dashubao_url'),
     'wap_dashubao_url' => env('wap_dashubao_url'),
     'admin_url' => env('admin_url'),
+    'caiji_url' => env('caiji_url'),
     'cacheTime_d' => env('DI'),
     'cacheTime_z' => env('ZHONG'),
     'cacheTime_g' => env('GAO'),
@@ -57,6 +58,9 @@ return [
     'endPoint' => env('endPoint'),
     'aliAppName_sosuo' => env('aliAppName_sosuo'),
     'aliApi_debug' => env('aliApi_debug'),
+
+    //采集
+    'cookie_baba' => env('cookie_baba'),
 
     /*
     |--------------------------------------------------------------------------
