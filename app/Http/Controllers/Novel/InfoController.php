@@ -13,7 +13,7 @@ class InfoController extends Controller
     {
       $id = request()->id;
       $bid = request()->bid;
-      return redirect(route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]) . '/', 301);
+      return redirect(route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]), 301);
     }
 
 
