@@ -54,7 +54,7 @@ class CaijiController extends Controller
 
         dd('222');
         */
-        $startdate = time();
+        $startdate = 1523083333;
         $path = storage_path()."/update.txt";
         if(is_file($path) && $lastdate = file_get_contents($path)){
             $startdate = (int)$lastdate;
