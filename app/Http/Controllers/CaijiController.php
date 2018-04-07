@@ -65,7 +65,7 @@ class CaijiController extends Controller
                         ->orderBy('postdate', 'asc')
                         ->paginate(20);
 
-
+        dd($items);
         if($items->count()>0){
             $curl = new \Curl\Curl();
             $curl->setOpt(CURLOPT_TIMEOUT, 3);
