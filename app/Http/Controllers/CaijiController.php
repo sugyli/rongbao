@@ -30,6 +30,7 @@ class CaijiController extends Controller
 
     public function update(Article $article)
     {
+      /*
       $curl = new \Curl\Curl();
       $curl->setOpt(CURLOPT_TIMEOUT, 3);
       $bid = 92113;
@@ -52,6 +53,7 @@ class CaijiController extends Controller
 
 
         dd('222');
+        */
         $startdate = time();
         $path = storage_path()."/update.txt";
         if(is_file($path) && $lastdate = file_get_contents($path)){
