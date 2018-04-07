@@ -30,30 +30,7 @@ class CaijiController extends Controller
 
     public function update(Article $article)
     {
-      /*
-      $curl = new \Curl\Curl();
-      $curl->setOpt(CURLOPT_TIMEOUT, 3);
-      $bid = 92113;
-      $a = floor($bid / 1000);
-      $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
-      $houzui = parse_url($web_url);
-      $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
-      $wap_url = route('wap.dashubaoinfo',['bid'=>$bid]);
-      $houzui1 = parse_url($wap_url);
-      $wap_url = config('app.wap_dashubao_url') .'/purge'.$houzui1['path'];
-      $curl->get($web_url);
-      $curl->get($wap_url);
-      $key = config('app.info_key').$bid;
-      \Cache::forget($key);
-
-      if (\Cache::has($key)) {
-            dd('ff');
-        }
-
-
-        dd('222');
-        */
         $startdate = 1523083333;
         $path = storage_path()."/update.txt";
         if(is_file($path) && $lastdate = file_get_contents($path)){
@@ -61,11 +38,10 @@ class CaijiController extends Controller
         }
         $items =
               $article->getBasicsBook()
-                        ->where('postdate', '>', $startdate)
-                        ->orderBy('postdate', 'asc')
+                        ->where('lastupdate', '>', $startdate)
+                        ->orderBy('lastupdate', 'asc')
                         ->paginate(20);
 
-        dd($items);
         if($items->count()>0){
             $curl = new \Curl\Curl();
             $curl->setOpt(CURLOPT_TIMEOUT, 3);
@@ -83,7 +59,7 @@ class CaijiController extends Controller
                 $curl->get($wap_url);
                 $key = config('app.info_key').$bid;
                 \Cache::forget($key);
-                $startdate = $item->postdate;
+                $startdate = $item->lastupdate;
             });
             $curl->close();
             file_put_contents($path, $startdate);
