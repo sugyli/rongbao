@@ -18,7 +18,7 @@ trait PublicArticle
   public function webdashubaoinfolink($articleid)
   {
     $id = floor($articleid / 1000);
-    return route('web.dashubaoinfo', ['id'=>$id , 'bid' => $articleid]) . '/';
+    return route('web.dashubaoinfo', ['id'=>$id , 'bid' => $articleid]);
 
   }
 
