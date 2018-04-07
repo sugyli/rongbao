@@ -47,16 +47,31 @@ class CaijiController extends Controller
             $curl->setOpt(CURLOPT_TIMEOUT, 3);
             $items->each(function ($item, $key) use ($curl ,&$startdate) {
                 $bid = $item->articleid;
+                $cid = $item->lastchapterid;
                 $a = floor($bid / 1000);
                 $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
                 $houzui = parse_url($web_url);
                 $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
+                $web_lastpage_url = route('web.dashubaocontent',['id'=>$a , 'bid'=>$bid ,'cid'=>$cid]);
+                $houzui_1 = parse_url($web_lastpage_url);
+                $web_lastpage_url = config('app.web_dashubao_url') .'/purge'.$houzui_1['path'];
+
+
                 $wap_url = route('wap.dashubaoinfo',['bid'=>$bid]);
                 $houzui1 = parse_url($wap_url);
                 $wap_url = config('app.wap_dashubao_url') .'/purge'.$houzui1['path'];
+
+                $wap_lastpage_url = route('wap.dashubaocontent',['bid'=>$bid ,'cid'=>$cid]);
+                $houzui1_1 = parse_url($wap_lastpage_url);
+                $wap_lastpage_url = config('app.wap_dashubao_url') .'/purge'.$houzui1_1['path'];
+
                 $curl->get($web_url);
+                $curl->get($web_lastpage_url);
+
                 $curl->get($wap_url);
+                $curl->get($wap_lastpage_url);
+
                 $key = config('app.info_key').$bid;
                 \Cache::forget($key);
                 $startdate = $item->lastupdate;
