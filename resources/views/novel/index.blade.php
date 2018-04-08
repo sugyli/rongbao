@@ -106,13 +106,15 @@
         </ul>
         @endif
       </div>
-
    </div>
-
-
-
-
-
-
-
+@endsection
+@section('youqing')
+<div class="link">
+    友情链接：<a href="https://www.88dus.com" target="_blank">88读书网</a>
+            <a href="http://www.pingshu365.com" target="_blank">评书网</a>
+            <a href="http://faloo.com" target="_blank">小说网</a>
+            <a href="http://www.k6uk.com/ " target="_blank">看小说</a>
+            <a href="http://www.pingshu8.com" target="_blank">评书吧</a>
+            <a href="http://www.guijj.com/" target="_blank">鬼故事</a>
+</div>
 @endsection

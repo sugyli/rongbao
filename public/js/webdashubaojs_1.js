@@ -23,8 +23,23 @@ function web_topad()
   document.writeln("     data-ad-slot=\'6528656449\'></ins>");
   document.writeln("<script>");
   document.writeln("(adsbygoogle = window.adsbygoogle || []).push({});");
-  document.writeln("</script>");  
+  document.writeln("</script>");
 }
+function web_footad()
+{
+  document.writeln("<script async src=\'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\'></script>");
+  document.writeln("<!-- 大书包_970X90_ad1 -->");
+  document.writeln("<ins class=\'adsbygoogle\'");
+  document.writeln("     style=\'display:inline-block;width:970px;height:90px\'");
+  document.writeln("     data-ad-client=\'ca-pub-1047803567334338\'");
+  document.writeln("     data-ad-slot=\'6528656449\'></ins>");
+  document.writeln("<script>");
+  document.writeln("(adsbygoogle = window.adsbygoogle || []).push({});");
+  document.writeln("</script>");
+}
+
+
+
 
 
 $(document).ready(function()
@@ -575,9 +590,6 @@ var st = function() {
     stTransform(!a);
     document.getElementById("st").innerHTML = a ? "繁體中文": "简体中文"
 };
-
-
-
 
 /*
  * AJAX针对所有的数据类型的函数
