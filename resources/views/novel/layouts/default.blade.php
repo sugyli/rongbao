@@ -85,6 +85,7 @@
   </div>
 
   <div class="index_ad">
+    <script>web_topad();</script>
   </div>
   @yield('content')
   <div class="index_ad">
