@@ -44,7 +44,7 @@ function web_footad()
 
 $(document).ready(function()
 {
-    baobaoni.islogin();
+  //  baobaoni.islogin();
 });
 
 function nr_setbg(b) {
