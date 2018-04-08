@@ -73,10 +73,21 @@ class Article extends Model
 
 
             case 'weektuijian':
-                $week_begin = mktime(0, 0, 0,date("m"),date("d")-date("w")+1,date("Y"));
+                //$week_begin = mktime(0, 0, 0,date("m"),date("d")-date("w")+1,date("Y"));
 
-                $week_end = mktime(23,59,59,date("m"),date("d")-date("w")+7,date("Y"));
-
+                //$week_end = mktime(23,59,59,date("m"),date("d")-date("w")+7,date("Y"));
+                $week_begin = strtotime('last Monday');
+                $week_end = strtotime('next Sunday');
+                /*
+                echo $week_begin;
+                echo '<br />';
+                echo $week_end;
+                echo '<br />';
+                echo strtotime('last Monday');
+                echo '<br />';
+                echo strtotime('next Sunday');
+                exit;
+                */
                 return
                         Ranking::select(\DB::raw('sum(hits) as h,articleid'))
                                 //->whereYear('created_at', '2016')
