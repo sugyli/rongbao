@@ -17,7 +17,7 @@ class SaveCookUser
     {
 
         if(\Auth::check()){
-          \Cookie::queue('islogin', 1, config('app.usercooktime'), $path = null, $domain = null, $secure = false, $httpOnly = false);
+            SaveCookUser();
         }
         return $next($request);
     }

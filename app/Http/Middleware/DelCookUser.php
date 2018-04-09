@@ -16,7 +16,7 @@ class DelCookUser
     public function handle($request, Closure $next)
     {
 
-        \Cookie::queue('islogin', 0, config('app.usercooktime'), $path = null, $domain = null, $secure = false, $httpOnly = false);
+        DelCookUser();
 
         return $next($request);
     }

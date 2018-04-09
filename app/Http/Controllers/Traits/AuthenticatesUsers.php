@@ -22,7 +22,7 @@ trait AuthenticatesUsers
     //$backUrl = route('member.show', [Auth::user()]);
     //$redirect_url = \Request::query('redirect_url');
     $redirect_url = request()->redirect_url ?: route($d);
-    \Cookie::queue('islogin', 1, config('app.usercooktime'), $path = null, $domain = null, $secure = false, $httpOnly = false);
+    SaveCookUser();
     //$redirect_url = request()->input('redirect_url',$backUrl);
     return redirect($redirect_url);
   }

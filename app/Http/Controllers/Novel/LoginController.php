@@ -68,7 +68,7 @@ class LoginController extends Controller
 
         //成功后跳转到哪
         if($request->action == 'ajax'){
-
+            SaveCookUser();
             return response()->json('ok');
         }
 

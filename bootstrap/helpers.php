@@ -10,6 +10,20 @@ if (!function_exists('formatTime')) {
   }
 }
 
+if (!function_exists('SaveCookUser')) {
+  function SaveCookUser()
+  {
+    \Cookie::queue('islogin', 1, config('app.usercooktime'), $path = null, $domain = null, $secure = false, $httpOnly = false);
+  }
+}
+
+if (!function_exists('DelCookUser')) {
+  function DelCookUser()
+  {
+    \Cookie::queue('islogin', 0, config('app.usercooktime'), $path = null, $domain = null, $secure = false, $httpOnly = false);
+  }
+}
+
 /**
  * 求取字符串位数（非字节），以UTF-8编码长度计算
  *
