@@ -24,9 +24,11 @@ class LoginController extends Controller
     {
 
         if($user = Auth::user()){
+           SaveCookUser();
           return $user->toJson();
           //return response()->cookie('islogin', $user->toJson() , config('app.usercooktime'))->json($user);
         }
+        DelCookUser();
         return response()->json('');
 
     }
@@ -74,6 +76,7 @@ class LoginController extends Controller
 
         return $this->authenticated('web.dashubaouserindex');
       }
+
       if($request->action == 'ajax'){
           return response()->json('');
       }

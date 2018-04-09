@@ -191,7 +191,7 @@ Route::group([
     'prefix'        => 'member',
     'middleware'    => ['user']
 ], function () {
-    Route::post('/verifylogin', 'LoginController@verifylogin')->middleware('addusercook')->name('verifylogin');
+    Route::post('/verifylogin', 'LoginController@verifylogin')->name('verifylogin');
     Route::get('/readbookshelf/{bid?}/{cid?}', 'BookshelfsController@readbookshelf')->name('readbookshelf');
     Route::post('/bookshelfdata', 'BookshelfsController@bookshelfdata')->name('bookshelfdata');
     Route::post('/bookshelf/destroy', 'BookshelfsController@destroy')->name('bookshelfdestroy');
