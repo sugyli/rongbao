@@ -13,6 +13,29 @@ window.onload = function() {
 
 
 };
+$(document).ready(function()
+{
+    baobaoni.islogin();
+});
+
+
+function getCookie(name){
+  var strcookie = document.cookie;//获取cookie字符串
+  if(strcookie){
+    var arrcookie = strcookie.split("; ");//分割
+    //遍历匹配
+    for ( var i = 0; i < arrcookie.length; i++) {
+        var arr = arrcookie[i].split("=");
+        if (arr[0] == name){
+          return arr[1];
+        }
+    }
+
+  }
+
+  return "";
+}
+
 function web_topad()
 {
   document.writeln("<script async src=\'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\'></script>");
@@ -37,15 +60,6 @@ function web_footad()
   document.writeln("(adsbygoogle = window.adsbygoogle || []).push({});");
   document.writeln("</script>");
 }
-
-
-
-
-
-$(document).ready(function()
-{
-  //  baobaoni.islogin();
-});
 
 function nr_setbg(b) {
     var c = document.getElementById("huyandiv");
@@ -636,7 +650,8 @@ var st = function() {
 
       },
       islogin:function() {
-        if (document.getElementById("ajax_login")) {
+        var islogin = getCookie('islogin');
+        if (islogin && islogin == 1 &&  document.getElementById("ajax_login")) {
           ajax_all_Filed("true", "false", "POST", Config.verifylogin_url, "json", "", function(data) {
               if(data){
                 var html =  '<ul>';

@@ -25,6 +25,7 @@ class LoginController extends Controller
 
         if($user = Auth::user()){
           return $user->toJson();
+          //return response()->cookie('islogin', $user->toJson() , config('app.usercooktime'))->json($user);
         }
         return response()->json('');
 

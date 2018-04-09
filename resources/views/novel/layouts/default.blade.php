@@ -42,12 +42,14 @@
 
     <div class="top">
       <div class="main">
+    
         <div class="lf" id="ajax_login">
               <input type="text" class="inp" value="请输入帐号" onfocus="this.style.color = '#000000';this.focus();if(this.value=='请输入帐号'){this.value='';}" onblur="this.style.color = '#d5d5d5';if(this.value==''){this.value='请输入帐号';}" ondblclick="javascript:this.value=''" name="uname" id="uname">
               <input type="password" class="inp" value="请输入密码" onfocus="this.style.color = '#000000';this.focus();if(this.value=='请输入密码'){this.value='';}" onblur="this.style.color = '#d5d5d5';if(this.value==''){this.value='请输入密码';}" ondblclick="javascript:this.value=''" name="password" id="password">
               <input class="int" type="button" onclick="javascript:inpulogin()"  value="登陆">
               <a href="javascript:alert('开发中');" title="忘记密码">忘记密码</a> | <a href="{{ route('web.dashubaoregister') }}?redirect_url={{request()->url()}}" title="用户注册">用户注册</a>
         </div>
+
         <div class="rt">
           <a href="javascript:st();void 0;" id="st" rel="nofollow">繁體中文</a> | <a href="{{route('wap.dashubaoindex')}}" target="_blank">手机版</a> | <a href="javascript:alert('开发中');">积分规则</a> | <a href="javascript:void(0);" onclick="AddFavorite('{{config('app.webdashubaotitle')}}',location.href)" target="_self" rel="nofollow">收藏本站</a>
         </div>

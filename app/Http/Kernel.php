@@ -48,6 +48,14 @@ class Kernel extends HttpKernel
             //\App\Http\Middleware\VerifyCsrfToken::class,
             //\Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        'addusercook'=>[
+            \App\Http\Middleware\SaveCookUser::class,
+
+        ],
+        'delusercook'=>[
+            \App\Http\Middleware\DelCookUser::class,
+
+        ],
         'houtai' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,

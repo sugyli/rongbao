@@ -48,7 +48,8 @@ Route::group([
           ->where('id', '^[0-9]\d*')
           ->name('web.dashubaotop');
 
-
+    Route::get('/search', 'SearchController@search')->name('search');
+    Route::post('/search', 'SearchController@alisearch');
 });
 
 
@@ -103,11 +104,11 @@ Route::group([
 ], function () {
 
 
-    Route::get('/login', 'LoginController@webdashubaovlogin')->name('web.dashubaologin');
+    Route::get('/login', 'LoginController@webdashubaovlogin')->middleware('delusercook')->name('web.dashubaologin');
     Route::post('/login', 'LoginController@webdashubaologin');
 
 
-    Route::get('/register', 'RegisterController@webdashubaovregister')->name('web.dashubaoregister');
+    Route::get('/register', 'RegisterController@webdashubaovregister')->middleware('delusercook')->name('web.dashubaoregister');
     Route::post('/register', 'RegisterController@webdashubaoregister');
 
 });
@@ -119,8 +120,6 @@ Route::group([
     'domain' => config('app.wap_dashubao_url'),
     'middleware'    => ['user'],
 ], function () {
-
-
 
     Route::get('/login', 'LoginController@wapdashubaovlogin')->name('wap.dashubaologin');
     Route::post('/login', 'LoginController@wapdashubaologin');
@@ -135,7 +134,7 @@ Route::group([
 Route::group([
     'namespace'     => 'Novel',
     'prefix'        => 'member',
-    'middleware'    => ['user','auth'],
+    'middleware'    => ['user','auth','addusercook'],
     'domain' => config('app.web_dashubao_url')
 ], function () {
     Route::get('/userindex', 'UsersController@webdashubaouserindex')->name('web.dashubaouserindex');
@@ -181,13 +180,13 @@ Route::group([
     Route::get('/sendadminmessage', 'MsgboxsController@wapdashubaosendadminmessage')->name('wap.dashubaosendadminmessage');
 
 });
-//共用不需要登录
+//共用不需要登录  千万要注意 这个地方一定放 需要验证用户的
 Route::group([
     'namespace'     => 'Novel',
     'prefix'        => 'member',
     'middleware'    => ['user']
 ], function () {
-    Route::post('/verifylogin', 'LoginController@verifylogin')->name('verifylogin');
+    Route::post('/verifylogin', 'LoginController@verifylogin')->middleware('addusercook')->name('verifylogin');
     Route::get('/readbookshelf/{bid?}/{cid?}', 'BookshelfsController@readbookshelf')->name('readbookshelf');
     Route::post('/bookshelfdata', 'BookshelfsController@bookshelfdata')->name('bookshelfdata');
     Route::post('/bookshelf/destroy', 'BookshelfsController@destroy')->name('bookshelfdestroy');
@@ -197,7 +196,7 @@ Route::group([
     Route::post('/sendmessage', 'MsgboxsController@sendmessage')->name('sendmessage');
 
 
-    Route::any('/logout', 'LoginController@destroy')->name('logout');
+    Route::any('/logout', 'LoginController@destroy')->middleware('delusercook')->name('logout');
 
 
     Route::post('/addbookcase', 'BookshelfsController@addbookcase')->name('addbookcase');
@@ -205,12 +204,11 @@ Route::group([
     Route::post('/recommend', 'UsersController@recommend')->name('recommend');
 
 
-    Route::get('/search', 'SearchController@search')->name('search');
-    Route::post('/search', 'SearchController@alisearch');
 
 
 
-    Route::post('/checkupsql', 'IndexController@upsqldata')->name('upsqldata');
+
+    //Route::post('/checkupsql', 'IndexController@upsqldata')->name('upsqldata');
 
 });
 

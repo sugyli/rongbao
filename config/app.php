@@ -11,6 +11,7 @@ return [
     'cacheTime_g' => env('GAO'),
     'xsfmdir' => env('xsfmdir'),//小说封面路径
     'dfxsfmdir' => env('dfxsfmdir'),//小说封面默认图片
+    'usercooktime' => 43200,
     'fenlei' => [
       '玄幻魔法',
       '武侠修真',
