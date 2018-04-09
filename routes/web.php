@@ -17,9 +17,6 @@ Route::get('/', function () {
 */
 
 
-
-
-
 Route::group([
     'namespace'     => 'Novel',
     'domain' => config('app.web_dashubao_url'),
@@ -48,8 +45,6 @@ Route::group([
           ->where('id', '^[0-9]\d*')
           ->name('web.dashubaotop');
 
-    Route::get('/search', 'SearchController@search')->name('search');
-    Route::post('/search', 'SearchController@alisearch');
 });
 
 
@@ -180,7 +175,17 @@ Route::group([
     Route::get('/sendadminmessage', 'MsgboxsController@wapdashubaosendadminmessage')->name('wap.dashubaosendadminmessage');
 
 });
-//共用不需要登录  千万要注意 这个地方一定放 需要验证用户的
+
+//公用
+Route::group([
+    'namespace'     => 'Novel',
+    //'middleware'    => ['responseLast'],
+], function () {
+    Route::get('/search', 'SearchController@search')->name('search');
+    Route::post('/search', 'SearchController@alisearch');
+
+});
+//需要验证登陆的 公用
 Route::group([
     'namespace'     => 'Novel',
     'prefix'        => 'member',
@@ -203,26 +208,9 @@ Route::group([
 
     Route::post('/recommend', 'UsersController@recommend')->name('recommend');
 
-
-
-
-
-
     //Route::post('/checkupsql', 'IndexController@upsqldata')->name('upsqldata');
 
 });
-
-
-//需要注册后公用
-Route::group([
-    'namespace'     => 'Novel',
-    'prefix'        => 'member',
-    'middleware'    => ['user','auth']
-], function () {
-
-});
-
-
 
 //采集
 Route::group([
