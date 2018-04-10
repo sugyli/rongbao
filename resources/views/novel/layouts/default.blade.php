@@ -38,11 +38,11 @@
         };
 
     </script>
-    <script src="/js/webdashubaojs_1.js"></script>
+    <script src="{{getJsfile()}}"></script>
 
     <div class="top">
       <div class="main">
-    
+
         <div class="lf" id="ajax_login">
               <input type="text" class="inp" value="请输入帐号" onfocus="this.style.color = '#000000';this.focus();if(this.value=='请输入帐号'){this.value='';}" onblur="this.style.color = '#d5d5d5';if(this.value==''){this.value='请输入帐号';}" ondblclick="javascript:this.value=''" name="uname" id="uname">
               <input type="password" class="inp" value="请输入密码" onfocus="this.style.color = '#000000';this.focus();if(this.value=='请输入密码'){this.value='';}" onblur="this.style.color = '#d5d5d5';if(this.value==''){this.value='请输入密码';}" ondblclick="javascript:this.value=''" name="password" id="password">

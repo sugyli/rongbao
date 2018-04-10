@@ -10,6 +10,13 @@ if (!function_exists('formatTime')) {
   }
 }
 
+if (!function_exists('getJsfile')) {
+  function getJsfile()
+  {
+    return '/js/webdashubaojs_2.js';
+  }
+}
+
 if (!function_exists('SaveCookUser')) {
   function SaveCookUser()
   {

@@ -21,7 +21,7 @@
 			alisearch_url: '{{route('search')}}',
 		};
 </script>
-<script src="/js/webdashubaojs_1.js"></script>
+<script src="{{getJsfile()}}"></script>
 </head>
 <body>
 <div class="ops_header">
