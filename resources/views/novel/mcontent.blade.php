@@ -78,9 +78,11 @@
 	@endif
 	<a id="pt_shuj1" href="{{ route('wap.dashubaobookshelfindex') }}?redirect_url={{request()->url()}}">书架</a>
 </div>
+<div class="nr_ad">
+<script>read_ad_1()</script>
+</div>
 <script>
 $('body').attr("id", 'nr_body');
 getset();
-
 </script>
 @endsection

