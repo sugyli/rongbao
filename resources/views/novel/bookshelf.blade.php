@@ -23,6 +23,7 @@
 ajax_all_Filed("true", "false", "POST", Config.bookshelfdata_url, "json", "", function(data) {
 
     $("#jiazai").removeAttr("style");
+    $("#jiazai").html('');
     if(data.error && data.error == 1){
       var html = '';
       for(i = 0; i < data.bakdata.length; i++) {
