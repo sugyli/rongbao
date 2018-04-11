@@ -40,13 +40,8 @@ class Message extends Model
     }
 
 
-    /*
-    public function images()
-    {
-        return $this->hasMany(Image::class ,'relation_id' ,'messageid');
-    }
-    */
-    /*
+    
+      /*
     public function collectImages()
     {
 
@@ -62,10 +57,13 @@ class Message extends Model
           //  $link = array_shift($links);
         }
     }
-    */
-    /*
 
 
+
+    public function images()
+    {
+        return $this->hasMany(Image::class ,'relation_id' ,'messageid');
+    }
 
     public function getContentAttribute($value)
     {

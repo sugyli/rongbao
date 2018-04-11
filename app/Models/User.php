@@ -96,6 +96,13 @@ class User extends Authenticatable
         }
     }
 
+    public function markAdminemailAsNoRead()
+    {
+        if($this->adminemail < 9 ) {
+            $this->increment('adminemail');
+        }
+    }
+
     //用户今天使用了多少票
   public function relationRankingsUseHits()
   {

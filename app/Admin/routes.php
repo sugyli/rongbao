@@ -14,4 +14,5 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('inbox', InboxController::class, ['except' => ['create','edit','destroy','update']]);
 
+    $router->resource('outbox', OutboxController::class, ['except' => ['create','store','edit','destroy','update']]);
 });
