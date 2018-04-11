@@ -24,8 +24,19 @@ function webdashubaotongji(){
   })();
 }
 
+//统计
+function wapdashubaotongji(){
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e0714531f1ec1f2a6630342ff685c39d";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+}
+
 //百度推送
-function webdashubaotuisong(){
+function dashubaotuisong(){
   //JS链接推送
     (function(){
         var bp = document.createElement('script');
@@ -40,6 +51,7 @@ function webdashubaotuisong(){
         s.parentNode.insertBefore(bp, s);
     })();
 }
+
 
 $(document).ready(function()
 {
