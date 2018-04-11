@@ -14,7 +14,7 @@
   <div class="shuqian">
     <a href="{{ route('web.dashubaobookshelfindex') }}" rel="nofollow">打开书架</a>
 		<a href="javascript:addbookcase( {{ $chapter['articleid'] }} , {{ $chapter['chapterid'] }})" rel="nofollow">添加书签</a>
-		<a href="{{route('web.dashubaosendadminmessage')}}?from={{ $bookData['articlename'] }}_{{$chapter['chaptername']}}_{{request()->url()}}&redirect_url={{request()->url()}}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
+		<a href="{{route('web.dashubaosendadminmessage')}}?title={{ $bookData['articlename'] }}_{{$chapter['chaptername']}}_{{request()->url()}}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
   </div>
   <input type="text" class="input" name="uservote_num" id="uservote_num" value="1" maxlength="4" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value=1;}">
   <div class="vote">

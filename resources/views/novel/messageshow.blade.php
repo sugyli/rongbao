@@ -22,12 +22,12 @@
   </div>
   <div class="msg_left">标题：</div>
   <div class="msg_right">
-    <input type="text" class="input" name="title" id="title" value="@if( isset($messageData->title) ){{'Re:'.$messageData->title}}@else{{ $from ?? ''}}@endif">
+    <input type="text" class="input" name="title" id="title" value="@if( isset($messageData->title) ){{'Re:'.$messageData->title}}@else{{ $title ?? ''}}@endif">
   </div>
   <div class="msg_left">内容：</div>
   <div class="msg_right2">
     <textarea class="textarea" name="content" id="content"></textarea>
-    <input type="button" class="button" id="bnt" value="回复消息" onclick="javascript:sendmsg('{{$from ?? '' }}','{{$redirect_url ?? '' }}');">
+    <input type="button" class="button" id="bnt" value="回复消息" onclick="javascript:sendmsg('{{$redirect_url ?? '' }}');">
   </div>
   @endif
 </div>

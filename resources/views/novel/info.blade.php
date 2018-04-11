@@ -22,7 +22,7 @@
     <div class="info">
       <a href="#footer" rel="nofollow">直达底部</a>
       <a href="javascript:addbookcase( {{ $bookData['articleid'] }} , 0)" rel="nofollow">加入书架</a>
-      <a href="{{route('web.dashubaosendadminmessage')}}?from={{ $bookData['articlename'] }}_{{request()->url()}}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
+      <a href="{{route('web.dashubaosendadminmessage')}}?title={{ $bookData['articlename'] }}_{{request()->url()}}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
     </div>
     <input type="text" name="uservote_num" id="uservote_num" value="1" maxlength="4" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value=1;}">
     <div class="vote">

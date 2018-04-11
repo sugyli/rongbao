@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="nr_set">
-		<a id="waperr" class="set1" href="{{route('wap.dashubaosendadminmessage')}}?from={{ $chapter['articlename'] }}_{{$chapter['chaptername']}}_{{request()->url()}}&redirect_url={{request()->url()}}">
+		<a id="waperr" class="set1" href="{{route('wap.dashubaosendadminmessage')}}?title={{ $chapter['articlename'] }}_{{$chapter['chaptername']}}_{{request()->url()}}&redirect_url={{request()->url()}}">
 			报错
 		</a>
 		<div id="lightdiv" class="set1" onclick="nr_setbg('light')">开灯</div>

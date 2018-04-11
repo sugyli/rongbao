@@ -44,12 +44,12 @@
 	 @if($isfajian >0 )
 	<h2 style="border-top: 1px dashed #ddd;">{{ isset($messageData->fromname) ? '快速回复' :'举报错误'}} </h2>
 	<p>
-		<input type="text" class="input" name="title" id="title" value="@if( isset($messageData->title) ){{'Re:'.$messageData->title}}@else{{ $from ?? ''}}@endif">
+		<input type="text" class="input" name="title" id="title" value="@if( isset($messageData->title) ){{'Re:'.$messageData->title}}@else{{ $title ?? ''}}@endif">
 	</p>
 	<p>
 		<textarea class="textarea" name="content" id="content"></textarea>
 	</p>
-	<input type="button" class="button" id="bnt" value="回复消息" onclick="javascript:sendmsg('{{$from ?? '' }}','{{$redirect_url ?? '' }}');">
+	<input type="button" class="button" id="bnt" value="回复消息" onclick="javascript:sendmsg('{{$redirect_url ?? '' }}');">
 	@endif
 </div>
 

@@ -13,7 +13,7 @@
 			<img src="{{$bookData['imgflag']}}" alt="{{$bookData['articlename']}}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
 		</div>
 		<div class="block_txt">
-      <h2 id="bookname" class="oneline"><a href="/info/68936/">{{$bookData['articlename']}}</a></h2>
+      <h2 id="bookname" class="oneline">{{$bookData['articlename']}}</h2>
 			<p class="oneline">
 				作者：{{$bookData['author']}}
 			</p>
@@ -34,7 +34,7 @@
 	<div class="clear"></div>
   <div id="notice">
       <input type="button" onclick="location.href= '{{ $bookData['minfomululink']}}'" value="开始阅读">
-      <input type="button" onclick="shujia(68936)" value="加入书架">
+      <input type="button" onclick="addbookcase( {{ $bookData['articleid'] }} , 0)" value="加入书架">
 	</div>
 	<div class="ablum_read" style="display:none">
 		<span class="left"><a href="{{ $bookData['minfomululink']}}">开始阅读</a></span>

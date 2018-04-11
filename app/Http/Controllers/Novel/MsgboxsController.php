@@ -192,17 +192,17 @@ class MsgboxsController extends Controller
     public function webdashubaosendadminmessage(Request $request)
     {
         $isfajian = 1;
-        $from = $request->from ?: '';
+        $title = $request->title ?: '';
         $redirect_url = $request->redirect_url ?: '';
-        return view('novel.messageshow', compact('isfajian','from','redirect_url'));
+        return view('novel.messageshow', compact('isfajian','title','redirect_url'));
     }
 
     public function wapdashubaosendadminmessage(Request $request)
     {
         $isfajian = 1;
-        $from = $request->from ?: '';
+        $title = $request->title ?: '';
         $redirect_url = $request->redirect_url ?: '';
-        return view('novel.mmessageshow', compact('request','isfajian','from','redirect_url'));
+        return view('novel.mmessageshow', compact('request','isfajian','title','redirect_url'));
     }
 
 
@@ -219,8 +219,8 @@ class MsgboxsController extends Controller
 
         $content =trim($request->content);
         $title = trim($request->title);
-        $from = trim($request->from);
-        $from = $from ? '_'.$from : '';
+        //$from = trim($request->from);
+        //$from = $from ? '_'.$from : '';
         if(empty($content) || empty($title)){
             $result['message'] = '内容、标题有一项为空了';
             return response()->json($result);
@@ -233,7 +233,7 @@ class MsgboxsController extends Controller
         $data['postdate'] = time();
         $data['fromname'] = $user->uname;
         $data['content'] = $content;
-        $data['title'] = $title.$from;
+        $data['title'] = $title;
         $data['toid'] = 0 ;
         $data['toname'] = '';
         $message =  $user->relationOutboxs()
