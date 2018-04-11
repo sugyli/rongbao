@@ -241,6 +241,7 @@ return [
         //判断设备
         Jenssegers\Agent\AgentServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
     ],
 

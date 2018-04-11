@@ -4793,5 +4793,62 @@
             "grid",
             "laravel"
         ]
+    },
+    {
+        "name": "rap2hpoutre/laravel-log-viewer",
+        "version": "v0.14.3",
+        "version_normalized": "0.14.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
+            "reference": "46b322385d7bc45b75019dc80d19bad65c0a10f7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/rap2hpoutre/laravel-log-viewer/46b322385d7bc45b75019dc80d19bad65c0a10f7.zip",
+            "reference": "46b322385d7bc45b75019dc80d19bad65c0a10f7",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "4.2.*|5.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2018-03-20T21:24:28+00:00",
+        "type": "laravel-package",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Rap2hpoutre\\LaravelLogViewer\\LaravelLogViewerServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/controllers"
+            ],
+            "psr-0": {
+                "Rap2hpoutre\\LaravelLogViewer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "rap2hpoutre",
+                "email": "raphaelht@gmail.com"
+            }
+        ],
+        "description": "A Laravel log reader",
+        "keywords": [
+            "laravel",
+            "log",
+            "log-reader",
+            "log-viewer",
+            "logging",
+            "lumen"
+        ]
     }
 ]
