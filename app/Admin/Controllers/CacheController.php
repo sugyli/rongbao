@@ -62,8 +62,8 @@ class CacheController extends Controller
 
           $curl = new \Curl\Curl();
           $curl->setOpt(CURLOPT_TIMEOUT, 3);
-
-          collect($bookData['relation_chapters'])->each(function ($item, $key) use ($curl){
+          $url = '';
+          collect($bookData['relation_chapters'])->each(function ($item, $key) use ($curl ,&$url){
                 $houzui = parse_url($item['webdashubaocontentlink']);
                 $web_nr_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
@@ -84,12 +84,15 @@ class CacheController extends Controller
 
                   $curl->get($web_ml_url);
                   $curl->get($wap_ml_url);
+                  $url = $item['webdashubaoinfolink'];
 
                 }
+
+              //  usleep(10000);
             });
 
             $curl->close();
-            $msg = $this->success($bid.'的书清理NGINX 和本地缓存完成,请检查');
+            $msg = $this->success( "<a href='{$url}' target='_blank'>{$bid}</a>的书清理NGINX 和本地缓存完成,请检查");
             return back()->with($msg);
 
         }else{
