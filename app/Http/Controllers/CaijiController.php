@@ -84,9 +84,9 @@ class CaijiController extends Controller
                     $curl->get($wap_lastpage_url);
 
                 }
-
-                $key = config('app.info_key').$bid;
-                \Cache::forget($key);
+                Article::getBidBookDataByGet($bid);
+                //$key = config('app.info_key').$bid;
+                //\Cache::forget($key);
                 $startdate = $item->lastupdate;
             });
             $curl->close();

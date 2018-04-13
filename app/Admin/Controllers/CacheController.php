@@ -55,9 +55,6 @@ class CacheController extends Controller
           $msg = $this->error('获取提交数据失败了');
           return back()->with($msg);
         }
-
-        $key = config('app.info_key').$bid;
-        \Cache::forget($key);
         if($bookData = $article->getBidBookData($bid)){
 
           $curl = new \Curl\Curl();
@@ -67,8 +64,6 @@ class CacheController extends Controller
                 $houzui = parse_url($item['webdashubaocontentlink']);
                 $web_nr_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
-
-
                 $houzui = parse_url($item['wapdashubaocontentlink']);
                 $wap_nr_url = config('app.wap_dashubao_url') .'/purge'.$houzui['path'];
 
@@ -77,13 +72,13 @@ class CacheController extends Controller
 
                 if($key == 0){
                   $houzui = parse_url($item['webdashubaoinfolink']);
-                  $web_ml_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
+                  $web_if_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
                   $houzui = parse_url($item['wapdashubaoinfolink']);
-                  $wap_ml_url = config('app.wap_dashubao_url') .'/purge'.$houzui['path'];
+                  $wap_if_url = config('app.wap_dashubao_url') .'/purge'.$houzui['path'];
 
-                  $curl->get($web_ml_url);
-                  $curl->get($wap_ml_url);
+                  $curl->get($web_if_url);
+                  $curl->get($wap_if_url);
                   $url = $item['webdashubaoinfolink'];
 
                 }
@@ -91,6 +86,24 @@ class CacheController extends Controller
               //  usleep(10000);
             });
 
+            //手机目录
+
+            $total = count($bookData['relation_chapters']);
+            $pageSize = (int)config('app.wapmululiebiao');
+            //计算总页数
+            $pagenum = (int)ceil($total / $pageSize);//当没有数据的时候 计算出来为0
+            for ($i=1; $i <= $pagenum ; $i++) {
+              $houzui = parse_url( route('wap.dashubaomulu',['bid'=>$bid ,'page'=>$i]) );
+              $wap_ml_url = config('app.wap_dashubao_url') .'/purge'.$houzui['path'];
+
+              $houzui = parse_url( route('wap.dashubaomulu1',['bid'=>$bid ,'page'=>$i ,'zid'=>1]) );
+              $wap_ml_url_1 = config('app.wap_dashubao_url') .'/purge'.$houzui['path'];
+              $curl->get($wap_ml_url);
+              $curl->get($wap_ml_url_1);
+            }
+            Article::getBidBookDataByGet($bid);
+            //$key = config('app.info_key').$bid;
+            //\Cache::forget($key);
             $curl->close();
             $msg = $this->success( "<a href='{$url}' target='_blank'>{$bid}</a>的书清理NGINX 和本地缓存完成,请检查");
             return back()->with($msg);

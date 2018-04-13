@@ -235,6 +235,7 @@ class Article extends Model
     {
 
       try {
+
         $isuse = Mulu::where('articleid',$bid)
                                       ->where('is_use',1)
                                       ->count();
@@ -257,7 +258,7 @@ class Article extends Model
         }
 
       } catch (\Exception $e) {
-          \Log::error('ajax更新书的缓存失败',['bookid'=>$bid ,'errno' => $e->getMessage()]);
+          \Log::error('更新书的缓存失败',['bookid'=>$bid ,'errno' => $e->getMessage()]);
            Mulu::where('articleid',$bid)->update(['is_use'=>0]);
       }
     }
