@@ -15,10 +15,14 @@ Route::group([
     $router->resource('inbox', InboxController::class, ['except' => ['create','edit','destroy','update']]);
 
     $router->resource('outbox', OutboxController::class, ['except' => ['create','store','edit','destroy','update']]);
+
     $router->get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 
     $router->get('delcache', 'CacheController@index');
     $router->post('delcache/delonebook', 'CacheController@delonebook');
+
+
+    $router->resource('article', ArticleController::class);
 
 });

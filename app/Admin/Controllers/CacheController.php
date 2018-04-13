@@ -55,6 +55,9 @@ class CacheController extends Controller
           $msg = $this->error('获取提交数据失败了');
           return back()->with($msg);
         }
+
+        Article::getBidBookDataByGet($bid);
+        sleep(4);
         if($bookData = $article->getBidBookData($bid)){
 
           $curl = new \Curl\Curl();
@@ -101,7 +104,7 @@ class CacheController extends Controller
               $curl->get($wap_ml_url);
               $curl->get($wap_ml_url_1);
             }
-            Article::getBidBookDataByGet($bid);
+            //Article::getBidBookDataByGet($bid);
             //$key = config('app.info_key').$bid;
             //\Cache::forget($key);
             $curl->close();
