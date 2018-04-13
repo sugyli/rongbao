@@ -41,16 +41,15 @@ class CaijiController extends Controller
               $article->getBasicsBook()
                         ->where('lastupdate', '>', $startdate)
                         ->orderBy('lastupdate', 'asc')
-                        ->paginate(50);
+                        ->paginate(30);
 
         if($items->count()>0){
             $curl = new \Curl\Curl();
             $curl->setOpt(CURLOPT_TIMEOUT, 3);
             $items->each(function ($item, $key) use ($curl ,&$startdate) {
                 $bid = $item->articleid;
-                
-                Article::getBidBookDataByGet($bid);
 
+                //Article::getBidBookDataByGet($bid);
 
                 $a = floor($bid / 1000);
                 $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
@@ -89,8 +88,8 @@ class CaijiController extends Controller
 
                 }
 
-                //$key = config('app.info_key').$bid;
-                //\Cache::forget($key);
+                $key = config('app.info_key').$bid;
+                \Cache::forget($key);
                 $startdate = $item->lastupdate;
             });
             $curl->close();

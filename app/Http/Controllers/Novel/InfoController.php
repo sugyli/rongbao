@@ -26,11 +26,11 @@ class InfoController extends Controller
       $a = floor($bid / 1000);
 
       if($id != $a){
-          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]) .'/' , 301);
+          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]) , 301);
       }
 
       if(!empty($any)){
-          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]) .'/' , 301);
+          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]) , 301);
       }
 
       if($bookData = $article->getBidBookData($bid)){
