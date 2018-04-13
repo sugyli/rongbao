@@ -16,7 +16,7 @@ class CaijiController extends Controller
       }
       $curl = new \Curl\Curl();
       $curl->setOpt(CURLOPT_COOKIE, config('app.cookie_baba'));
-      $curl->setOpt(CURLOPT_TIMEOUT, 15);
+      $curl->setOpt(CURLOPT_TIMEOUT, 4);
       $curl->setUserAgent("Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)");
       $curl->get($url);
       $curl->close();
