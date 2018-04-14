@@ -57,7 +57,7 @@ class CacheController extends Controller
         }
 
         $bookData = $article->getBidBookData($bid);
-        dd($bookData)
+        dd($bookData);
         $key = config('app.info_key').$bid;
         \Cache::forget($key);
 
