@@ -13,7 +13,7 @@ if (!function_exists('formatTime')) {
 if (!function_exists('getJsfile')) {
   function getJsfile()
   {
-    return '/js/webdashubaojs_4.js';
+    return '/js/webdashubaojs_5.js';
   }
 }
 

