@@ -55,30 +55,10 @@ class CacheController extends Controller
           $msg = $this->error('获取提交数据失败了');
           return back()->with($msg);
         }
-
-        $bookData = $article->getBidBookData($bid);
-        dd($bookData);
+        
         $key = config('app.info_key').$bid;
         \Cache::forget($key);
 
-        $curl = new \Curl\Curl();
-        $curl->setOpt(CURLOPT_TIMEOUT, 3);
-
-        $a = floor($bid / 1000);
-        $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
-        $houzui = parse_url($web_url);
-        $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
-        $curl->get($web_url);
-        $curl->close();
-        //$bookData = $article->getBidBookData($bid);
-
-        $msg = $this->success( "4444444");
-        return back()->with($msg);
-
-
-
-
-        exit;
         if($bookData = $article->getBidBookData($bid)){
 
           $curl = new \Curl\Curl();
