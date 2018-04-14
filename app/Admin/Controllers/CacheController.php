@@ -55,6 +55,9 @@ class CacheController extends Controller
           $msg = $this->error('获取提交数据失败了');
           return back()->with($msg);
         }
+
+        $bookData = $article->getBidBookData($bid);
+        dd($bookData)
         $key = config('app.info_key').$bid;
         \Cache::forget($key);
 
