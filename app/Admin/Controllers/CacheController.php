@@ -67,7 +67,7 @@ class CacheController extends Controller
         $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
         $curl->get($web_url);
         $curl->close();
-        $msg = $this->success( "<a href='{$url}' target='_blank'>{$bid}</a>的书清理NGINX 和本地缓存完成,请检查");
+        $msg = $this->success( "4444444");
         return back()->with($msg);
 
 
