@@ -59,12 +59,14 @@ class CacheController extends Controller
 
         $key = config('app.info_key').$bid;
         \Cache::forget($key);
+
         $curl = new \Curl\Curl();
         $curl->setOpt(CURLOPT_TIMEOUT, 3);
 
         $a = floor($bid / 1000);
         $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
         $houzui = parse_url($web_url);
+        $url = $web_url;
         $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
 
@@ -76,32 +78,13 @@ class CacheController extends Controller
 
         $curl->get($wap_url);
 
+        $curl->close();
 
-        $lastChapter = Chapter::where('chaptertype','<=' ,0)
-                                ->where('display', '<=', '0')
-                                ->where('articleid',$bid)
-                                ->where('chapterorder','<',$item->chapters)
-                                ->orderBy('chapterorder', 'desc')
-                                ->first();
+        $msg = $this->success( "<a href='{$url}' target='_blank'>{$bid}</a>的书清理NGINX 和本地缓存完成,请检查");
+        return back()->with($msg);
 
 
 
-
-      if($lastChapter){
-          $cid = $lastChapter->chapterid;
-
-          $web_lastpage_url = route('web.dashubaocontent',['id'=>$a , 'bid'=>$bid ,'cid'=>$cid]);
-          $houzui_1 = parse_url($web_lastpage_url);
-          $web_lastpage_url = config('app.web_dashubao_url') .'/purge'.$houzui_1['path'];
-          $curl->get($web_lastpage_url);
-
-          $wap_lastpage_url = route('wap.dashubaocontent',['bid'=>$bid ,'cid'=>$cid]);
-          $houzui1_1 = parse_url($wap_lastpage_url);
-          $wap_lastpage_url = config('app.wap_dashubao_url') .'/purge'.$houzui1_1['path'];
-          $curl->get($wap_lastpage_url);
-
-      }
-      $curl->close();
       /*
         if($bookData = $article->getBidBookData($bid)){
 
