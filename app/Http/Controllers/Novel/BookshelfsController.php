@@ -34,6 +34,24 @@ class BookshelfsController extends Controller
           }
 
         }
+
+        $url = request()->url();
+        if(str_contains($url, config('app.wap_dashubao_url'))){
+          if($cid > 0){
+            return redirect()->route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid]);
+          }
+
+          return redirect()->route('wap.dashubaoinfo',['bid'=>$bid]);
+        }
+
+
+        $id = floor($bid / 1000);
+        if($cid > 0){
+          return redirect()->route('web.dashubaocontent',['id'=>$id , 'bid'=>$bid , 'cid' =>$cid]);
+        }
+        return redirect( route('web.dashubaoinfo',['id'=>$id,'bid'=>$bid]));
+
+        /*
         if(\Agent::isMobile()){
           if($cid > 0){
             return redirect()->route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid]);
@@ -49,8 +67,7 @@ class BookshelfsController extends Controller
           return redirect( route('web.dashubaoinfo',['id'=>$id,'bid'=>$bid]) . '/' );
           //return redirect()->route('web.dashubaoinfo',['id'=>$id,'bid'=>$bid]);
         }
-
-
+        */
 
     }
 

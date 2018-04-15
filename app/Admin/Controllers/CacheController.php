@@ -14,6 +14,7 @@ use Encore\Admin\Layout\Row;
 use App\Admin\Traits\PublicTrait;
 
 use App\Models\Article;
+use App\Models\Chapter;
 class CacheController extends Controller
 {
     use ModelForm ,PublicTrait;
@@ -55,10 +56,53 @@ class CacheController extends Controller
           $msg = $this->error('获取提交数据失败了');
           return back()->with($msg);
         }
-        
+
         $key = config('app.info_key').$bid;
         \Cache::forget($key);
+        $curl = new \Curl\Curl();
+        $curl->setOpt(CURLOPT_TIMEOUT, 3);
 
+        $a = floor($bid / 1000);
+        $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
+        $houzui = parse_url($web_url);
+        $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
+
+
+        $wap_url = route('wap.dashubaoinfo',['bid'=>$bid]);
+        $houzui1 = parse_url($wap_url);
+        $wap_url = config('app.wap_dashubao_url') .'/purge'.$houzui1['path'];
+
+        $curl->get($web_url);
+
+        $curl->get($wap_url);
+
+
+        $lastChapter = Chapter::where('chaptertype','<=' ,0)
+                                ->where('display', '<=', '0')
+                                ->where('articleid',$bid)
+                                ->where('chapterorder','<',$item->chapters)
+                                ->orderBy('chapterorder', 'desc')
+                                ->first();
+
+
+
+
+      if($lastChapter){
+          $cid = $lastChapter->chapterid;
+
+          $web_lastpage_url = route('web.dashubaocontent',['id'=>$a , 'bid'=>$bid ,'cid'=>$cid]);
+          $houzui_1 = parse_url($web_lastpage_url);
+          $web_lastpage_url = config('app.web_dashubao_url') .'/purge'.$houzui_1['path'];
+          $curl->get($web_lastpage_url);
+
+          $wap_lastpage_url = route('wap.dashubaocontent',['bid'=>$bid ,'cid'=>$cid]);
+          $houzui1_1 = parse_url($wap_lastpage_url);
+          $wap_lastpage_url = config('app.wap_dashubao_url') .'/purge'.$houzui1_1['path'];
+          $curl->get($wap_lastpage_url);
+
+      }
+      $curl->close();
+      /*
         if($bookData = $article->getBidBookData($bid)){
 
           $curl = new \Curl\Curl();
@@ -116,6 +160,7 @@ class CacheController extends Controller
           $msg = $this->error($bid.'的书不存在或生产出错了');
           return back()->with($msg);
         }
+        */
 
     }
 

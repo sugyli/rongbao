@@ -98,12 +98,24 @@ class SearchController extends Controller
               $item['fields']['price'] = config('app.xsfmdir') .$item['fields']['price'] ;
 
            }
+
+           /*
             if(\Agent::isMobile()){
               $item['fields']['bookurl'] = route('wap.dashubaoinfo',['bid'=>$item['fields']['bookid']]) .'/';
             }else{
               $id = floor($item['fields']['bookid'] / 1000);
               $item['fields']['bookurl'] = route('web.dashubaoinfo',['id'=>$id,'bid'=>$item['fields']['bookid']]) . '/';
             }
+            */
+            $url = request()->url();
+            if(str_contains($url, config('app.wap_dashubao_url'))){
+              $item['fields']['bookurl'] = route('wap.dashubaoinfo',['bid'=>$item['fields']['bookid']]);
+            }else{
+
+              $id = floor($item['fields']['bookid'] / 1000);
+              $item['fields']['bookurl'] = route('web.dashubaoinfo',['id'=>$id,'bid'=>$item['fields']['bookid']]);
+            }
+
             $data[] = $item;
       });
       $result['error'] = 1;

@@ -19,12 +19,25 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             //return redirect('/home');
+
+            /*
             if(\Agent::isMobile()){
               return redirect( route('wap.dashubaouserindex') );
 
             }else {
               return redirect( route('web.dashubaouserindex') );
             }
+            */
+            $url = request()->url();
+            $jump_url = '/';
+            if(str_contains($url, config('app.web_dashubao_url') )){
+              $jump_url = route('web.dashubaouserindex');
+            }
+
+            if(str_contains($url, config('app.wap_dashubao_url'))){
+              $jump_url = route('wap.dashubaouserindex');
+            }
+            return redirect($jump_url);
 
         }
 

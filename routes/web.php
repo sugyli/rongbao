@@ -179,10 +179,15 @@ Route::group([
 //公用
 Route::group([
     'namespace'     => 'Novel',
-    //'middleware'    => ['responseLast'],
+    'prefix'        => 'member',
 ], function () {
     Route::get('/search', 'SearchController@search')->name('search');
     Route::post('/search', 'SearchController@alisearch');
+
+
+    Route::get('/checkupnextchapter/{bid}/{chapterorder}', 'ContentController@checkupnextchapter')
+          ->where('chapterorder', '^[0-9]\d*')
+          ->name('checkupnextchapter');
 
 });
 //需要验证登陆的 公用

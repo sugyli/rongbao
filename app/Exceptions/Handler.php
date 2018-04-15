@@ -71,10 +71,31 @@ class Handler extends ExceptionHandler
     //如果点击需要登录的地址 用户没有登录会跳转这
    protected function unauthenticated($request, AuthenticationException $exception)
    {
+       /*
        if ($request->expectsJson()) {
            return response()->json(['error' => 'Unauthenticated. 没有登录'], 401);
        }
-       $redirect_url = $request->redirect_url;
+       */
+       //$redirect_url = $request->redirect_url;
+
+       $url = request()->url();
+       $jump_url = '/';
+
+       if(str_contains($url, config('app.web_dashubao_url') )){
+         $jump_url = $request->redirect_url ?
+                     route('web.dashubaologin') .'?redirect_url=' .$request->redirect_url
+                     : route('web.dashubaologin');
+       }
+
+       if(str_contains($url, config('app.wap_dashubao_url'))){
+         $jump_url = $request->redirect_url ?
+                     route('wap.dashubaologin') .'?redirect_url=' .$request->redirect_url
+                     : route('wap.dashubaologin');
+       }
+       return redirect()->guest($jump_url);
+
+       /*
+
        if(\Agent::isMobile()){
          $url = $request->redirect_url ?
                      route('wap.dashubaologin') .'?redirect_url=' .$request->redirect_url
@@ -87,5 +108,6 @@ class Handler extends ExceptionHandler
        }
 
        return redirect()->guest($url);
+       */
    }
 }

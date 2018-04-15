@@ -74,13 +74,15 @@ class CaijiController extends Controller
             $items->each(function ($item, $key) use ($curl ,&$startdate) {
                 $bid = $item->articleid;
 
-                Article::getBidBookDataByGet($bid);
+                $key = config('app.info_key').$bid;
+                \Cache::forget($key);
+
+                //Article::getBidBookDataByGet($bid);
 
                 $a = floor($bid / 1000);
                 $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
                 $houzui = parse_url($web_url);
                 $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
-
 
                 $wap_url = route('wap.dashubaoinfo',['bid'=>$bid]);
                 $houzui1 = parse_url($wap_url);
@@ -89,11 +91,12 @@ class CaijiController extends Controller
                 $curl->get($web_url);
 
                 $curl->get($wap_url);
+                /*
 
                 $lastChapter = Chapter::where('chaptertype','<=' ,0)
                                         ->where('display', '<=', '0')
                                         ->where('articleid',$bid)
-                                        ->where('chapterorder','<',$item->chapters)
+                                        ->where('lastupdate','<',$item->lastupdate)
                                         ->orderBy('chapterorder', 'desc')
                                         ->first();
 
@@ -112,9 +115,8 @@ class CaijiController extends Controller
                     $curl->get($wap_lastpage_url);
 
                 }
+                */
 
-                //$key = config('app.info_key').$bid;
-                //\Cache::forget($key);
                 $startdate = $item->lastupdate;
             });
             $curl->close();

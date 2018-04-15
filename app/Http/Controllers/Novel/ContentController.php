@@ -14,7 +14,7 @@ class ContentController extends Controller
       $cid = (int)request()->cid;
       $content  = config('app.dfnr');
       $id = floor($bid / 1000);
-      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]) .'/';
+      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]);
       $isimg = 0;//判断是否图片
       $bookData = $article->getBidBookData($bid);
       if(!$bookData){
@@ -159,8 +159,47 @@ class ContentController extends Controller
                 $isimg = 1;
           }
       }
-    
+
       return view('novel.mcontent',compact('request','bookData','chapter','previousChapter','nextChapter','content','isimg','page'));
 
     }
+
+    public function checkupnextchapter(Article $article){
+        //$infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]);
+        $bid = (int)request()->bid;
+        $chapterorder = (int)request()->chapterorder;
+
+
+        $bookData = $article->getBidBookData($bid);
+        if(!$bookData){
+            return redirect('/');
+        }
+
+        $nextChapter  =
+                          collect($bookData['relation_chapters'])->first(function ($item, $key) use($chapterorder) {
+                                      return ($item['chapterorder'] > $chapterorder && $item['chaptertype'] <= 0);
+                                  });
+
+        $url = request()->url();
+        if(str_contains($url, config('app.wap_dashubao_url'))){
+            if($nextChapter){
+
+              return redirect( $nextChapter['wapdashubaocontentlink'] );
+
+            }
+
+            $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid]);
+            return redirect($infoUrl);
+        }
+
+
+      if($nextChapter){
+        return redirect( $nextChapter['webdashubaocontentlink'] );
+      }
+      $id = floor($bid / 1000);
+      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]);
+      return redirect($infoUrl);
+    }
+
+
 }

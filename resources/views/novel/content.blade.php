@@ -121,13 +121,13 @@
     @if($previousChapter)
     <a href="{{ $previousChapter['webdashubaocontentlink']}}" target="_top">← 上一章</a>
     @else
-    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top">←到头了</a>
+    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top">← 到头了</a>
     @endif
 		<a class="back" href="{{ $chapter['webdashubaoinfolink']}}" target="_top">返回目录</a>
     @if($nextChapter)
     <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top">下一章 →</a>
     @else
-    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top"> 到尾了→</a>
+    <a href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}" target="_top">到尾了? →</a>
     @endif
   </div>
   <div class="aside">
@@ -153,7 +153,7 @@
     @if($nextChapter)
     <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top" id="next_page">下一章 →</a>
     @else
-    <a href="{{ $chapter['webdashubaoinfolink']}}" target="_top" id="next_page"> 到尾了→</a>
+    <a href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}" target="_top" id="next_page">到尾了? →</a>
     @endif
   </div>
   <div class="readacbtn">

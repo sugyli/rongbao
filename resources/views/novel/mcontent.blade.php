@@ -49,7 +49,7 @@
 	@if($nextChapter)
 	<a id="pt_next" href="{{ $nextChapter['wapdashubaocontentlink']}}">下一章</a>
 	@else
-	<a id="pt_next" href="{{ $chapter['wapdashubaoinfolink'] }}">到尾了?</a>
+	<a id="pt_next" href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}">到尾了?</a>
 	@endif
 	<a id="pt_shuj" href="{{ route('wap.dashubaobookshelfindex') }}?redirect_url={{request()->url()}}">书架</a>
 </div>
@@ -74,7 +74,7 @@
 	@if($nextChapter)
 	<a id="pt_next1" href="{{ $nextChapter['wapdashubaocontentlink']}}">下一章</a>
 	@else
-	<a id="pt_next1" href="{{ $chapter['wapdashubaoinfolink'] }}">到尾了?</a>
+	<a id="pt_next1" href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}">到尾了?</a>
 	@endif
 	<a id="pt_shuj1" href="{{ route('wap.dashubaobookshelfindex') }}?redirect_url={{request()->url()}}">书架</a>
 </div>
