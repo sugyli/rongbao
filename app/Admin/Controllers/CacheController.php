@@ -52,6 +52,7 @@ class CacheController extends Controller
         $array_b = explode("|",$array_a[1]);
 
         $bid = $array_b[2] ?? 0;
+        $bid = trim($bid);
         if($bid <= 0 ){
           $msg = $this->error('获取提交数据失败了');
           return back()->with($msg);
@@ -64,7 +65,7 @@ class CacheController extends Controller
         $curl->setOpt(CURLOPT_TIMEOUT, 3);
 
         $a = floor($bid / 1000);
-        $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
+        $web_url = route('web.dashubaoinfo',['id'=>$a ,'bid'=>$bid]);
         dd($web_url);
         $houzui = parse_url($web_url);
 
