@@ -65,8 +65,9 @@ class CacheController extends Controller
 
         $a = floor($bid / 1000);
         $web_url = route('web.dashubaoinfo',['id'=>$a , 'bid'=>$bid]);
+        dd($web_url);
         $houzui = parse_url($web_url);
-        $url = $web_url;
+
         $web_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
 
 
