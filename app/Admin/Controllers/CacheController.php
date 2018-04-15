@@ -80,6 +80,22 @@ class CacheController extends Controller
 
         $curl->get($wap_url);
 
+
+        $chapters = Chapter::getBasicsChapter()
+                            ->where('articleid',$bid)
+                            ->get();
+
+        $chapters->each(function ($item, $key) use ($curl) {
+          $houzui = parse_url($item['webdashubaocontentlink']);
+          $web_nr_url = config('app.web_dashubao_url') .'/purge'.$houzui['path'];
+
+          $houzui = parse_url($item['wapdashubaocontentlink']);
+          $wap_nr_url = config('app.wap_dashubao_url') .'/purge'.$houzui['path'];
+          $curl->get($web_nr_url);
+          $curl->get($wap_nr_url);
+          usleep(10000);
+        });
+        
         $curl->close();
 
         $msg = $this->success( "<a href='{$url}' target='_blank'>{$bid}</a>的书清理NGINX 和本地缓存完成,请检查");
