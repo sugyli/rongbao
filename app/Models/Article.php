@@ -13,7 +13,8 @@ class Article extends Model
     protected $primaryKey = 'articleid';
 
     protected $appends = [
-                          'updatetime',
+                          'updatetime',//更新时间
+                          'adddatetime',//添加时间
                           'webdashubaocontentlink',
                           'wapdashubaocontentlink',
                           'webdashubaoinfolink',
@@ -170,6 +171,11 @@ class Article extends Model
     public function getUpdatetimeAttribute()
     {
       return $this->updatetime($this->attributes['lastupdate']);
+    }
+
+    public function getAdddatetimeAttribute()
+    {
+      return $this->updatetime($this->attributes['postdate']);
     }
     public function getSortAttribute()
     {

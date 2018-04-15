@@ -66,7 +66,7 @@ class CaijiController extends Controller
               $article->getBasicsBook()
                         ->where('lastupdate', '>', $startdate)
                         ->orderBy('lastupdate', 'asc')
-                        ->paginate(50);
+                        ->paginate(100);
 
         if($items->count()>0){
             $curl = new \Curl\Curl();

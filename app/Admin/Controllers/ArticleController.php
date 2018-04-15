@@ -73,10 +73,36 @@ class ArticleController extends Controller
     {
         return Admin::grid(Article::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
+            $grid->articleid('书号')->sortable();
+            $grid->articlename('小说名')->limit(30);
+            $grid->author('作者')->limit(30);
+            $grid->adddatetime('入库时间');
+            $grid->updatetime('最后更新');
+            //禁用导出数据按钮
+            $grid->disableExport();
+            $grid->model()->orderBy('lastupdate', 'desc');
+            $grid->filter(function($filter){
+                // 去掉默认的id过滤器
+                $filter->disableIdFilter();
+                // 在这里添加字段过滤器
+                $filter->where(function ($query) {
 
-            $grid->created_at();
-            $grid->updated_at();
+                    $query->where('articlename', 'like', "{$this->input}%");
+
+                }, '小说名')->placeholder('小说名');
+
+
+                //$filter->equal('articlename', '小说名');
+            });
+
+            $grid->actions(function ($actions) {
+
+                // append一个操作
+                $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
+
+                // prepend一个操作
+                //$actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
+            });
         });
     }
 
