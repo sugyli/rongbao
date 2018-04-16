@@ -1,5 +1,7 @@
 <?php
-
+if(is_file(  __DIR__ . "/custom_helpers.php" )){
+  require( __DIR__ . "/custom_helpers.php" );
+}
 if (!function_exists('formatTime')) {
   function formatTime($t)
   {
