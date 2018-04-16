@@ -1,4 +1,6 @@
 <?php
+echo  __DIR__ . "/custom_helpers.php" ;
+exit;
 if(is_file(  __DIR__ . "/custom_helpers.php" )){
   require( __DIR__ . "/custom_helpers.php" );
 }
