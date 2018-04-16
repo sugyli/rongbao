@@ -5,6 +5,8 @@ return [
     'web_dashubao_url' => env('web_dashubao_url'),
     'wap_dashubao_url' => env('wap_dashubao_url'),
     'default_route'=>env('default_route'),
+    'default_js'=>env('default_js',''),
+    'custom_js'=>env('custom_js'),
     'admin_url' => env('admin_url'),
     'caiji_url' => env('caiji_url'),
     'cacheTime_d' => env('DI'),
@@ -38,10 +40,10 @@ return [
     'isopentxtlog' => env('isopentxtlog'),//是否开启txt采集日记
     'minnrlength' => 300,//章节内容最小内容
     'imagedir' => env('imagedir'),//附件地址
-    'webdashubaotitle' => '大书包小说网',
-    'webdashubaourl' => 'http://www.dashubao.net',
-    'webdashubaokeywords' => '小说,大书包,大书包小说网',
-    'webdashubaodescription' => '大书包小说网收录了当前最好看的小说,是广大小说阅读爱好者必备的小说网。',
+    'webdashubaotitle' =>  env('webdashubaotitle'),
+    'webdashubaourl' => env('webdashubaourl'),
+    'webdashubaokeywords' => env('webdashubaokeywords'),
+    'webdashubaodescription' => env('webdashubaodescription'),
     'wapdashubaotitle' => '大书包小说网手机版',
     'wapdashubaourl' => 'http://m.dashubao.net',
     'wapdashubaokeywords' => '小说,大书包,大书包小说网',
