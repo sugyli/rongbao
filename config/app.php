@@ -68,7 +68,10 @@ return [
     'default_route'=>env('default_route'),
     'default_js'=>env('default_js',false),
     'custom_js'=>env('custom_js'),
+
     'webmulutitle'=>env('webmulutitle',false),
+    'webmuluwords'=>env('webmuluwords',false),
+    'webmuludes'=>env('webmuludes',false),
 
     /*
     |--------------------------------------------------------------------------
