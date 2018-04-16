@@ -12,20 +12,7 @@ return [
     'xsfmdir' => env('xsfmdir'),//小说封面路径
     'dfxsfmdir' => env('dfxsfmdir'),//小说封面默认图片
     'usercooktime' => 43200,
-    'fenlei' => [
-      '玄幻魔法',
-      '武侠修真',
-      '都市言情',
-      '历史穿越',
-      '恐怖悬疑',
-      '游戏竞技',
-      '军事科幻',
-      '综合类型',
-      '名家作品',
-      '网友更新',
-      '商战职场',
-      '同人小说'
-    ],
+    'fenlei' => require(__DIR__ . "/fenlei.php"),
     'info_key' => 'info_key_',
     'txt_key' => 'txt_key_',
     'maxchapter' => 10000,
@@ -50,8 +37,8 @@ return [
     'massagemaxcount' => 20,//默认收发件数量
     'dayrecommendmaxcount' => 20,//默认日推荐
     'recommendscore' => 1,//投票增长的经验
-    'wangzhangonggao' => '网站公告',
-    'wapwangzhangonggao' => '网站公告2',
+    'wangzhangonggao' => env('wangzhangonggao'),
+    'wapwangzhangonggao' => env('wapwangzhangonggao'),
 
     //SOU sdk
     'accessKeyId' => env('accessKeyId'),
