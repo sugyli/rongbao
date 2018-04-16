@@ -1,5 +1,8 @@
 <?php
 require __DIR__ . '/helpers.php';
+if(is_file(  __DIR__ . "/custom_helpers.php" )){
+  require( __DIR__ . "/custom_helpers.php" );
+}
 /*
 |--------------------------------------------------------------------------
 | Create The Application
