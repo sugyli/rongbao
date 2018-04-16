@@ -41,10 +41,10 @@ return [
     'webdashubaourl' => env('webdashubaourl'),
     'webdashubaokeywords' => env('webdashubaokeywords'),
     'webdashubaodescription' => env('webdashubaodescription'),
-    'wapdashubaotitle' => '大书包小说网手机版',
-    'wapdashubaourl' => 'http://m.dashubao.net',
-    'wapdashubaokeywords' => '小说,大书包,大书包小说网',
-    'wapdashubaodescription' => '大书包小说网收录了当前最好看的小说,是广大小说阅读爱好者必备的小说网。',
+    'wapdashubaotitle' => env('wapdashubaotitle'),
+    'wapdashubaourl' => env('wapdashubaourl'),
+    'wapdashubaokeywords' => env('wapdashubaokeywords'),
+    'wapdashubaodescription' => env('wapdashubaodescription'),
     'honorskey'=>'honorskey',
     'bookcasemaxcount' => 20,//默认书架数量
     'massagemaxcount' => 20,//默认收发件数量
