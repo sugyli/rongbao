@@ -25,6 +25,7 @@ Route::group([
 
     $router->resource('article', ArticleController::class);
 
-    $router->resource('honors', HonorsController::class);
+    $router->resource('honor', HonorController::class);
+    //$router->delete('delhonorcache', 'HonorController@delhonorcache');
 
 });

@@ -10,7 +10,7 @@ class DelCacheForHonor extends AbstractTool
   protected function script()
   {
 
-    $url =  route('admin.delhonorscache');
+    $url =  admin_url('delhonorcache');
 
     return <<<EOT
 
@@ -38,7 +38,7 @@ EOT;
         Admin::script($this->script());
         $bntName = '删除缓存';
 
-        return view('admin.tools.custombnt', compact('bntName'));
+        return view('admin.custombnt', compact('bntName'));
     }
 }
 

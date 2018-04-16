@@ -11,7 +11,7 @@ class Honor extends Model
     protected $casts = [
         'setting' => 'json',
     ];
-
+    public $timestamps = false;
     public static function getUserHonor(User $user){
 
         $honor = self::getAllHonor();
