@@ -3,7 +3,7 @@
 /storage/*.key
 /storage/*
 /routes/custom.php
-/public/images/logo.png
+
 /bootstrap/custom_helpers.php
 /config/fenlei.php
 /.idea

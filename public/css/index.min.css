@@ -162,7 +162,7 @@ a:hover{color:#336600;}
 
 
 .wrapper{width:960px;margin:0px auto;}
-.wrapper .logo a{height:90px;float:left;width:280px;background:url(/images/logo.png) no-repeat;text-indent:-9999px;margin:10px 0;}
+.wrapper .logo a{height:90px;float:left;width:280px;background:url(/images/logo.gif) no-repeat;text-indent:-9999px;margin:10px 0;}
 .wrapper .seach{float:left;padding-top:30px;}
 .wrapper input {
 	float: left;
