@@ -11,9 +11,11 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
+use App\Admin\Traits\PublicTrait;
+
 class ArticleController extends Controller
 {
-    use ModelForm;
+    use ModelForm , PublicTrait;
 
     /**
      * Index interface.
@@ -40,11 +42,15 @@ class ArticleController extends Controller
     public function edit($id)
     {
         return Admin::content(function (Content $content) use ($id) {
+          $bookData = Article::getBasicsBook()->where('articleid', $id)->first();
+          if($bookData){
+            $bookData->load('relationChapters');
+          }else{
 
-            $content->header('header');
-            $content->description('description');
 
-            $content->body($this->form()->edit($id));
+          }
+
+          $content->body(view('admin.article',compact('bookData')));
         });
     }
 
