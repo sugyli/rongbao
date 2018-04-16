@@ -69,10 +69,7 @@ return [
     'default_js'=>env('default_js',false),
     'custom_js'=>env('custom_js'),
 
-    'webmulutitle'=>env('webmulutitle',false),
-    'webmuluwords'=>env('webmuluwords',false),
-    'webmuludes'=>env('webmuludes',false),
-
+    'custom_key_twd'=>env('custom_key_twd',false),
     /*
     |--------------------------------------------------------------------------
     | Application Name
