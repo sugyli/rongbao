@@ -1,8 +1,5 @@
 <?php
 
-if(is_file(  __DIR__ . "/custom_helpers.php" )){
-  require( __DIR__ . "/custom_helpers.php" );
-}
 if (!function_exists('formatTime')) {
   function formatTime($t)
   {
@@ -71,5 +68,46 @@ if (!function_exists('getstrlength')) {
       return $num;
   }
 }
+
+if (!function_exists('webmulutitle')) {
+  function webmulutitle($bookname , $zuozhe ,$fenlei)
+  {
+    return 'fff';
+  }
+}
+if (!function_exists('webmuluwords')) {
+  function webmuluwords($bookname , $zuozhe ,$fenlei)
+  {
+    return '自己组合2';
+  }
+}
+if (!function_exists('webmuludes')) {
+  function webmuludes($bookname , $zuozhe ,$fenlei)
+  {
+    return '自己组合2';
+  }
+}
+
+if (!function_exists('webnrtitle')) {
+  function webnrtitle($bookname , $zuozhe ,$fenlei ,$zjname)
+  {
+    return '自己组合21';
+  }
+}
+
+if (!function_exists('webnrwords')) {
+  function webnrwords($bookname , $zuozhe ,$fenlei ,$zjname)
+  {
+    return '自己组合21';
+  }
+}
+
+if (!function_exists('webnrdes')) {
+  function webnrdes($bookname , $zuozhe ,$fenlei ,$zjname)
+  {
+    return '自己组合21';
+  }
+}
+
 
 ?>
