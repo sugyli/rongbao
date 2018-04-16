@@ -1,4 +1,7 @@
 <?php
+if(is_file('./custom_helpers.php')){
+  require('./custom_helpers.php');
+}
 if (!function_exists('formatTime')) {
   function formatTime($t)
   {
@@ -16,7 +19,7 @@ if (!function_exists('getJsfile')) {
     if (config('app.default_js')) {
         return config('app.default_js');
     }
-    return config('app.custom_js');    
+    return config('app.custom_js');
   }
 }
 

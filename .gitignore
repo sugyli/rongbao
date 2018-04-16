@@ -4,6 +4,7 @@
 /storage/*
 /routes/custom.php
 /public/images/logo.png
+/bootstrap/custom_helpers.php
 /.idea
 /.vagrant
 Homestead.json

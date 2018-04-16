@@ -4,9 +4,6 @@ return [
 
     'web_dashubao_url' => env('web_dashubao_url'),
     'wap_dashubao_url' => env('wap_dashubao_url'),
-    'default_route'=>env('default_route'),
-    'default_js'=>env('default_js',''),
-    'custom_js'=>env('custom_js'),
     'admin_url' => env('admin_url'),
     'caiji_url' => env('caiji_url'),
     'cacheTime_d' => env('DI'),
@@ -66,6 +63,12 @@ return [
     //采集
     'cookie_baba' => env('cookie_baba'),
     'cookie_93shu' => env('cookie_93shu'),
+
+    //兼容
+    'default_route'=>env('default_route'),
+    'default_js'=>env('default_js',false),
+    'custom_js'=>env('custom_js'),
+    'webmulutitle'=>env('webmulutitle',false),
 
     /*
     |--------------------------------------------------------------------------
