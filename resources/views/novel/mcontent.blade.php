@@ -1,7 +1,13 @@
 @extends('novel.layouts.mdefault')
+@if(config('app.custom_key_twd'))
+@section('wapdashubaotitle'){{ wapnrtitle( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] , $chapter['chaptername'] ) }}@endsection
+@section('wapdashubaokeywords'){{ wapnrwords( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] , $chapter['chaptername'] ) }}@endsection
+@section('wapdashubaodescription'){{ wapnrdes( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] , $chapter['chaptername'] ) }}@endsection
+@else
 @section('wapdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
 @section('wapdashubaokeywords'){{$chapter['chaptername']}},{{ $bookData['articlename'] }},{{$bookData['author']}}@endsection
 @section('wapdashubaodescription'){{$bookData['articlename']}}是由{{$bookData['author']}}所写的{{$bookData['sort']}}类小说， {{$chapter['chaptername']}}是小说{{$bookData['articlename']}}的最新章节。@endsection
+@endif
 @section('header')
 @include('novel.layouts.header',[$request,'title'=>$chapter['articlename'] , 'url' => $chapter['wapdashubaoinfolink'] ])
 @endsection

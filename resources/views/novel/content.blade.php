@@ -1,17 +1,11 @@
 @extends('novel.layouts.default')
 @if(config('app.custom_key_twd'))
 @section('webdashubaotitle'){{ webnrtitle( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] , $chapter['chaptername'] ) }}@endsection
-@else
-@section('webdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
-@endif
-@if(config('app.custom_key_twd'))
 @section('webdashubaokeywords'){{ webnrwords( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] , $chapter['chaptername'] ) }}@endsection
-@else
-@section('webdashubaokeywords'){{$chapter['chaptername']}},{{ $bookData['articlename'] }},{{$bookData['author']}}@endsection
-@endif
-@if(config('app.custom_key_twd'))
 @section('webdashubaodescription'){{ webnrdes( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] , $chapter['chaptername'] ) }}@endsection
 @else
+@section('webdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
+@section('webdashubaokeywords'){{$chapter['chaptername']}},{{ $bookData['articlename'] }},{{$bookData['author']}}@endsection
 @section('webdashubaodescription'){{$bookData['articlename']}}是由{{$bookData['author']}}所写的{{$bookData['sort']}}类小说， {{$chapter['chaptername']}}是小说{{$bookData['articlename']}}的最新章节。@endsection
 @endif
 @section('content')
