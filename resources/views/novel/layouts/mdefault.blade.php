@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>@yield('wapdashubaotitle',config('app.wapdashubaotitle').'-'.route('wap.dashubaoindex'))-</title>
+    <title>@yield('wapdashubaotitle',config('app.wapdashubaotitle').'-'.route('wap.dashubaoindex'))</title>
     <meta name="keywords" content="@yield('wapdashubaokeywords',config('app.wapdashubaokeywords'))"/>
     <meta name="description" content="@yield('wapdashubaodescription',config('app.wapdashubaodescription'))"/>
     <meta name="MobileOptimized" content="240"/>
