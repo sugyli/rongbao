@@ -25,4 +25,6 @@ Route::group([
 
     $router->resource('article', ArticleController::class);
 
+    $router->resource('honors', HonorsController::class);
+
 });

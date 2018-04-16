@@ -26,7 +26,7 @@ class Bookcase extends Model
      *
      * @var bool
      */
-  //public $timestamps = false;
+  public $timestamps = false;
   public function relationArticles()
   {
     //第2个参数是 chapter类的外键   第3个是 本类中articleid

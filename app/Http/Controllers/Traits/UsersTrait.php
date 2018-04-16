@@ -13,7 +13,7 @@ trait UsersTrait
                                 ->orderBy('messageid', 'desc')
                                 ->first();
 
-      return count($last_message) && strcmp($last_message->content, $content) === 0;
+      return $last_message && strcmp($last_message->content, $content) === 0;
   }
 
   public function creatorFailed($error)
