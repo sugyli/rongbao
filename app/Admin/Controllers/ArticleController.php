@@ -70,6 +70,17 @@ class ArticleController extends Controller
         });
     }
 
+    public function show()
+    {
+        return Admin::content(function (Content $content) {
+
+            $content->header('header');
+            $content->description('description');
+
+            $content->body($this->form());
+        });
+    }
+
     /**
      * Make a grid builder.
      *
@@ -121,10 +132,8 @@ class ArticleController extends Controller
     {
         return Admin::form(Article::class, function (Form $form) {
 
-            $form->display('id', 'ID');
+            $form->text('articlename', '书名')->rules('required');
 
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
         });
     }
 }

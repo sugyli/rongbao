@@ -21,7 +21,7 @@
         <span>《{{$bookData->articlename}}》[<a href="{{$bookData->webdashubaoinfolink}}" target="_blank">信息</a>]</span>
         <span>
           [<a href="javascript:alert('开发中');">新建分卷</a>]
-          [<a href="https://www.88dus.com/modules/article/newchapter.php?aid=89336">增加章节</a>]
+          [<a href="{{route('article.show',['id'=>$bookData->articleid])}}">增加章节</a>]
           [<a href="https://www.88dus.com/modules/article/articleedit.php?id=89336">编辑文章</a>]
           [<a href="javascript:if(confirm('确实要删除该文章么？')) document.location='https://www.88dus.com/modules/article/articledel.php?id=89336';">删除文章</a>]
           [<a href="javascript:if(confirm('确实要清空（删除所有章节）该文章么？')) document.location='https://www.88dus.com/modules/article/articleclean.php?id=89336';">清空文章</a>]
