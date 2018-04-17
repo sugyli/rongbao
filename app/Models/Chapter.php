@@ -20,7 +20,7 @@ class Chapter extends Model
 
     public function getUpdatetimeAttribute()
     {
-      return $this->updatetime($this->attributes['lastupdate']);
+      return $this->datetime($this->attributes['lastupdate']);
     }
 
     public function getWapdashubaoinfolinkAttribute()

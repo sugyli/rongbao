@@ -180,12 +180,12 @@ class Article extends Model
 
     public function getUpdatetimeAttribute()
     {
-      return $this->updatetime($this->attributes['lastupdate']);
+      return $this->datetime($this->attributes['lastupdate']);
     }
 
     public function getAdddatetimeAttribute()
     {
-      return $this->updatetime($this->attributes['postdate']);
+      return $this->datetime($this->attributes['postdate']);
     }
     public function getSortAttribute()
     {

@@ -138,6 +138,8 @@ class ArticleController extends Controller
             $form->select('sortkey','类型')->options(config('app.fenlei'));
             $form->text('articlename', '书名')->rules('required');
             $form->text('author', '作者')->rules('required');
+            $form->text('adddatetime', '添加时间')->attribute(['readonly' => 'readonly']);
+            $form->text('updatetime', '更新时间')->attribute(['readonly' => 'readonly']);
             $form->radio('zhuangtai','状态')->options([0 => '连载', 1 => '完本']);
             $form->textarea('intro', '简介')->attribute(['rows' => 40])->rules('required');
 

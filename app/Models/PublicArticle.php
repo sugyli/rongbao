@@ -5,7 +5,7 @@ trait PublicArticle
 {
 
 
-  public function updatetime($lastupdate)
+  public function datetime($lastupdate)
   {
     return formatTime($lastupdate);
   }
