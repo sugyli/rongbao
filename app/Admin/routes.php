@@ -23,8 +23,8 @@ Route::group([
     $router->post('delcache/delonebook', 'CacheController@delonebook');
 
 
-    $router->resource('article', ArticleController::class);
-    
+    $router->resource('article', ArticleController::class , ['except' => ['destroy']] );
+    $router->get('article/editinfo/{id}', 'ArticleController@editinfo')->name('article.editinfo');
 
     $router->resource('honor', HonorController::class);
     //$router->delete('delhonorcache', 'HonorController@delhonorcache');

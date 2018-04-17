@@ -54,7 +54,6 @@ return [
     //兼容
     'default_route'=>env('default_route' ,true),
     'default_js'=>env('default_js','/js/webdashubaojs_5.js'),
-
     'custom_key_twd'=>env('custom_key_twd',false),
     /*
     |--------------------------------------------------------------------------

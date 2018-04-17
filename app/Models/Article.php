@@ -21,6 +21,8 @@ class Article extends Model
                           'wapdashubaoinfolink',
                           'minfomululink',
                           'allltuijiancount',
+                          'zhuangtai',
+                          'sortkey',
                           'sort',
                           'sortlink'
                         ];
@@ -140,6 +142,14 @@ class Article extends Model
     {
         return $value > 0 ? '完本' : '连载';
     }
+    public function getZhuangtaiAttribute()
+    {
+        return $this->attributes['fullflag'];
+    }
+    public function setZhuangtaiAttribute($value)
+    {
+        $this->attributes['fullflag'] = $value;
+    }
     public function getWebdashubaocontentlinkAttribute()
     {
        return $this->webdashubaocontentlink($this->articleid,$this->lastchapterid);
@@ -181,6 +191,15 @@ class Article extends Model
     {
         $key = (int)($this->sortid - 1);
         return config('app.fenlei')[$key] ?? '未知分类';
+    }
+    public function getSortkeyAttribute()
+    {
+        return ($this->sortid - 1);
+    }
+
+    public function setSortkeyAttribute($value)
+    {
+        $this->attributes['sortid'] = ($value+1);
     }
 
     public function getSortlinkAttribute()
