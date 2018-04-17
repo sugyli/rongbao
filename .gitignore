@@ -3,7 +3,9 @@
 /storage/*.key
 /storage/*
 /public/images/logo.gif
-
+/bootstrap/custom_helpers.php
+/config/fenlei.php
+/routes/custom.php
 /.idea
 /.vagrant
 Homestead.json
