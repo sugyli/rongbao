@@ -4,7 +4,7 @@
 @section('webdashubaokeywords'){{ webmuluwords( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] ) }}@endsection
 @section('webdashubaodescription'){{ webmuludes( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] ) }}@endsection
 @else
-@section('webdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}-@endsection
+@section('webdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
 @section('webdashubaokeywords'){{ $bookData['articlename'] }},小说{{ $bookData['articlename'] }},{{ $bookData['articlename'] }}最新章节,{{ $bookData['articlename'] }}全文阅读@endsection
 @section('webdashubaodescription'){{ $bookData['articlename'] }}是由{{ $bookData['author'] }}所写的{{ $bookData['sort']}}类小说，本站提供{{ $bookData['articlename'] }}最新章节观看,{{ $bookData['articlename'] }}全文阅读等服务，如果您发现{{ $bookData['articlename'] }}更新慢了,请第一时间联系{{config('app.webdashubaotitle')}}。@endsection
 @endif
