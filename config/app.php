@@ -24,21 +24,21 @@ return [
     'isopentxtlog' => env('isopentxtlog'),//是否开启txt采集日记
     'minnrlength' => 300,//章节内容最小内容
     'imagedir' => env('imagedir'),//附件地址
-    'webdashubaotitle' =>  env('webdashubaotitle'),
-    'webdashubaourl' => env('webdashubaourl'),
-    'webdashubaokeywords' => env('webdashubaokeywords'),
-    'webdashubaodescription' => env('webdashubaodescription'),
-    'wapdashubaotitle' => env('wapdashubaotitle'),
-    'wapdashubaourl' => env('wapdashubaourl'),
-    'wapdashubaokeywords' => env('wapdashubaokeywords'),
-    'wapdashubaodescription' => env('wapdashubaodescription'),
+    'webdashubaotitle' =>  env('webdashubaotitle' , '大书包小说网'),
+    'webdashubaourl' => env('webdashubaourl' , 'http://www.dashubao.net'),
+    'webdashubaokeywords' => env('webdashubaokeywords' , '小说,大书包,大书包小说网'),
+    'webdashubaodescription' => env('webdashubaodescription' , '大书包小说网收录了当前最好看的小说,是广大小说阅读爱好者必备的小说网。'),
+    'wapdashubaotitle' => env('wapdashubaotitle' ,'大书包小说网手机版'),
+    'wapdashubaourl' => env('wapdashubaourl' , 'http://m.dashubao.net'),
+    'wapdashubaokeywords' => env('wapdashubaokeywords' , '小说,大书包,大书包小说网'),
+    'wapdashubaodescription' => env('wapdashubaodescription' , '大书包小说网收录了当前最好看的小说,是广大小说阅读爱好者必备的小说网。'),
     'honorskey'=>'honorskey',
     'bookcasemaxcount' => 20,//默认书架数量
     'massagemaxcount' => 20,//默认收发件数量
     'dayrecommendmaxcount' => 20,//默认日推荐
     'recommendscore' => 1,//投票增长的经验
-    'wangzhangonggao' => env('wangzhangonggao'),
-    'wapwangzhangonggao' => env('wapwangzhangonggao'),
+    'wangzhangonggao' => env('wangzhangonggao' , '公告1'),
+    'wapwangzhangonggao' => env('wapwangzhangonggao' , '公告2'),
 
     //SOU sdk
     'accessKeyId' => env('accessKeyId'),
