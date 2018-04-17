@@ -17,10 +17,7 @@ if (!function_exists('formatTime')) {
 if (!function_exists('getJsfile')) {
   function getJsfile()
   {
-    if (config('app.default_js')) {
-        return config('app.default_js');
-    }
-    return config('app.custom_js');
+    return config('app.default_js');
   }
 }
 
