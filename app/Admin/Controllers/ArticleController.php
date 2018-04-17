@@ -70,14 +70,14 @@ class ArticleController extends Controller
         });
     }
 
-    public function show()
+    public function addzhangjie($id)
     {
-        return Admin::content(function (Content $content) {
+        return Admin::content(function (Content $content) use ($id){
 
             $content->header('header');
             $content->description('description');
 
-            $content->body($this->form());
+            $content->body($this->form()->update($id));
         });
     }
 
@@ -133,6 +133,7 @@ class ArticleController extends Controller
         return Admin::form(Article::class, function (Form $form) {
 
             $form->text('articlename', '书名')->rules('required');
+            $form->textarea('intro', '简介')->attribute(['rows' => 40])->rules('required');
 
         });
     }
