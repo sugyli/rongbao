@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
 use App\Admin\Traits\PublicTrait;
-
+use App\Models\Chapter;
 class ArticleController extends Controller
 {
     use ModelForm , PublicTrait;
@@ -133,8 +133,7 @@ class ArticleController extends Controller
     protected function form()
     {
         return Admin::form(Article::class, function (Form $form) {
-            //$a = config('app.fenlei');
-            //dd($a);
+
             $form->select('sortkey','类型')->options(config('app.fenlei'));
             $form->text('articlename', '书名')->rules('required');
             $form->text('author', '作者')->rules('required');
@@ -142,7 +141,15 @@ class ArticleController extends Controller
             $form->text('updatetime', '更新时间')->attribute(['readonly' => 'readonly']);
             $form->radio('zhuangtai','状态')->options([0 => '连载', 1 => '完本']);
             $form->textarea('intro', '简介')->attribute(['rows' => 40])->rules('required');
+            //忽略一些字段
+            $form->ignore(['updatetime','adddatetime']);
+            //保存后回调
+            $form->saved(function (Form $form) {
+                Chapter::where('articleid', $form->model()->articleid)
+                        ->update(['articlename' => $form->model()->articlename]);
 
+                 return redirect(route('article.edit', ['id' => $form->model()->articleid]));
+            });
         });
     }
 }

@@ -24,7 +24,9 @@ Route::group([
 
 
     $router->resource('article', ArticleController::class , ['except' => ['destroy']] );
-    $router->get('article/editinfo/{id}', 'ArticleController@editinfo')->name('article.editinfo');
+    $router->get('article/editinfo/{id}', 'ArticleController@editinfo')
+              ->where('id', '^[1-9]\d*')
+              ->name('article.editinfo');
 
     $router->resource('honor', HonorController::class);
     //$router->delete('delhonorcache', 'HonorController@delhonorcache');
