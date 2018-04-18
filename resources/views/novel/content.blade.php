@@ -180,7 +180,7 @@ function jumpPage() {
   if (event.keyCode==13) location=index_page;
 }
 document.onkeydown=jumpPage;
+webdashubaotongji();
+webdashubaotuisong();
 </script>
-
-
 @endsection

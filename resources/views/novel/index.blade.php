@@ -117,4 +117,5 @@
             <a href="http://www.pingshu8.com" target="_blank">评书吧</a>
             <a href="http://www.guijj.com/" target="_blank">鬼故事</a>
 </div>
+<script>webdashubaotongji();</script>
 @endsection

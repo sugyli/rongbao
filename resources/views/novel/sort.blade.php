@@ -50,4 +50,5 @@
  {{ $sortDatas->links('vendor.pagination.webdashubaopage',['sid' => $sid ,'id'=>$id]) }}
 </div>
 @endif
+<script>webdashubaotongji();</script>
 @endsection

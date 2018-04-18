@@ -63,4 +63,5 @@
  {{ $bookDatas->links('vendor.pagination.webdashubaopage_top',['any' => $any ,'id'=>$id]) }}
 </div>
 @endif
+<script>webdashubaotongji();</script>
 @endsection

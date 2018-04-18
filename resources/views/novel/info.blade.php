@@ -55,5 +55,5 @@
   </ul>
 </div>
 @endif
-
+<script>webdashubaotongji();webdashubaotuisong();</script>
 @endsection
