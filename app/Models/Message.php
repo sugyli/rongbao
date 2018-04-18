@@ -29,7 +29,7 @@ class Message extends Model
     public function getAdminpostdateAttribute()
     {
 
-        return date("Y-m-d",$this->attributes['postdate']);
+        return date("Y-m-d H:i:s",$this->attributes['postdate']);
     }
 
     public function markAsRead()
@@ -40,7 +40,7 @@ class Message extends Model
     }
 
 
-    
+
       /*
     public function collectImages()
     {
