@@ -15,7 +15,7 @@
     <script src="/js/iconfont.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/public_js/layer_mobile/layer.js"></script>
-    <script src="{{getJsfile()}}"></script>
+    <script src="{{ config('app.default_js') }}"></script>
   </head>
   <body>
     <script>

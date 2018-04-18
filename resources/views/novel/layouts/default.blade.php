@@ -38,7 +38,7 @@
         };
 
     </script>
-    <script src="{{getJsfile()}}"></script>
+    <script src="{{ config('app.default_js') }}"></script>
 
     <div class="top">
       <div class="main">
