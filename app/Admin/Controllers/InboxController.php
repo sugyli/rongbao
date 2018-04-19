@@ -163,8 +163,8 @@ class InboxController extends Controller
                   $showForm->display('fromname' ,'发件人');
                   $showForm->display('toname', '收件人');
                   $showForm->display('adminpostdate' ,'发件时间');
-                  $showForm->display('title', '标题');
-                  $showForm->display('content', '内容');
+                  $showForm->text('title', '标题')->attribute(['readonly' => 'readonly']);
+                  $showForm->textarea('content', '内容')->attribute(['readonly' => 'readonly']);
 
                   $column->append((new Box('收件内容', $showForm))->collapsable()->style('success'));
                 });
