@@ -51,8 +51,8 @@ return [
     'cookie_93shu' => env('cookie_93shu'),
 
     //兼容
-    'default_route'=>env('default_route' ,true),
-    'default_js'=>env('default_js','/js/webdashubaojs_8.js'),
+    //'default_route'=>env('default_route' ,true),
+    'default_js'=>env('default_js','/js/webdashubaojs_9.js'),
     'custom_key_twd'=>env('custom_key_twd',false),
     /*
     |--------------------------------------------------------------------------

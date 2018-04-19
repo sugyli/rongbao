@@ -1,13 +1,7 @@
 @extends('novel.layouts.mdefault')
-@if(config('app.custom_key_twd'))
-@section('wapdashubaotitle'){{ wapmulutitle( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] ) }}@endsection
-@section('wapdashubaokeywords'){{ wapmuluwords( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] ) }}@endsection
-@section('wapdashubaodescription'){{ wapmuludes( $bookData['articlename'] , $bookData['author'] ,$bookData['sort'] ) }}@endsection
-@else
 @section('wapdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
 @section('wapdashubaokeywords'){{ $bookData['articlename'] }},小说{{ $bookData['articlename'] }},{{ $bookData['articlename'] }}最新章节,{{ $bookData['articlename'] }}全文阅读@endsection
 @section('wapdashubaodescription'){{ $bookData['articlename'] }}是由{{ $bookData['author'] }}所写的{{ $bookData['sort']}}类小说，本站提供{{ $bookData['articlename'] }}最新章节观看,{{ $bookData['articlename'] }}全文阅读等服务，如果您发现{{ $bookData['articlename'] }}更新慢了,请第一时间联系{{config('app.wapdashubaotitle')}}。@endsection
-@endif
 @section('header')
 @include('novel.layouts.header',[$request,'title'=>$bookData['articlename']])
 @endsection
