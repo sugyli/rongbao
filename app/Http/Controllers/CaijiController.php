@@ -125,6 +125,16 @@ class CaijiController extends Controller
 
     }
 
+    public function caijiinfo93shu()
+    {
+        header('Content-type:text/html;charset=gbk');
+        $url = trim(request()->url);
+        if(!$url){
+          die('meiyou_url');
+        }
+        echo $this->caiji($url , false, config('app.cookie_93shu'));    
+    }
+
 
     public function caiji93shu()
     {
