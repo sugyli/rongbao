@@ -74,5 +74,7 @@
 $("#notice").hide();
 $(".ablum_read").show();
 $("#chapterlist2").show();
+wapdashubaotongji();
+webdashubaotuisong();
 </script>
 @endsection

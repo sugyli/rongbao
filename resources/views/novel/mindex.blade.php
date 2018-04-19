@@ -189,4 +189,5 @@
        </div>
     @endif
 </div>
+<script>wapdashubaotongji();</script>
 @endsection

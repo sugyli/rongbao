@@ -101,6 +101,8 @@ function page(){
 	  return re.test(s)
 	}
 }
+wapdashubaotongji();
+webdashubaotuisong();
 </script>
 
 @endsection

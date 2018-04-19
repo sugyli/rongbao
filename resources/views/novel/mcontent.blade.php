@@ -90,5 +90,7 @@
 <script>
 $('body').attr("id", 'nr_body');
 getset();
+wapdashubaotongji();
+webdashubaotuisong();
 </script>
 @endsection
