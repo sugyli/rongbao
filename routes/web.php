@@ -225,4 +225,5 @@ Route::group([
     Route::get('/caijibaba', 'CaijiController@caijibaba');
     Route::get('/update', 'CaijiController@update');
     Route::get('/caiji93shu', 'CaijiController@caiji93shu');
+    Route::get('/caijiinfo93shu', 'CaijiController@caijiinfo93shu');
 });
