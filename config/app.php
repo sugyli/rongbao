@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'web_dashubao_url' => env('web_dashubao_url'),
     'wap_dashubao_url' => env('wap_dashubao_url'),
     'admin_url' => env('admin_url'),
@@ -37,8 +36,8 @@ return [
     'massagemaxcount' => 20,//默认收发件数量
     'dayrecommendmaxcount' => 20,//默认日推荐
     'recommendscore' => 1,//投票增长的经验
-    'wangzhangonggao' => env('wangzhangonggao' , '公告1'),
-    'wapwangzhangonggao' => env('wapwangzhangonggao' , '公告2'),
+    'wangzhangonggao' => env('wangzhangonggao' , '数据在整理中,请期待'),
+    'wapwangzhangonggao' => env('wapwangzhangonggao' , '数据在整理中,请期待'),
 
     //SOU sdk
     'accessKeyId' => env('accessKeyId'),
@@ -53,7 +52,7 @@ return [
 
     //兼容
     'default_route'=>env('default_route' ,true),
-    'default_js'=>env('default_js','/js/webdashubaojs_7.js'),
+    'default_js'=>env('default_js','/js/webdashubaojs_8.js'),
     'custom_key_twd'=>env('custom_key_twd',false),
     /*
     |--------------------------------------------------------------------------
