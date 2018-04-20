@@ -89,7 +89,6 @@ class ArticleController extends Controller
     protected function grid()
     {
         return Admin::grid(Article::class, function (Grid $grid) {
-            dd($grid->model());
             $grid->articleid('书号')->sortable();
             $grid->articlename('小说名')->limit(30);
             $grid->author('作者')->limit(30);
