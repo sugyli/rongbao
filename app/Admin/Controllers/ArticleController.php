@@ -89,6 +89,7 @@ class ArticleController extends Controller
     protected function grid()
     {
         return Admin::grid(Article::class, function (Grid $grid) {
+
             $grid->articleid('书号')->sortable();
             $grid->articlename('小说名')->limit(30);
             $grid->author('作者')->limit(30);
@@ -116,7 +117,13 @@ class ArticleController extends Controller
             $grid->actions(function ($actions) {
 
                 // append一个操作
-                $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
+                $bid = $actions->getKey();
+
+                $a = floor($bid / 1000);
+
+
+                $url = route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]);
+                $actions->append('<a href='.$url .' target="_blank"><i class="fa fa-eye"></i></a>');
 
                 // prepend一个操作
                 //$actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
