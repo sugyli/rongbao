@@ -60,8 +60,8 @@ class PushBook extends Command
       $pageSize = 500;
       //计算总页数
       $pagenum = (int)ceil($total / $pageSize);//当没有数据的时候 计算出来为0
-
-      $startpage = 142;
+      $startpage = 1;
+      //$startpage = 142;
       $endpage = $pagenum;
       $path = storage_path()."/sosuopage.txt";
 
@@ -75,7 +75,7 @@ class PushBook extends Command
           $startpage = $pagenum;
       }
       $jisu = 0;
-      for ($i=$startpage; $i <= $endpage; $i++) {
+      for ($i=$startpage; $i <= 2; $i++) {
             $this->info("========开始获取第{$i}页数据=========");
             $jisu++;
             //开始的索引
