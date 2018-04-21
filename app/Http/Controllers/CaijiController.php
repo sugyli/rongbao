@@ -42,6 +42,7 @@ class CaijiController extends Controller
       $curl = new \Curl\Curl();
       $curl->setOpt(CURLOPT_COOKIE, config('app.cookie_baba'));
       $curl->setOpt(CURLOPT_TIMEOUT, 4);
+      $curl->setOpt(CURLOPT_SSL_VERIFYPEER,false);//这个是重点。
       $curl->setUserAgent("Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)");
       $curl->get($url);
       $curl->close();
@@ -132,7 +133,7 @@ class CaijiController extends Controller
         if(!$url){
           die('meiyou_url');
         }
-        echo $this->caiji($url , false, config('app.cookie_93shu'));    
+        echo $this->caiji($url , false, config('app.cookie_93shu'));
     }
 
 
