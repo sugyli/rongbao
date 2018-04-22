@@ -168,10 +168,30 @@ baobaoni.content();
 var preview_page = $("#preview_page").attr("href");
 var next_page = $("#next_page").attr("href");
 var index_page = $("#index_page").attr("href");
-function jumpPage() {
-  if (event.keyCode==37) location=preview_page;
-  if (event.keyCode==39) location=next_page;
-  if (event.keyCode==13) location=index_page;
+function jumpPage(e) {
+  if(navigator.appName == "Microsoft Internet Explorer")
+  {
+    var keycode = event.keyCode;
+    var realkey = String.fromCharCode(event.keyCode);
+  }else
+  {
+    var keycode = e.which;
+    var realkey = String.fromCharCode(e.which);
+    //console.log(keycode + '___');
+    //console.log(realkey);
+  }
+  if(keycode==39){
+    window.location.href=next_page;
+  }
+  if(keycode==37){
+    window.location.href=preview_page;
+  }
+  if(keycode==13){
+    window.location.href=index_page;
+  }
+  //if (ev.keyCode==37) location=preview_page;
+  //if (ev.keyCode==39) location=next_page;
+  //if (ev.keyCode==13) location=index_page;
 }
 document.onkeydown=jumpPage;
 webdashubaotongji();
