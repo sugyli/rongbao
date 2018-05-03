@@ -77,7 +77,7 @@ $('#search_bnt').bind('click',function(){
 							var data = data.bakdata;
 							var html = '';
 							for (var i = 0; i < data.length; i++) {
-									html += '<a href="'+ data[i]['fields']['bookurl'] +'"><div class="block">';
+									html += '<a href="'+ data[i]['fields']['bookurl'] +'" {!! Agent::isMobile() ? '' : 'target="_blank"' !!}><div class="block">';
 									html += '<div class="block_img">';
 									html += '<img src="'+ data[i]['fields']['price'] +'">';
 									html += '</div>';
