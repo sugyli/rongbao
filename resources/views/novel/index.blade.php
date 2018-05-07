@@ -1,5 +1,18 @@
 @extends('novel.layouts.default')
 @section('content')
+<script>
+try
+{
+ if(typeof(eval(webjumpwap))=="function")
+ {
+   var url = "{{ route('wap.dashubaoindex') }}" ;
+   webjumpwap(url);
+ }
+}catch(e)
+{
+//alert("not function");
+}
+</script>
 @if ($weekDatas->count() > 0)
 <div class="fengtui">
   @foreach ($weekDatas as $weekData)

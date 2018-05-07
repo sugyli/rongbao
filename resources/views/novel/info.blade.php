@@ -3,6 +3,19 @@
 @section('webdashubaokeywords'){{ $bookData['articlename'] }},小说{{ $bookData['articlename'] }},{{ $bookData['articlename'] }}最新章节,{{ $bookData['articlename'] }}全文阅读@endsection
 @section('webdashubaodescription'){{ $bookData['articlename'] }}是由{{ $bookData['author'] }}所写的{{ $bookData['sort']}}类小说，本站提供{{ $bookData['articlename'] }}最新章节观看,{{ $bookData['articlename'] }}全文阅读等服务，如果您发现{{ $bookData['articlename'] }}更新慢了,请第一时间联系{{config('app.webdashubaotitle')}}。@endsection
 @section('content')
+<script>
+try
+{
+ if(typeof(eval(webjumpwap))=="function")
+ {
+   var url = "{{ route('wap.dashubaoinfo', ['bid' => $bookData['articleid']]) }}" ;
+   webjumpwap(url);
+ }
+}catch(e)
+{
+//alert("not function");
+}
+</script>
 <div class="place oneline">
   当前位置：<a href="/">{{config('app.webdashubaotitle')}}</a> &gt; <a href="{{$bookData['sortlink']}}">{{$bookData['sort']}}</a> &gt; {{$bookData['articlename']}}
 </div>

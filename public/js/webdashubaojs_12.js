@@ -13,6 +13,12 @@ window.onload = function() {
 
 
 };
+
+function webjumpwap(url){
+  if(navigator.userAgent.match(/(iPhone|iPod|Android)/i)){
+    location.href = url;
+  }
+}
 //统计
 function webdashubaotongji(){
   var _hmt = _hmt || [];

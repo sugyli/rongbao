@@ -3,6 +3,19 @@
 @section('webdashubaokeywords'){{$chapter['chaptername']}},{{ $bookData['articlename'] }},{{$bookData['author']}}@endsection
 @section('webdashubaodescription'){{$bookData['articlename']}}是由{{$bookData['author']}}所写的{{$bookData['sort']}}类小说， {{$chapter['chaptername']}}是小说{{$bookData['articlename']}}的最新章节。@endsection
 @section('content')
+<script>
+try
+{
+ if(typeof(eval(webjumpwap))=="function")
+ {
+   var url = "{{ route('wap.dashubaocontent', ['bid' => $bookData['articleid'] , 'cid' => $chapter['chapterid'] ]) }}" ;
+   webjumpwap(url);
+ }
+}catch(e)
+{
+//alert("not function");
+}
+</script>
 <div class="nr_ad">
 
 </div>
