@@ -58,7 +58,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $weekData->relationArticles->sort }}]
-                 <a href="{{ $newData->wapdashubaoinfolink }}" class="blue">{{ $weekData->relationArticles->articlename }}</a> / {{ $weekData->relationArticles->author }}
+                 <a href="{{ $weekData->wapdashubaoinfolink }}" class="blue">{{ $weekData->relationArticles->articlename }}</a> / {{ $weekData->relationArticles->author }}
                </li>
              @endforeach
             </ul>
@@ -89,7 +89,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $monthData->relationArticles->sort }}]
-                 <a href="{{ $newData->wapdashubaoinfolink }}" class="blue">{{ $monthData->relationArticles->articlename }}</a> / {{ $monthData->relationArticles->author }}
+                 <a href="{{ $monthData->wapdashubaoinfolink }}" class="blue">{{ $monthData->relationArticles->articlename }}</a> / {{ $monthData->relationArticles->author }}
                </li>
              @endforeach
             </ul>
@@ -120,7 +120,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $allData->relationArticles->sort }}]
-                 <a href="{{ $newData->wapdashubaoinfolink }}" class="blue">{{ $allData->relationArticles->articlename }}</a> / {{ $allData->relationArticles->author }}
+                 <a href="{{ $allData->wapdashubaoinfolink }}" class="blue">{{ $allData->relationArticles->articlename }}</a> / {{ $allData->relationArticles->author }}
                </li>
              @endforeach
             </ul>
@@ -151,7 +151,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $shouchangData->sort }}]
-                 <a href="{{ $newData->wapdashubaoinfolink }}" class="blue">{{ $shouchangData->articlename }}</a> / {{ $shouchangData->author }}
+                 <a href="{{ $shouchangData->wapdashubaoinfolink }}" class="blue">{{ $shouchangData->articlename }}</a> / {{ $shouchangData->author }}
                </li>
              @endforeach
             </ul>
@@ -182,7 +182,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $wanbenData->sort }}]
-                 <a href="{{ $newData->wapdashubaoinfolink }}" class="blue">{{ $wanbenData->articlename }}</a> / {{ $wanbenData->author }}
+                 <a href="{{ $wanbenData->wapdashubaoinfolink }}" class="blue">{{ $wanbenData->articlename }}</a> / {{ $wanbenData->author }}
                </li>
              @endforeach
             </ul>
