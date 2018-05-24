@@ -181,7 +181,8 @@ class ContentController extends Controller
                                   });
 
         $url = request()->url();
-        if(str_contains($url, config('app.wap_dashubao_url'))){
+        $url1=str_replace(array("https://","http://"),"",config('app.wap_dashubao_url'));
+        if(str_contains($url, $url1)){
             if($nextChapter){
 
               return redirect( $nextChapter['wapdashubaocontentlink'] );
