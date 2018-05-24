@@ -24,11 +24,11 @@ return [
     'minnrlength' => 300,//章节内容最小内容
     'imagedir' => env('imagedir'),//附件地址
     'webdashubaotitle' =>  env('webdashubaotitle' , '大书包小说网'),
-    'webdashubaourl' => env('webdashubaourl' , 'http://www.dashubao.net'),
+    'webdashubaourl' => env('webdashubaourl' , 'https://www.dashubao.net'),
     'webdashubaokeywords' => env('webdashubaokeywords' , '小说,大书包,大书包小说网'),
     'webdashubaodescription' => env('webdashubaodescription' , '大书包小说网收录了当前最好看的小说,是广大小说阅读爱好者必备的小说网。'),
     'wapdashubaotitle' => env('wapdashubaotitle' ,'大书包小说网手机版'),
-    'wapdashubaourl' => env('wapdashubaourl' , 'http://m.dashubao.net'),
+    'wapdashubaourl' => env('wapdashubaourl' , 'https://m.dashubao.net'),
     'wapdashubaokeywords' => env('wapdashubaokeywords' , '小说,大书包,大书包小说网'),
     'wapdashubaodescription' => env('wapdashubaodescription' , '大书包小说网收录了当前最好看的小说,是广大小说阅读爱好者必备的小说网。'),
     'honorskey'=>'honorskey',
