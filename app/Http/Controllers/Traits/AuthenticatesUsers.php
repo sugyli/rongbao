@@ -35,7 +35,10 @@ trait AuthenticatesUsers
     $registerUrl = route('mnovels.register');
     //$passwordUrl = route('novel.password');
     $redirect_url = request()->redirect_url;
-    if (str_contains( $redirect_url , $loginUrl ) || str_contains($redirect_url ,$registerUrl) ) {
+
+    $loginUrl1=str_replace(array("https://","http://"),"",$loginUrl);
+    $registerUrl1=str_replace(array("https://","http://"),"",$registerUrl);
+    if (str_contains( $redirect_url , $loginUrl1 ) || str_contains($redirect_url ,$registerUrl1) ) {
         $redirect_url = null;
     }
 
