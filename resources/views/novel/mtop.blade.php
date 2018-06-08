@@ -33,27 +33,29 @@
 	</div>
 	@endforeach
 @else
-	@foreach ($bookDatas as $bookData)
-	<div class="block">
-		<a href="{{ $bookData->wapdashubaoinfolink }}">
-			<div class="block_img">
-				<img src="{{$bookData->imgflag}}" alt="{{ $bookData->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
-			</div>
-			<div class="block_txt">
-				<h2 class="oneline">{{ $bookData->articlename }}</h2>
-				<p class="oneline">
-					作者：{{ $bookData->author }}
-				</p>
-				<p class="oneline">
-					时间：{{ $bookData->updatetime }}
-				</p>
-				<p class="bestmoreline" style="-webkit-line-clamp: 2;">
-					    {{ $bookData->intro }}
-				</p>
-			</div>
-		</a>
-	</div>
-	@endforeach
+	@if($bookDatas->count() > 0)
+		@foreach ($bookDatas as $bookData)
+		<div class="block">
+			<a href="{{ $bookData->wapdashubaoinfolink }}">
+				<div class="block_img">
+					<img src="{{$bookData->imgflag}}" alt="{{ $bookData->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
+				</div>
+				<div class="block_txt">
+					<h2 class="oneline">{{ $bookData->articlename }}</h2>
+					<p class="oneline">
+						作者：{{ $bookData->author }}
+					</p>
+					<p class="oneline">
+						时间：{{ $bookData->updatetime }}
+					</p>
+					<p class="bestmoreline" style="-webkit-line-clamp: 2;">
+						    {{ $bookData->intro }}
+					</p>
+				</div>
+			</a>
+		</div>
+		@endforeach
+	@endif
 @endif
 
 	<div class="page">
