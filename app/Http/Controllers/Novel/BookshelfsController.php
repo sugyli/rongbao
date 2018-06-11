@@ -40,18 +40,18 @@ class BookshelfsController extends Controller
 
         if(str_contains($url, $url1 )){
           if($cid > 0){
-            return redirect()->route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid]);
+            return redirect()->route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid], false);
           }
 
-          return redirect()->route('wap.dashubaoinfo',['bid'=>$bid]);
+          return redirect()->route('wap.dashubaoinfo',['bid'=>$bid], false);
         }
 
 
         $id = floor($bid / 1000);
         if($cid > 0){
-          return redirect()->route('web.dashubaocontent',['id'=>$id , 'bid'=>$bid , 'cid' =>$cid]);
+          return redirect()->route('web.dashubaocontent',['id'=>$id , 'bid'=>$bid , 'cid' =>$cid], false);
         }
-        return redirect( route('web.dashubaoinfo',['id'=>$id,'bid'=>$bid]));
+        return redirect( route('web.dashubaoinfo',['id'=>$id,'bid'=>$bid], false));
 
         /*
         if(\Agent::isMobile()){
@@ -88,17 +88,17 @@ class BookshelfsController extends Controller
 
           $bookcases =$bookcases->each(function ($item, $key) {
                 $item['new_gif'] = isset($item->relationArticles->lastupdate) && ($item->relationArticles->lastupdate > $item->lastvisit) ? true : false;
-                $item['book_url'] = isset($item->relationArticles->articleid) ? route('readbookshelf',['bid'=>$item->relationArticles->articleid]) : false;
+                $item['book_url'] = isset($item->relationArticles->articleid) ? route('readbookshelf',['bid'=>$item->relationArticles->articleid], false) : false;
                 $item['book_name'] = $item['book_url'] ? $item->relationArticles->articlename : false;
                 $item['book_author'] = $item['book_url']  ? $item->relationArticles->author : false;
                 $item['book_lastchapter_url'] = isset($item->relationArticles->lastchapterid) &&
                                 $item->relationArticles->lastchapterid > 0 ?
-                                route('readbookshelf',['bid'=>$item->relationArticles->articleid ,'cid'=>$item->relationArticles->lastchapterid]):
+                                route('readbookshelf',['bid'=>$item->relationArticles->articleid ,'cid'=>$item->relationArticles->lastchapterid], false):
                                 false;
                 $item['book_lastchapter_name'] = $item['book_lastchapter_url'] ? $item->relationArticles->lastchapter : false;
 
                 $item['book_shuqian_url'] = $item->chapterid > 0 ?
-                                              route('readbookshelf',['bid'=>$item->articleid ,'cid'=>$item->chapterid]) :
+                                              route('readbookshelf',['bid'=>$item->articleid ,'cid'=>$item->chapterid], false) :
                                               false;
 
                 $item['book_shuqian_name'] =  $item['book_shuqian_url'] ? $item->chaptername : false;

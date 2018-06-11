@@ -22,7 +22,7 @@
           <font color="#FF0000">{{ $message->fromname }}</font>
         </span>
         <span class="bt">
-          <a href="{{route('web.dashubaoinboxshow',['id'=>$message->messageid])}}" title="{{$message->title}}">{{$message->title}}</a>
+          <a href="{{route('web.dashubaoinboxshow',['id'=>$message->messageid],false)}}" title="{{$message->title}}">{{$message->title}}</a>
         </span>
         <span class="wz">{{ $message->postdate }}</span>
         <span class="sc">

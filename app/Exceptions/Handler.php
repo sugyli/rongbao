@@ -86,16 +86,16 @@ class Handler extends ExceptionHandler
 
        if(str_contains($url, $url1 )){
          $jump_url = $request->redirect_url ?
-                     route('web.dashubaologin') .'?redirect_url=' .$request->redirect_url
-                     : route('web.dashubaologin');
+                     route('web.dashubaologin',[], false) .'?redirect_url=' .$request->redirect_url
+                     : route('web.dashubaologin',[], false);
        }
 
        $url2=str_replace(array("https://","http://"),"",config('app.wap_dashubao_url'));
 
        if(str_contains($url, $url2 )){
          $jump_url = $request->redirect_url ?
-                     route('wap.dashubaologin') .'?redirect_url=' .$request->redirect_url
-                     : route('wap.dashubaologin');
+                     route('wap.dashubaologin',[], false) .'?redirect_url=' .$request->redirect_url
+                     : route('wap.dashubaologin',[], false);
        }
        return redirect()->guest($jump_url);
 

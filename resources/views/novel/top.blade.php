@@ -1,5 +1,5 @@
 @extends('novel.layouts.default')
-@section('webdashubaotitle'){{$leixing}}-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
+@section('webdashubaotitle'){{$leixing}}-{{config('app.webdashubaotitle')}}-{{config('app.webdashubaourl')}}@endsection
 @section('webdashubaokeywords'){{$leixing}}@endsection
 @section('webdashubaodescription'){{$leixing}}@endsection
 @section('content')

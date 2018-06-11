@@ -118,7 +118,7 @@ class InboxController extends Controller
 
                $page = request()->page ?: 1;
 
-               $showUrl = route('inbox.show',['id'=>$id]) . '?page=' . $page;
+               $showUrl = route('inbox.show',['id'=>$id], false) . '?page=' . $page;
                $actions->append('<a href="'. $showUrl .'"><i class="fa fa-eye"></i></a>');
 
             });

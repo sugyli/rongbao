@@ -13,7 +13,7 @@ class InfoController extends Controller
     {
       $id = request()->id;
       $bid = request()->bid;
-      return redirect(route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]), 301);
+      return redirect(route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid], false), 301);
     }
 
 
@@ -26,11 +26,11 @@ class InfoController extends Controller
       $a = floor($bid / 1000);
 
       if($id != $a){
-          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]) , 301);
+          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid], false) , 301);
       }
 
       if(!empty($any)){
-          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]) , 301);
+          return redirect(route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid], false) , 301);
       }
 
       if($bookData = $article->getBidBookData($bid)){
@@ -44,7 +44,7 @@ class InfoController extends Controller
     public function wapdashubaolaoinfo(){
 
       $bid = request()->bid;
-      return redirect(route('wap.dashubaoinfo', ['bid' => $bid]), 301);
+      return redirect(route('wap.dashubaoinfo', ['bid' => $bid], false), 301);
 
     }
 
@@ -53,7 +53,7 @@ class InfoController extends Controller
       $any = request()->any;
       $bid = (int)request()->bid;
       if(!empty($any)){
-          return redirect(route('wap.dashubaoinfo', ['bid' => $bid]) , 301);
+          return redirect(route('wap.dashubaoinfo', ['bid' => $bid], false) , 301);
       }
       if($bookData = $article->getBidBookData($bid)){
 
@@ -80,7 +80,7 @@ class InfoController extends Controller
             return redirect('/');
         }
         $total = count($bookData['relation_chapters']);
-        $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid]);
+        $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid], false);
         if($total <= 0){
             return redirect($infoUrl);
         }
@@ -107,7 +107,7 @@ class InfoController extends Controller
 
         }
 
-        return redirect(route('wap.dashubaoinfo', ['bid' => $bid]));
+        return redirect(route('wap.dashubaoinfo', ['bid' => $bid], false));
 
     }
 

@@ -34,13 +34,13 @@ class RedirectIfAuthenticated
             $url1=str_replace(array("https://","http://"),"",config('app.web_dashubao_url'));
 
             if(str_contains($url, $url1)){
-              $jump_url = route('web.dashubaouserindex');
+              $jump_url = route('web.dashubaouserindex',[], false);
             }
 
             $url2=str_replace(array("https://","http://"),"",config('app.wap_dashubao_url'));
 
             if(str_contains($url, $url2)){
-              $jump_url = route('wap.dashubaouserindex');
+              $jump_url = route('wap.dashubaouserindex',[], false);
             }
 
             return redirect($jump_url);

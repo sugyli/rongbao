@@ -1,5 +1,5 @@
 @extends('novel.layouts.mdefault')
-@section('wapdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
+@section('wapdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.wapdashubaotitle')}}-{{config('app.wapdashubaourl')}}@endsection
 @section('wapdashubaokeywords'){{$chapter['chaptername']}},{{ $bookData['articlename'] }},{{$bookData['author']}}@endsection
 @section('wapdashubaodescription'){{$bookData['articlename']}}是由{{$bookData['author']}}所写的{{$bookData['sort']}}类小说， {{$chapter['chaptername']}}是小说{{$bookData['articlename']}}的最新章节。@endsection
 @section('header')
@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="nr_set">
-		<a id="waperr" class="set1" href="{{route('wap.dashubaosendadminmessage')}}?title={{ $chapter['articlename'] }}_{{$chapter['chaptername']}}_{{request()->url()}}&redirect_url={{request()->url()}}">
+		<a id="waperr" class="set1" href="{{route('wap.dashubaosendadminmessage',[],false)}}?title={{ $chapter['articlename'] }}_{{$chapter['chaptername']}}_{{ edithttps(request()->url()) }}&redirect_url={{ edithttps(request()->url()) }}">
 			报错
 		</a>
 		<div id="lightdiv" class="set1" onclick="nr_setbg('light')">开灯</div>
@@ -45,13 +45,13 @@
 	@else
 	<a id="pt_prev" href="javascript:">到头了</a>
 	@endif
-	<a id="pt_mulu" href="{{ route('wap.dashubaomulu',['bid'=>$chapter['articleid'] ,'id'=>$page ] ) }}">目录</a>
+	<a id="pt_mulu" href="{{ route('wap.dashubaomulu',['bid'=>$chapter['articleid'] ,'id'=>$page ],false ) }}">目录</a>
 	@if($nextChapter)
 	<a id="pt_next" href="{{ $nextChapter['wapdashubaocontentlink']}}">下一章</a>
 	@else
-	<a id="pt_next" href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}">到尾了?</a>
+	<a id="pt_next" href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']] ,false) }}">到尾了?</a>
 	@endif
-	<a id="pt_shuj" href="{{ route('wap.dashubaobookshelfindex') }}?redirect_url={{request()->url()}}">书架</a>
+	<a id="pt_shuj" href="{{ route('wap.dashubaobookshelfindex',[],false) }}?redirect_url={{ edithttps(request()->url()) }}">书架</a>
 </div>
 
 <div id="nr" class="nr_nr">
@@ -70,13 +70,13 @@
 	@else
 	<a id="pt_prev1" href="javascript:">到头了</a>
 	@endif
-	<a id="pt_mulu1" href="{{ route('wap.dashubaomulu',['bid'=>$chapter['articleid'] ,'id'=>$page ] ) }}">目录</a>
+	<a id="pt_mulu1" href="{{ route('wap.dashubaomulu',['bid'=>$chapter['articleid'] ,'id'=>$page ] ,false) }}">目录</a>
 	@if($nextChapter)
 	<a id="pt_next1" href="{{ $nextChapter['wapdashubaocontentlink']}}">下一章</a>
 	@else
-	<a id="pt_next1" href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}">到尾了?</a>
+	<a id="pt_next1" href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']] ,false) }}">到尾了?</a>
 	@endif
-	<a id="pt_shuj1" href="{{ route('wap.dashubaobookshelfindex') }}?redirect_url={{request()->url()}}">书架</a>
+	<a id="pt_shuj1" href="{{ route('wap.dashubaobookshelfindex' ,[],false) }}?redirect_url={{ edithttps(request()->url()) }}">书架</a>
 </div>
 <div class="nr_ad">
 <script>read_ad_1();</script>

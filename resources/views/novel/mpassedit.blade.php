@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<form name="frmregister" action="{{ route('wap.dashubaopassedit') }}" method="post">
+<form name="frmregister" action="{{ route('wap.dashubaopassedit',[],false) }}" method="post">
     {{ csrf_field() }}
     <div class="login">
       <p>原密码：<input maxlength="30" name="pass" value="{{old('pass')}}" autocomplete="off" onkeypress="javascript: if (event.keyCode==32) return false;" type="password" class="login_name"></p>

@@ -21,7 +21,7 @@ trait AuthenticatesUsers
   {
     //$backUrl = route('member.show', [Auth::user()]);
     //$redirect_url = \Request::query('redirect_url');
-    $redirect_url = request()->redirect_url ?: route($d);
+    $redirect_url = request()->redirect_url ?: route($d,[],false);
     SaveCookUser();
     //$redirect_url = request()->input('redirect_url',$backUrl);
     return redirect($redirect_url);
@@ -31,8 +31,8 @@ trait AuthenticatesUsers
   {
     //$redirect_url = request()->input('redirect_url');
     //$redirect_url = \Request::query('redirect_url');
-    $loginUrl = route('mnovels.login');
-    $registerUrl = route('mnovels.register');
+    $loginUrl = route('mnovels.login',[],false);
+    $registerUrl = route('mnovels.register',[],false);
     //$passwordUrl = route('novel.password');
     $redirect_url = request()->redirect_url;
 

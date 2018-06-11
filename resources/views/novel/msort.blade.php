@@ -1,5 +1,5 @@
 @extends('novel.layouts.mdefault')
-@section('wapdashubaotitle'){{$sortname}}-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
+@section('wapdashubaotitle'){{$sortname}}-{{config('app.wapdashubaotitle')}}-{{config('app.wapdashubaourl')}}@endsection
 @section('wapdashubaokeywords'){{$sortname}}@endsection
 @section('wapdashubaodescription'){{$sortname}}@endsection
 @section('header')
@@ -37,15 +37,15 @@
 
 		@elseif($sortDatas->currentPage() == 1)
 		<a href="javascript:">到头了</a>
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()+1) ])}}">下一页</a>
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>$sortDatas->lastPage()])}}">尾页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()+1) ],false)}}">下一页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>$sortDatas->lastPage()],false)}}">尾页</a>
 		@elseif($sortDatas->currentPage() > 1 && $sortDatas->currentPage() < $sortDatas->lastPage())
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()-1) ])}}">上一页</a>
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()+1) ])}}">下一页</a>
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>$sortDatas->lastPage()])}}">尾页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()-1) ],false)}}">上一页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()+1) ],false)}}">下一页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>$sortDatas->lastPage()],false)}}">尾页</a>
 		@elseif($sortDatas->currentPage() >= $sortDatas->lastPage())
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>1 ])}}">首页</a>
-		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()+1) ])}}">下一页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>1 ],false)}}">首页</a>
+		<a href="{{route('wap.dashubaosort',['sid'=>$sid ,'page'=>($sortDatas->currentPage()+1) ],false)}}">下一页</a>
 		<a href="javascript:">到尾了</a>
 		@endif
 	</div>

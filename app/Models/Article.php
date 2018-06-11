@@ -162,7 +162,7 @@ class Article extends Model
     }
     public function getMinfomululinkAttribute()
     {
-      return route('wap.dashubaomulu',['bid'=>$this->articleid ,'page'=>1] );
+      return route('wap.dashubaomulu',['bid'=>$this->articleid ,'page'=>1],false);
 
     }
 
@@ -205,7 +205,7 @@ class Article extends Model
     public function getSortlinkAttribute()
     {
 
-        return route('web.dashubaosort', ['sid' => $this->sortid , 'id'=>0 , 'page'=>1]);
+        return route('web.dashubaosort', ['sid' => $this->sortid , 'id'=>0 , 'page'=>1],false);
     }
 
     public function getBidBookData($bid)

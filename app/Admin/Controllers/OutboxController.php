@@ -76,7 +76,7 @@ class OutboxController extends Controller
                $id = $actions->getKey();
                //$row = $actions->row;
                $page = request()->page ?: 1;
-               $showUrl = route('outbox.show',['id'=>$id]) . '?page=' . $page;
+               $showUrl = route('outbox.show',['id'=>$id], false) . '?page=' . $page;
                $actions->append('<a href="'. $showUrl .'"><i class="fa fa-eye"></i></a>');
 
             });

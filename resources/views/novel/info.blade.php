@@ -1,5 +1,5 @@
 @extends('novel.layouts.default')
-@section('webdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
+@section('webdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.webdashubaotitle')}}-{{config('app.webdashubaourl')}}@endsection
 @section('webdashubaokeywords'){{ $bookData['articlename'] }},小说{{ $bookData['articlename'] }},{{ $bookData['articlename'] }}最新章节,{{ $bookData['articlename'] }}全文阅读@endsection
 @section('webdashubaodescription'){{ $bookData['articlename'] }}是由{{ $bookData['author'] }}所写的{{ $bookData['sort']}}类小说，本站提供{{ $bookData['articlename'] }}最新章节观看,{{ $bookData['articlename'] }}全文阅读等服务，如果您发现{{ $bookData['articlename'] }}更新慢了,请第一时间联系{{config('app.webdashubaotitle')}}。@endsection
 @section('content')
@@ -8,7 +8,7 @@ try
 {
  if(typeof(eval(webjumpwap))=="function")
  {
-   var url = "{{ route('wap.dashubaoinfo', ['bid' => $bookData['articleid']]) }}" ;
+   var url = "https://{{ str_replace(array('https://','http://'),"",config('app.wap_dashubao_url'))}}{{ route('wap.dashubaoinfo', ['bid' => $bookData['articleid']],false) }}" ;
    webjumpwap(url);
  }
 }catch(e)
@@ -35,7 +35,7 @@ try
     <div class="info">
       <a href="#footer" rel="nofollow">直达底部</a>
       <a href="javascript:addbookcase( {{ $bookData['articleid'] }} , 0)" rel="nofollow">加入书架</a>
-      <a href="{{route('web.dashubaosendadminmessage')}}?title={{ $bookData['articlename'] }}_{{request()->url()}}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
+      <a href="{{route('web.dashubaosendadminmessage',[],false)}}?title={{ $bookData['articlename'] }}_{{ edithttps(request()->url()) }}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
     </div>
     <input type="text" name="uservote_num" id="uservote_num" value="1" maxlength="4" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value=1;}">
     <div class="vote">

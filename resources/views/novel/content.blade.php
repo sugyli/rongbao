@@ -1,5 +1,5 @@
 @extends('novel.layouts.default')
-@section('webdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
+@section('webdashubaotitle'){{$chapter['chaptername']}}_小说{{$bookData['articlename']}}-{{$bookData['author']}}-{{config('app.webdashubaotitle')}}-{{config('app.webdashubaourl')}}@endsection
 @section('webdashubaokeywords'){{$chapter['chaptername']}},{{ $bookData['articlename'] }},{{$bookData['author']}}@endsection
 @section('webdashubaodescription'){{$bookData['articlename']}}是由{{$bookData['author']}}所写的{{$bookData['sort']}}类小说， {{$chapter['chaptername']}}是小说{{$bookData['articlename']}}的最新章节。@endsection
 @section('content')
@@ -8,7 +8,7 @@ try
 {
  if(typeof(eval(webjumpwap))=="function")
  {
-   var url = "{{ route('wap.dashubaocontent', ['bid' => $bookData['articleid'] , 'cid' => $chapter['chapterid'] ]) }}" ;
+   var url = "https://{{ str_replace(array('https://','http://'),"",config('app.wap_dashubao_url'))}}{{ route('wap.dashubaocontent', ['bid' => $bookData['articleid'] , 'cid' => $chapter['chapterid']] ,false) }}" ;
    webjumpwap(url);
  }
 }catch(e)
@@ -25,9 +25,9 @@ try
 
 <div class="read_b">
   <div class="shuqian">
-    <a href="{{ route('web.dashubaobookshelfindex') }}" rel="nofollow">打开书架</a>
+    <a href="{{ route('web.dashubaobookshelfindex',[], false) }}" rel="nofollow">打开书架</a>
 		<a href="javascript:addbookcase( {{ $chapter['articleid'] }} , {{ $chapter['chapterid'] }})" rel="nofollow">添加书签</a>
-		<a href="{{route('web.dashubaosendadminmessage')}}?title={{ $bookData['articlename'] }}_{{$chapter['chaptername']}}_{{request()->url()}}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
+		<a href="{{route('web.dashubaosendadminmessage',[], false)}}?title={{ $bookData['articlename'] }}_{{$chapter['chaptername']}}_{{ edithttps(request()->url()) }}" target="_blank" rel="nofollow">错误举报</a>投推荐票：
   </div>
   <input type="text" class="input" name="uservote_num" id="uservote_num" value="1" maxlength="4" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value=1;}">
   <div class="vote">
@@ -140,7 +140,7 @@ try
     @if($nextChapter)
     <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top">下一章 →</a>
     @else
-    <a href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}" target="_top">到尾了? →</a>
+    <a href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']], false) }}" target="_top">到尾了? →</a>
     @endif
   </div>
   <div class="aside">
@@ -166,13 +166,13 @@ try
     @if($nextChapter)
     <a href="{{ $nextChapter['webdashubaocontentlink']}}" target="_top" id="next_page">下一章 →</a>
     @else
-    <a href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']]) }}" target="_top" id="next_page">到尾了? →</a>
+    <a href="{{ route('checkupnextchapter', ['bid'=>$chapter['articleid'],'chapterorder' => $chapter['chapterorder']], false) }}" target="_top" id="next_page">到尾了? →</a>
     @endif
   </div>
   <div class="readacbtn">
     <a class="recommend" onclick="javascript:tuijian({{$bookData['articleid']}})" rel="nofollow">推荐小说</a>
 		<a class="favorite" href="javascript:addbookcase( {{ $chapter['articleid'] }} , {{ $chapter['chapterid'] }})" rel="nofollow">添加书签</a>
-		<a class="bookshelf" href="{{ route('web.dashubaobookshelfindex') }}" rel="nofollow">书架</a>
+		<a class="bookshelf" href="{{ route('web.dashubaobookshelfindex',[], false) }}" rel="nofollow">书架</a>
   </div>
 </div>
 <div class="nr_ad4"></div>

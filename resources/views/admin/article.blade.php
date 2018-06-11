@@ -22,7 +22,7 @@
         <span>
           [<a href="javascript:alert('开发中');">新建分卷</a>]
           [<a href="javascript:alert('开发中');">增加章节</a>]
-          [<a href="{{route('article.editinfo',['id'=>$bookData->articleid])}}">编辑文章</a>]
+          [<a href="{{route('article.editinfo',['id'=>$bookData->articleid], false)}}">编辑文章</a>]
           [<a href="javascript:alert('开发中');">删除文章</a>]
           [<a href="javascript:alert('开发中');">清空文章</a>]
           [<a href="javascript:alert('开发中');">管理书评</a>]

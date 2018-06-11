@@ -14,7 +14,7 @@
         <div class="lf">
           <input type="checkbox" id="checkid[]" name="checkid[]" value="{{$message->messageid}}">
         </div>
-        <a href="{{route('wap.dashubaoinboxshow',['id'=>$message->messageid])}}">
+        <a href="{{route('wap.dashubaoinboxshow',['id'=>$message->messageid],false)}}">
           <div class="rt">
               @if($message->isread <= 0)
                 <img src="/images/new.gif">

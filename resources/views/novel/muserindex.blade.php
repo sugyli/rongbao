@@ -89,7 +89,7 @@
   </div>
 <div class="fengexian"></div>
 <div class="yonghulist clearfix">
-  <a href="{{ route('wap.dashubaobookshelfindex') }}">
+  <a href="{{ route('wap.dashubaobookshelfindex',[],false) }}">
     <p>
       &diams; 我的书架
     </p>
@@ -97,7 +97,7 @@
   </a>
 </div>
 <div class="yonghulist clearfix">
-  <a href="{{ route('wap.dashubaoinboxindex') }}">
+  <a href="{{ route('wap.dashubaoinboxindex',[],false) }}">
     <p>
       &diams; 收件箱
     </p>
@@ -108,7 +108,7 @@
   </a>
 </div>
 <div class="yonghulist clearfix">
-  <a href="{{ route('wap.dashubaooutboxindex') }}">
+  <a href="{{ route('wap.dashubaooutboxindex',[],false) }}">
     <p>
       &diams; 发件箱
     </p>
@@ -116,7 +116,7 @@
   </a>
 </div>
 <div class="yonghulist clearfix">
-  <a href="{{ route('wap.dashubaopassedit') }}">
+  <a href="{{ route('wap.dashubaopassedit',[],false) }}">
     <p>
       &diams; 修改密码
     </p>
@@ -125,7 +125,7 @@
 </div>
 <div class="fengexian"></div>
 <div class="yonghulist">
-  <a href="{{ route('logout') }}">
+  <a href="{{ route('logout',[],false) }}">
   <span>退出登录</span>
  </a>
 </div>

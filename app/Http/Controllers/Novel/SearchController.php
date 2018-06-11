@@ -110,11 +110,11 @@ class SearchController extends Controller
             $url = request()->url();
             $url1=str_replace(array("https://","http://"),"",config('app.wap_dashubao_url'));
             if(str_contains($url, $url1)){
-              $item['fields']['bookurl'] = route('wap.dashubaoinfo',['bid'=>$item['fields']['bookid']]);
+              $item['fields']['bookurl'] = route('wap.dashubaoinfo',['bid'=>$item['fields']['bookid']], false);
             }else{
 
               $id = floor($item['fields']['bookid'] / 1000);
-              $item['fields']['bookurl'] = route('web.dashubaoinfo',['id'=>$id,'bid'=>$item['fields']['bookid']]);
+              $item['fields']['bookurl'] = route('web.dashubaoinfo',['id'=>$id,'bid'=>$item['fields']['bookid']], false);
             }
 
             $data[] = $item;

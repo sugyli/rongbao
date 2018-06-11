@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>@yield('wapdashubaotitle',config('app.wapdashubaotitle').'-'.route('wap.dashubaoindex'))</title>
+    <title>@yield('wapdashubaotitle',config('app.wapdashubaotitle').'-'.config('app.wapdashubaourl'))</title>
     <meta name="keywords" content="@yield('wapdashubaokeywords',config('app.wapdashubaokeywords'))"/>
     <meta name="description" content="@yield('wapdashubaodescription',config('app.wapdashubaodescription'))"/>
     <meta name="MobileOptimized" content="240"/>
@@ -21,17 +21,17 @@
     <script>
           var currentHref=location.href;
           if(/baiducontent.com/gi.test(currentHref)){
-            location.href= "{{request()->url()}}";
+            location.href= "{{ edithttps(request()->url()) }}";
           }
         var Config = {
-          bookshelfdata_url: '{{route('bookshelfdata')}}',
-          bookshelfdestroy_url: '{{route('bookshelfdestroy')}}',
-          inboxdestroy_url: '{{route('inboxdestroy')}}',
-          outboxdestroy_url: '{{route('outboxdestroy')}}',
-          sendmessage_url: '{{route('sendmessage')}}',
-          outboxindex_url: '{{route('wap.dashubaooutboxindex')}}',
-          addbookcase_url: '{{route('addbookcase')}}',
-          recommend_url: '{{route('recommend')}}',
+          bookshelfdata_url: '{{route('bookshelfdata',[],false)}}',
+          bookshelfdestroy_url: '{{route('bookshelfdestroy',[],false)}}',
+          inboxdestroy_url: '{{route('inboxdestroy',[],false)}}',
+          outboxdestroy_url: '{{route('outboxdestroy' ,[],false )}}',
+          sendmessage_url: '{{route('sendmessage' ,[],false )}}',
+          outboxindex_url: '{{route('wap.dashubaooutboxindex',[],false)}}',
+          addbookcase_url: '{{route('addbookcase' ,[],false)}}',
+          recommend_url: '{{route('recommend' ,[],false)}}',
         };
 
     </script>
@@ -42,7 +42,7 @@
 
 <div class="footer">
 <p>本站所有小说由网友上传，如有侵犯版权，请来信告知，本站立即予以处理。</p>
-<p><a href="{{route('web.dashubaoindex')}}">电脑版</a> | <a href="javascript:scroll(0,0)">返回顶部</a></p>
+<p><a href="{{config('app.webdashubaourl')}}">电脑版</a> | <a href="javascript:scroll(0,0)">返回顶部</a></p>
 </div>
 
   </body>

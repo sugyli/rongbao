@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="article">
-  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'xinshu','spage'=>1]) }}">新书</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'xinshu','spage'=>1]) }}">更多...</a></h2>
+  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'xinshu','spage'=>1] ,false) }}">新书</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'xinshu','spage'=>1],false) }}">更多...</a></h2>
     @if ($newDatas->count() > 0)
       <div class="block">
         @foreach ($newDatas as $newData)
@@ -36,7 +36,7 @@
 </div>
 
 <div class="article">
-  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'weektuijian','spage'=>1]) }}">周荐榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'weektuijian','spage'=>1]) }}">更多...</a></h2>
+  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'weektuijian','spage'=>1],false) }}">周荐榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'weektuijian','spage'=>1],false) }}">更多...</a></h2>
     @if ($weekDatas->count() > 0)
       <div class="block">
         @foreach ($weekDatas as $weekData)
@@ -67,7 +67,7 @@
 </div>
 
 <div class="article">
-  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'monthtuijian','spage'=>1]) }}">月荐榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'monthtuijian','spage'=>1]) }}">更多...</a></h2>
+  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'monthtuijian','spage'=>1],false) }}">月荐榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'monthtuijian','spage'=>1],false) }}">更多...</a></h2>
     @if ($monthDatas->count() > 0)
       <div class="block">
         @foreach ($monthDatas as $monthData)
@@ -98,7 +98,7 @@
 </div>
 
 <div class="article">
-  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'alltuijian','spage'=>1]) }}">总荐榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'alltuijian','spage'=>1]) }}">更多...</a></h2>
+  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'alltuijian','spage'=>1],false) }}">总荐榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'alltuijian','spage'=>1],false) }}">更多...</a></h2>
     @if ($allDatas->count() > 0)
       <div class="block">
         @foreach ($allDatas as $allData)
@@ -129,7 +129,7 @@
 </div>
 
 <div class="article">
-  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'shouchangbang','spage'=>1]) }}">收藏榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'shouchangbang','spage'=>1]) }}">更多...</a></h2>
+  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'shouchangbang','spage'=>1],false) }}">收藏榜</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'shouchangbang','spage'=>1],false) }}">更多...</a></h2>
     @if ($shouchangDatas->count() > 0)
       <div class="block">
         @foreach ($shouchangDatas as $shouchangData)
@@ -160,7 +160,7 @@
 </div>
 
 <div class="article">
-  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'wanben','spage'=>1]) }}">完本</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'wanben','spage'=>1]) }}">更多...</a></h2>
+  <h2><span><a href="{{ route('wap.dashubaotop' ,['any'=>'wanben','spage'=>1],false) }}">完本</a></span><a href="{{ route('wap.dashubaotop' ,['any'=>'wanben','spage'=>1],false) }}">更多...</a></h2>
     @if ($wanbenDatas->count() > 0)
       <div class="block">
         @foreach ($wanbenDatas as $wanbenData)

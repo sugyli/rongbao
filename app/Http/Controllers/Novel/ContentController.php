@@ -14,7 +14,7 @@ class ContentController extends Controller
       $cid = (int)request()->cid;
       $content  = config('app.dfnr');
       $id = floor($bid / 1000);
-      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]);
+      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid], false);
       $isimg = 0;//判断是否图片
       $bookData = $article->getBidBookData($bid);
       if(!$bookData){
@@ -85,7 +85,7 @@ class ContentController extends Controller
       $bid = (int)request()->bid;
       $cid = (int)request()->cid;
       $content  = config('app.dfnr');
-      $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid]);
+      $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid], false);
       $isimg = 0;//判断是否图片
       $bookData = app(Article::class)->getBidBookData($bid);
 
@@ -189,7 +189,7 @@ class ContentController extends Controller
 
             }
 
-            $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid]);
+            $infoUrl = route('wap.dashubaoinfo', ['bid' => $bid], false);
             return redirect($infoUrl);
         }
 
@@ -198,7 +198,7 @@ class ContentController extends Controller
         return redirect( $nextChapter['webdashubaocontentlink'] );
       }
       $id = floor($bid / 1000);
-      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid]);
+      $infoUrl = route('web.dashubaoinfo', ['id'=>$id,'bid' => $bid], false);
       return redirect($infoUrl);
     }
 

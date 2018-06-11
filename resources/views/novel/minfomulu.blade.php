@@ -1,5 +1,5 @@
 @extends('novel.layouts.mdefault')
-@section('wapdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
+@section('wapdashubaotitle'){{ $bookData['articlename'] }}全文阅读_{{ $bookData['articlename'] }}最新章节-{{config('app.wapdashubaotitle')}}-{{config('app.wapdashubaourl')}}@endsection
 @section('wapdashubaokeywords'){{ $bookData['articlename'] }},小说{{ $bookData['articlename'] }},{{ $bookData['articlename'] }}最新章节,{{ $bookData['articlename'] }}全文阅读@endsection
 @section('wapdashubaodescription'){{ $bookData['articlename'] }}是由{{ $bookData['author'] }}所写的{{ $bookData['sort']}}类小说，本站提供{{ $bookData['articlename'] }}最新章节观看,{{ $bookData['articlename'] }}全文阅读等服务，如果您发现{{ $bookData['articlename'] }}更新慢了,请第一时间联系{{config('app.wapdashubaotitle')}}。@endsection
 @section('header')
@@ -33,29 +33,29 @@
 
 	@elseif(empty($sort) && $page == 1)
 		<a href="javascript:">到头了</a>
-		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page+1)])}}">下一页</a>
-		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>$pagenum])}}">尾页</a>
+		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page+1)],false)}}">下一页</a>
+		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>$pagenum],false)}}">尾页</a>
 	@elseif(empty($sort) && $page > 1 && $page < $pagenum)
 		<a href="{{ $bookData['minfomululink']}} ">首页</a>
-		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page-1)])}}">上一页</a>
-		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page+1)])}}">下一页</a>
-		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>$pagenum])}}">尾页</a>
+		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page-1)] ,false)}}">上一页</a>
+		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page+1)] ,false)}}">下一页</a>
+		<a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>$pagenum] ,false)}}">尾页</a>
   @elseif(empty($sort) && $page >= $pagenum)
 	  <a href="{{ $bookData['minfomululink']}} ">首页</a>
-    <a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page-1)])}}">上一页</a>
+    <a href="{{route('wap.dashubaomulu',['bid'=>$bookData['articleid'] ,'page'=>($page-1)],false)}}">上一页</a>
 		<a href="javascript:">到尾了</a>
 	@elseif($sort && $page == 1)
 		<a href="javascript:">到头了</a>
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page+1) , 'zid'=>1 ])}}">下一页</a>
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>$pagenum , 'zid'=>1 ])}}">尾页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page+1) , 'zid'=>1 ] ,false)}}">下一页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>$pagenum , 'zid'=>1 ] ,false)}}">尾页</a>
 	@elseif($sort && $page > 1 && $page < $pagenum)
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>1 , 'zid'=>1 ])}}">首页</a>
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page-1) , 'zid'=>1 ])}}">上一页</a>
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page+1) , 'zid'=>1 ])}}">下一页</a>
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>$pagenum, 'zid'=>1  ])}}">尾页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>1 , 'zid'=>1 ] ,false)}}">首页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page-1) , 'zid'=>1 ] ,false)}}">上一页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page+1) , 'zid'=>1 ] ,false)}}">下一页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>$pagenum, 'zid'=>1  ] ,false)}}">尾页</a>
 	@elseif($sort && $page >= $pagenum)
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>1 , 'zid'=>1 ])}}">首页</a>
-		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page-1) , 'zid'=>1 ])}}">上一页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>1 , 'zid'=>1 ],false)}}">首页</a>
+		<a href="{{route('wap.dashubaomulu1',['bid'=>$bookData['articleid'] ,'page'=>($page-1) , 'zid'=>1 ] ,false)}}">上一页</a>
 		<a href="javascript:">到尾了</a>
 	@endif
 </div>

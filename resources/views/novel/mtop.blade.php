@@ -1,5 +1,5 @@
 @extends('novel.layouts.mdefault')
-@section('wapdashubaotitle'){{$leixing}}-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
+@section('wapdashubaotitle'){{$leixing}}-{{config('app.wapdashubaotitle')}}-{{config('app.wapdashubaourl')}}@endsection
 @section('wapdashubaokeywords'){{$leixing}}@endsection
 @section('wapdashubaodescription'){{$leixing}}@endsection
 @section('header')
@@ -63,15 +63,15 @@
 
 		@elseif($page == 1)
 		<a href="javascript:">到头了</a>
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page+1) ])}}">下一页</a>
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>$bookDatas->lastPage()])}}">尾页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page+1) ],false)}}">下一页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>$bookDatas->lastPage()],false)}}">尾页</a>
 		@elseif($page > 1 && $page < $bookDatas->lastPage())
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page-1) ])}}">上一页</a>
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page+1) ])}}">下一页</a>
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>$bookDatas->lastPage()])}}">尾页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page-1) ],false)}}">上一页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page+1) ],false)}}">下一页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>$bookDatas->lastPage()],false)}}">尾页</a>
 		@elseif($page >= $bookDatas->lastPage())
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>1 ])}}">首页</a>
-		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page+1) ])}}">下一页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>1 ],false)}}">首页</a>
+		<a href="{{route('wap.dashubaotop',['any'=>$any ,'page'=>($page+1) ],false)}}">下一页</a>
 		<a href="javascript:">到尾了</a>
 		@endif
 	</div>

@@ -52,7 +52,7 @@ return [
 
     //兼容
     //'default_route'=>env('default_route' ,true),
-    'default_js'=>env('default_js','/js/webdashubaojs_17.js'),
+    'default_js'=>env('default_js','/js/webdashubaojs_18.js'),
     //'custom_key_twd'=>env('custom_key_twd',false),
     /*
     |--------------------------------------------------------------------------

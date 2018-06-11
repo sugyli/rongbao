@@ -1,4 +1,11 @@
 <?php
+if (!function_exists('edithttps')) {
+  function edithttps($url)
+  {
+    $url=str_replace(array("https://","http://"),"",$url);
+    return 'https://'.$url;
+  }
+}
 if (!function_exists('formatTime')) {
   function formatTime($t)
   {

@@ -14,7 +14,7 @@
         <div class="lf">
           <input type="checkbox" id="checkid[]" name="checkid[]" value="{{$message->messageid}}">
         </div>
-        <a href="{{route('wap.dashubaooutboxshow',['id'=>$message->messageid])}}">
+        <a href="{{route('wap.dashubaooutboxshow',['id'=>$message->messageid],false)}}">
           <div class="rt">
                <h3>{{$message->title}}</h3>
                <p>收件人：{{ $message->toname }}</p>

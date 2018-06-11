@@ -5,7 +5,7 @@ try
 {
  if(typeof(eval(webjumpwap))=="function")
  {
-   var url = "{{ route('wap.dashubaoindex') }}" ;
+   var url = " {{config('app.wap_dashubao_url')}}" ;
    webjumpwap(url);
  }
 }catch(e)
@@ -35,7 +35,7 @@ try
   @if ($allDatas->count() > 0)
   <ul class="l">
     <li class="t">
-      <h2><a href="{{ route('web.dashubaotop' ,['any'=>'alltuijian' ,'id'=>0 ,'page' =>1] ) }}">总推荐</a></h2>
+      <h2><a href="{{ route('web.dashubaotop' ,['any'=>'alltuijian' ,'id'=>0 ,'page' =>1],false ) }}">总推荐</a></h2>
     </li>
       @foreach ($allDatas as $allData)
       <li class="oneline"><a href="{{$allData->relationArticles->webdashubaoinfolink}}">{{ $allData->relationArticles->articlename }}</a>/{{ $allData->relationArticles->author }}</li>
@@ -46,7 +46,7 @@ try
   @if ($monthDatas->count() > 0)
   <ul>
     <li class="t">
-    <h2><a href="{{ route('web.dashubaotop' ,['any'=>'monthtuijian' ,'id'=>0 ,'page' =>1] ) }}">月推荐</a></h2>
+    <h2><a href="{{ route('web.dashubaotop' ,['any'=>'monthtuijian' ,'id'=>0 ,'page' =>1],false ) }}">月推荐</a></h2>
     </li>
     @foreach ($monthDatas as $monthData)
     <li><a href="{{$monthData->relationArticles->webdashubaoinfolink}}">{{ $monthData->relationArticles->articlename }}</a>/{{ $monthData->relationArticles->author }}</li>
@@ -57,7 +57,7 @@ try
   @if ($shouchangDatas->count() > 0)
   <ul>
     <li class="t">
-    <h2><a href="{{ route('web.dashubaotop' ,['any'=>'shouchangbang' ,'id'=>0 ,'page' =>1] ) }}">收藏榜</a></h2>
+    <h2><a href="{{ route('web.dashubaotop' ,['any'=>'shouchangbang' ,'id'=>0 ,'page' =>1],false ) }}">收藏榜</a></h2>
     </li>
     @foreach ($shouchangDatas as $shouchangData)
     <li><a href="{{$shouchangData->webdashubaoinfolink}}">{{ $shouchangData->articlename }}</a>/{{ $shouchangData->author }}</li>
@@ -68,7 +68,7 @@ try
   @if ($wanbenDatas->count() > 0)
   <ul>
     <li class="t">
-    <h2><a href="{{ route('web.dashubaotop' ,['any'=>'wanben' ,'id'=>0 ,'page' =>1] ) }}">完本</a></h2>
+    <h2><a href="{{ route('web.dashubaotop' ,['any'=>'wanben' ,'id'=>0 ,'page' =>1],false ) }}">完本</a></h2>
     </li>
     @foreach ($wanbenDatas as $wanbenData)
     <li><a href="{{$wanbenData->webdashubaoinfolink}}">{{ $wanbenData->articlename }}</a>/{{ $wanbenData->author }}</li>
@@ -106,7 +106,7 @@ try
        </ul>
      </div>
      <div class="postdate">
-       <h2><a href="{{ route('web.dashubaotop' ,['any'=>'xinshu' ,'id'=>0 ,'page' =>1] ) }}">新书入库</a></h2>
+       <h2><a href="{{ route('web.dashubaotop' ,['any'=>'xinshu' ,'id'=>0 ,'page' =>1],false) }}">新书入库</a></h2>
        @if ($wanbenDatas->count() > 0)
          <ul>
           @foreach ($newDatas as $newData)

@@ -122,7 +122,7 @@ class ArticleController extends Controller
                 $a = floor($bid / 1000);
 
 
-                $url = route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]);
+                $url = route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid], false);
                 $actions->append('<a href='.$url .' target="_blank"><i class="fa fa-eye"></i></a>');
 
                 // prepend一个操作
@@ -154,7 +154,7 @@ class ArticleController extends Controller
                 Chapter::where('articleid', $form->model()->articleid)
                         ->update(['articlename' => $form->model()->articlename]);
 
-                 return redirect(route('article.edit', ['id' => $form->model()->articleid]));
+                 return redirect(route('article.edit', ['id' => $form->model()->articleid], false));
             });
         });
     }

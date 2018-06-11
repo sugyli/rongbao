@@ -3,7 +3,7 @@
 @section('content_member')
 <div class="case_right">
   <div class="case_title">密码修改</div>
-  <form name="formtable" action="{{ route('web.dashubaopassedit') }}" method="post">
+  <form name="formtable" action="{{ route('web.dashubaopassedit',[],false) }}" method="post">
     {{ csrf_field() }}
     <div class="msg_left">原密码：</div>
     <div class="msg_right">

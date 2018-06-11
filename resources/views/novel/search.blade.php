@@ -15,10 +15,10 @@
 <script>
 		var currentHref=location.href;
 		if(/baiducontent.com/gi.test(currentHref)){
-			location.href= "{{request()->url()}}";
+			location.href= "{{ edithttps(request()->url()) }}";
 		}
 		var Config = {
-			alisearch_url: '{{route('search')}}',
+			alisearch_url: '{{route('search',[],false)}}',
 		};
 </script>
 <script src="{{getJsfile()}}"></script>

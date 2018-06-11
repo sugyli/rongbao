@@ -6,7 +6,7 @@
       <h2>用户注册</h2>
     <dl>
       <dt></dt>
-      <form name="formtable" action="{{ route('web.dashubaoregister') }}{{ !empty($redirect_url)  ? '?redirect_url='.$redirect_url : '' }}" method="post">
+      <form name="formtable" action="{{ route('web.dashubaoregister',[],false) }}{{ !empty($redirect_url)  ? '?redirect_url='.$redirect_url : '' }}" method="post">
         <dd>
           <span class="l">用户名:</span>
           <span class="c">
@@ -42,7 +42,7 @@
     <dl>
       <dt>用户登陆</dt>
       <dd>已经有账号了？</dd>
-      <dd><a href="{{ route('web.dashubaologin') }}{{ !empty($redirect_url)  ? '?redirect_url='.$redirect_url : '' }}" title="登陆">立即登陆</a></dd>
+      <dd><a href="{{ route('web.dashubaologin',[],false) }}{{ !empty($redirect_url)  ? '?redirect_url='.$redirect_url : '' }}" title="登陆">立即登陆</a></dd>
     </dl>
     <div class="regad">
 

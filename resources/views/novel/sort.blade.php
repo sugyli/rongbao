@@ -1,5 +1,5 @@
 @extends('novel.layouts.default')
-@section('webdashubaotitle'){{$sortname}}-{{config('app.webdashubaotitle')}}-{{route('web.dashubaoindex')}}@endsection
+@section('webdashubaotitle'){{$sortname}}-{{config('app.webdashubaotitle')}}-{{config('app.webdashubaourl')}}@endsection
 @section('webdashubaokeywords'){{$sortname}}@endsection
 @section('webdashubaodescription'){{$sortname}}@endsection
 @section('content')

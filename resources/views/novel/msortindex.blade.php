@@ -1,5 +1,5 @@
 @extends('novel.layouts.mdefault')
-@section('wapdashubaotitle')作品类型-{{config('app.wapdashubaotitle')}}-{{route('wap.dashubaoindex')}}@endsection
+@section('wapdashubaotitle')作品类型-{{config('app.wapdashubaotitle')}}-{{config('app.wapdashubaourl')}}@endsection
 @section('wapdashubaokeywords')作品类型@endsection
 @section('wapdashubaodescription')作品类型@endsection
 @section('header')
