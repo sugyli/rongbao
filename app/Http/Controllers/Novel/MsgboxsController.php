@@ -78,7 +78,8 @@ class MsgboxsController extends Controller
           //$bkurl = request()->redirect_url ?: '/';
           return view('novel.messageshow', compact('messageData','isfajian'));
       }
-      return redirect()->route('web.dashubaooutboxindex',[], false);
+      return redirect( route('web.dashubaooutboxindex',[], false));
+      //return redirect()->route('web.dashubaooutboxindex',[], false);
     }
 
     public function wapdashubaooutboxshow($id,Request $request){
@@ -93,7 +94,8 @@ class MsgboxsController extends Controller
           //$bkurl = request()->redirect_url ?: '/';
           return view('novel.mmessageshow', compact('request','messageData','isfajian'));
       }
-      return redirect()->route('wap.dashubaooutboxindex',[], false);
+      return redirect( route('wap.dashubaooutboxindex',[], false));
+      //return redirect()->route('wap.dashubaooutboxindex',[], false);
     }
 
 
@@ -111,7 +113,9 @@ class MsgboxsController extends Controller
             //$bkurl = request()->redirect_url ?: '/';
             return view('novel.messageshow', compact('messageData','isfajian'));
         }
-        return redirect()->route('web.dashubaoinboxindex',[], false);
+        return redirect( route('web.dashubaoinboxindex',[], false));
+
+        //return redirect()->route('web.dashubaoinboxindex',[], false);
     }
 
     public function wapdashubaoinboxshow($id,Request $request){
@@ -128,7 +132,8 @@ class MsgboxsController extends Controller
             //$bkurl = request()->redirect_url ?: '/';
             return view('novel.mmessageshow', compact('request','messageData','isfajian'));
         }
-        return redirect()->route('wap.dashubaoinboxindex',[], false);
+        return redirect( route('wap.dashubaoinboxindex',[], false));
+        //return redirect()->route('wap.dashubaoinboxindex',[], false);
     }
 
 

@@ -39,17 +39,23 @@ class BookshelfsController extends Controller
         $url1=str_replace(array("https://","http://"),"",config('app.wap_dashubao_url'));
 
         if(str_contains($url, $url1 )){
+
           if($cid > 0){
-            return redirect()->route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid], false);
+
+            return redirect( route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid], false));
+
+            //return redirect()->route('wap.dashubaocontent',['bid'=>$bid , 'cid' =>$cid], false);
           }
 
-          return redirect()->route('wap.dashubaoinfo',['bid'=>$bid], false);
+          return redirect( route('wap.dashubaoinfo',['bid'=>$bid], false));
+          //return redirect()->route('wap.dashubaoinfo',['bid'=>$bid], false);
         }
 
 
         $id = floor($bid / 1000);
         if($cid > 0){
-          return redirect()->route('web.dashubaocontent',['id'=>$id , 'bid'=>$bid , 'cid' =>$cid], false);
+          return redirect( route('web.dashubaocontent',['id'=>$id , 'bid'=>$bid , 'cid' =>$cid], false));
+          //return redirect()->route('web.dashubaocontent',['id'=>$id , 'bid'=>$bid , 'cid' =>$cid], false);
         }
         return redirect( route('web.dashubaoinfo',['id'=>$id,'bid'=>$bid], false));
 

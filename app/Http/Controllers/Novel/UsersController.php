@@ -70,7 +70,8 @@ class UsersController extends Controller
         try {
             $user->pass = md5($request->newpass);
             $user->save();
-            return redirect()->route('web.dashubaouserindex',[], false);
+            return redirect( route('web.dashubaouserindex',[], false));
+            //return redirect()->route('web.dashubaouserindex',[], false);
         } catch (\Exception $exception) {
             $error = new MessageBag([
               'pass'   => '修改密码失败'
@@ -112,7 +113,8 @@ class UsersController extends Controller
         try {
             $user->pass = md5($request->newpass);
             $user->save();
-            return redirect()->route('wap.dashubaouserindex',[], false);
+            return redirect( route('wap.dashubaouserindex',[], false));
+            //return redirect()->route('wap.dashubaouserindex',[], false);
         } catch (\Exception $exception) {
             $error = new MessageBag([
               'pass'   => '修改密码失败'
