@@ -40,7 +40,7 @@
     @if ($weekDatas->count() > 0)
       <div class="block">
         @foreach ($weekDatas as $weekData)
-        <a href="{{ $newData->wapdashubaoinfolink }}">
+        <a href="{{ $weekData->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$weekData->relationArticles->imgflag}}" alt="{{ $weekData->relationArticles->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -71,7 +71,7 @@
     @if ($monthDatas->count() > 0)
       <div class="block">
         @foreach ($monthDatas as $monthData)
-        <a href="{{ $newData->wapdashubaoinfolink }}">
+        <a href="{{ $monthData->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$monthData->relationArticles->imgflag}}" alt="{{ $monthData->relationArticles->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -102,7 +102,7 @@
     @if ($allDatas->count() > 0)
       <div class="block">
         @foreach ($allDatas as $allData)
-        <a href="{{ $newData->wapdashubaoinfolink }}">
+        <a href="{{ $allData->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$allData->relationArticles->imgflag}}" alt="{{ $allData->relationArticles->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -133,7 +133,7 @@
     @if ($shouchangDatas->count() > 0)
       <div class="block">
         @foreach ($shouchangDatas as $shouchangData)
-        <a href="{{ $newData->wapdashubaoinfolink }}">
+        <a href="{{ $shouchangData->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$shouchangData->imgflag}}" alt="{{ $shouchangData->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -164,7 +164,7 @@
     @if ($wanbenDatas->count() > 0)
       <div class="block">
         @foreach ($wanbenDatas as $wanbenData)
-        <a href="{{ $newData->wapdashubaoinfolink }}">
+        <a href="{{ $wanbenData->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$wanbenData->imgflag}}" alt="{{ $wanbenData->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
