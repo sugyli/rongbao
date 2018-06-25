@@ -30,7 +30,7 @@
       </dt>
       @if($bookData->relationChapters->count() > 0)
         @foreach ($bookData->relationChapters as $chapter)
-        <dd><input type="checkbox" name="chapterid[]" value="27950495"><a href="{{$chapter->webdashubaocontentlink}}" target="_blank" title="{{$chapter->articlename}}">{{$chapter->chaptername}}</a> <a href="https://www.88dus.com/modules/article/chapteredit.php?id=27950495&amp;chaptertype=0">[编]</a> <a href="javascript:if(confirm('确实要删除该章节么？')) document.location='https://www.88dus.com/modules/article/chapterdel.php?id=27950495&amp;chaptertype=0';">[删]</a></dd>
+        <dd><input type="checkbox" name="chapterid[]" value="27950495"><a href="{{config('app.web_dashubao_url')}}{{$chapter->webdashubaocontentlink}}" target="_blank" title="{{$chapter->articlename}}">{{$chapter->chaptername}}</a> <a href="https://www.88dus.com/modules/article/chapteredit.php?id=27950495&amp;chaptertype=0">[编]</a> <a href="javascript:if(confirm('确实要删除该章节么？')) document.location='https://www.88dus.com/modules/article/chapterdel.php?id=27950495&amp;chaptertype=0';">[删]</a></dd>
         @endforeach
       @endif
       <dt>

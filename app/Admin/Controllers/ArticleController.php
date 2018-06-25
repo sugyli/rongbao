@@ -122,7 +122,7 @@ class ArticleController extends Controller
                 $a = floor($bid / 1000);
 
 
-                $url = route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid], false);
+                $url = route('web.dashubaoinfo', ['id'=>$a,'bid' => $bid]);
                 $actions->append('<a href='.$url .' target="_blank"><i class="fa fa-eye"></i></a>');
 
                 // prepend一个操作
