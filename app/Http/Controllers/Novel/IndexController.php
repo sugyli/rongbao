@@ -33,7 +33,6 @@ class IndexController extends Controller
       $shouchangDatas = $article->getArticlesWithFilter('shouchangbang',7);
       $wanbenDatas = $article->getArticlesWithFilter('wanben',7);
       $newDatas = $article->getArticlesWithFilter('newbook',6);
-
       return view('novel.mindex',compact('request','weekDatas','monthDatas','allDatas','shouchangDatas','wanbenDatas','newDatas'));
 
     }

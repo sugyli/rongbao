@@ -31,6 +31,19 @@ class CaijiController extends Controller
     }
 
 
+    /*
+    public function zonghecaiji()
+    {
+
+      header('Content-type:text/html;charset=gbk');
+      $gz = trim(request()->gz);
+      $url = trim(request()->url);
+
+
+
+    }
+
+*/
 
     public function caijibaba()
     {

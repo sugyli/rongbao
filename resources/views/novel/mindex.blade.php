@@ -40,7 +40,7 @@
     @if ($weekDatas->count() > 0)
       <div class="block">
         @foreach ($weekDatas as $weekData)
-        <a href="{{ $weekData->wapdashubaoinfolink }}">
+        <a href="{{ $weekData->relationArticles->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$weekData->relationArticles->imgflag}}" alt="{{ $weekData->relationArticles->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -58,7 +58,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $weekData->relationArticles->sort }}]
-                 <a href="{{ $weekData->wapdashubaoinfolink }}" class="blue">{{ $weekData->relationArticles->articlename }}</a> / {{ $weekData->relationArticles->author }}
+                 <a href="{{ $weekData->relationArticles->wapdashubaoinfolink }}" class="blue">{{ $weekData->relationArticles->articlename }}</a> / {{ $weekData->relationArticles->author }}
                </li>
              @endforeach
             </ul>
@@ -71,7 +71,7 @@
     @if ($monthDatas->count() > 0)
       <div class="block">
         @foreach ($monthDatas as $monthData)
-        <a href="{{ $monthData->wapdashubaoinfolink }}">
+        <a href="{{ $monthData->relationArticles->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$monthData->relationArticles->imgflag}}" alt="{{ $monthData->relationArticles->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -89,7 +89,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $monthData->relationArticles->sort }}]
-                 <a href="{{ $monthData->wapdashubaoinfolink }}" class="blue">{{ $monthData->relationArticles->articlename }}</a> / {{ $monthData->relationArticles->author }}
+                 <a href="{{ $monthData->relationArticles->wapdashubaoinfolink }}" class="blue">{{ $monthData->relationArticles->articlename }}</a> / {{ $monthData->relationArticles->author }}
                </li>
              @endforeach
             </ul>
@@ -102,7 +102,7 @@
     @if ($allDatas->count() > 0)
       <div class="block">
         @foreach ($allDatas as $allData)
-        <a href="{{ $allData->wapdashubaoinfolink }}">
+        <a href="{{ $allData->relationArticles->wapdashubaoinfolink }}">
           <div class="block_img">
               <img src="{{$allData->relationArticles->imgflag}}" alt="{{ $allData->relationArticles->articlename }}" onerror="this.src='{{config('app.dfxsfmdir')}}'">
           </div>
@@ -120,7 +120,7 @@
                @continue($loop->iteration <=1)
                <li class="oneline">
                  [{{ $allData->relationArticles->sort }}]
-                 <a href="{{ $allData->wapdashubaoinfolink }}" class="blue">{{ $allData->relationArticles->articlename }}</a> / {{ $allData->relationArticles->author }}
+                 <a href="{{ $allData->relationArticles->wapdashubaoinfolink }}" class="blue">{{ $allData->relationArticles->articlename }}</a> / {{ $allData->relationArticles->author }}
                </li>
              @endforeach
             </ul>
