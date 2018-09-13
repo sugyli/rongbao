@@ -2,8 +2,19 @@
 if (!function_exists('edithttps')) {
   function edithttps($url)
   {
-    $url=str_replace(array("https://","http://"),"",$url);
-    return 'https://'.$url;
+    // $url=str_replace(array("https://","http://"),"",$url);
+    // return 'http://'.$url;
+    $arr = parse_url($url);
+    /*
+    [scheme] => http
+    [host] => www.sina.com.cn
+    [path] => /abc/de/fg.php
+    [query] => id=1
+    */
+    if (isset($arr['path'])) {
+      return $arr['path'];
+    }
+    return '/';
   }
 }
 if (!function_exists('formatTime')) {
