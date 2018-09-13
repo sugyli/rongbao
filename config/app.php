@@ -3,8 +3,6 @@
 return [
     'web_dashubao_url' => env('web_dashubao_url'),
     'wap_dashubao_url' => env('wap_dashubao_url'),
-    'web_dashubao_url_2' => env('web_dashubao_url_2'),
-    'wap_dashubao_url_2' => env('wap_dashubao_url_2'),
     'admin_url' => env('admin_url'),
     'caiji_url' => env('caiji_url'),
     'cacheTime_d' => env('DI'),
