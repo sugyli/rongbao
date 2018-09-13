@@ -3,7 +3,7 @@ if (!function_exists('edithttps')) {
   function edithttps($url)
   {
     $url=str_replace(array("https://","http://"),"",$url);
-    return 'https://'.$url;
+    return 'http://'.$url;
   }
 }
 if (!function_exists('formatTime')) {
