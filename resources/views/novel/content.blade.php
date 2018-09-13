@@ -8,7 +8,7 @@ try
 {
  if(typeof(eval(webjumpwap))=="function")
  {
-   var url = "https://{{ str_replace(array('https://','http://'),"",config('app.wap_dashubao_url'))}}{{ route('wap.dashubaocontent', ['bid' => $bookData['articleid'] , 'cid' => $chapter['chapterid']] ,false) }}" ;
+   var url = "http://{{ str_replace(array('https://','http://'),"",config('app.wap_dashubao_url'))}}{{ route('wap.dashubaocontent', ['bid' => $bookData['articleid'] , 'cid' => $chapter['chapterid']] ,false) }}" ;
    webjumpwap(url);
  }
 }catch(e)
